@@ -35,8 +35,10 @@ public class MainActivity extends AppCompatActivity {
         login.setUsuario(usuario);
         login.setSenha(senha);
         login.toString();
+        loginController.cadastroLogin(login);
 
-        Toast.makeText(getBaseContext(), login.toString(), Toast.LENGTH_LONG).show();
+        //Toast.makeText(getBaseContext(), login.toString(), Toast.LENGTH_LONG).show();
+        Toast.makeText(getBaseContext(), loginController.exibeLogin(), Toast.LENGTH_LONG).show();
 
     }
 

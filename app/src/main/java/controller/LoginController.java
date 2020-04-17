@@ -14,7 +14,9 @@ public class LoginController {
     }
 
     public static String exibeLogin() {
-        System.out.println(listaLogins.toString());
+        //System.out.println(listaLogins.toString());
         return listaLogins.toString();
     }
+
+
 }
