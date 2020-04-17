@@ -9,8 +9,11 @@ public class LoginController {
 
     static List<Login> listaLogins = new ArrayList<Login>();
 
+
     public void cadastroLogin(Login login) {
+
         listaLogins.add(login);
+
     }
 
     public static String exibeLogin() {

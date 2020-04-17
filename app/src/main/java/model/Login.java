@@ -5,6 +5,12 @@ public class Login {
     private static String Usuario;
     private static String Senha;
 
+    public Login(Login login) {
+    }
+
+    public Login() {
+
+    }
 
 
     public String getUsuario()

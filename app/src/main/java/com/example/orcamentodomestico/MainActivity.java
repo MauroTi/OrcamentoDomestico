@@ -17,7 +17,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
     }
 
     Login login;
@@ -34,20 +33,16 @@ public class MainActivity extends AppCompatActivity {
         login = new Login();
         login.setUsuario(usuario);
         login.setSenha(senha);
-        login.toString();
         loginController.cadastroLogin(login);
 
-        //Toast.makeText(getBaseContext(), login.toString(), Toast.LENGTH_LONG).show();
+        // Toast.makeText(getBaseContext(), login.toString(), Toast.LENGTH_LONG).show();
         Toast.makeText(getBaseContext(), loginController.exibeLogin(), Toast.LENGTH_LONG).show();
-
     }
+
+    public void logar(View view) {}
 
     public void proxima(View view) {
         Intent intent = new Intent(MainActivity.this, Main2Activity.class);
         startActivity(intent);
-
     }
-
-
-
 }
