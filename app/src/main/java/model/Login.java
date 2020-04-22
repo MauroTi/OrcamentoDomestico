@@ -5,28 +5,25 @@ public class Login {
     private static String Usuario;
     private static String Senha;
 
-    public Login(Login login) {
+    public Login(String Usuario, String Senha) {
+        this.Usuario = Usuario;
+        this.Senha = Senha;
     }
 
-    public Login() {
 
-    }
-
-
-    public String getUsuario()
-    {
+    public static String getUsuario() {
         return Usuario;
     }
-    public void setUsuario(String usuario)
-    {
+
+    public static void setUsuario(String usuario) {
         Usuario = usuario;
     }
-    public String getSenha()
-    {
+
+    public static String getSenha() {
         return Senha;
     }
-    public void setSenha(String senha)
-    {
+
+    public static void setSenha(String senha) {
         Senha = senha;
     }
 

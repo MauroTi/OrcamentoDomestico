@@ -6,15 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".Main3Activity">
 
-    <EditText
-        android:id="@+id/etNomeSenha"
-        android:layout_width="285dp"
-        android:layout_height="511dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
+
+    <TextView
+        android:id="@+id/tvResultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="44dp"
+        android:background="@drawable/rounded_corner"
+        android:text="Texto somente para teste."
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.253" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

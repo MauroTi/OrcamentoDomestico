@@ -1,4 +1,4 @@
-package view;
+/*package view;
 
 import controller.LoginController;
 import model.Login;
@@ -22,6 +22,4 @@ public class LoginTeste {
         LoginController.exibeLogin();
 
     }
-
-
-}
+}*/

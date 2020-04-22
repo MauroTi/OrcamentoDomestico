@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         String senha = etSenha.getText().toString();
 
         loginController = new LoginController();
-        login = new Login();
+        login = new Login(usuario,senha);
         login.setUsuario(usuario);
         login.setSenha(senha);
         loginController.cadastroLogin(login);

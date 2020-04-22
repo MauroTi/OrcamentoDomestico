@@ -7,8 +7,7 @@ import model.Login;
 
 public class LoginController {
 
-    static List<Login> listaLogins = new ArrayList<Login>();
-
+    static List<Login> listaLogins = new ArrayList<>();
 
     public void cadastroLogin(Login login) {
 
@@ -20,6 +19,4 @@ public class LoginController {
         //System.out.println(listaLogins.toString());
         return listaLogins.toString();
     }
-
-
 }
