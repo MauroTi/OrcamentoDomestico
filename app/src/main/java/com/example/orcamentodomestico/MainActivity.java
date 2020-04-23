@@ -1,6 +1,5 @@
 package com.example.orcamentodomestico;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -20,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     Login login;
-    LoginController loginController;
+    LoginController loginController = new LoginController();
 
     public void cadastrar(View view) {
 
@@ -29,20 +28,24 @@ public class MainActivity extends AppCompatActivity {
         EditText etSenha = findViewById(R.id.etSenha);
         String senha = etSenha.getText().toString();
 
-        loginController = new LoginController();
         login = new Login(usuario,senha);
         login.setUsuario(usuario);
         login.setSenha(senha);
         loginController.cadastroLogin(login);
 
+        if ()
+        {
+
+        }
+
         // Toast.makeText(getBaseContext(), login.toString(), Toast.LENGTH_LONG).show();
         Toast.makeText(getBaseContext(), loginController.exibeLogin(), Toast.LENGTH_LONG).show();
     }
 
-    public void logar(View view) {}
+   /*public void logar(View view) {}
 
     public void proxima(View view) {
         Intent intent = new Intent(MainActivity.this, Main2Activity.class);
         startActivity(intent);
-    }
+    }*/
 }

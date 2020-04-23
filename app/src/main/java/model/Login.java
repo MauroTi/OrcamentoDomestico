@@ -2,8 +2,9 @@ package model;
 
 public class Login {
 
-    private static String Usuario;
-    private static String Senha;
+    private String Usuario;
+    private String Senha;
+
 
     public Login(String Usuario, String Senha) {
         this.Usuario = Usuario;
@@ -11,19 +12,19 @@ public class Login {
     }
 
 
-    public static String getUsuario() {
+    public  String getUsuario() {
         return Usuario;
     }
 
-    public static void setUsuario(String usuario) {
+    public  void setUsuario(String usuario) {
         Usuario = usuario;
     }
 
-    public static String getSenha() {
+    public  String getSenha() {
         return Senha;
     }
 
-    public static void setSenha(String senha) {
+    public  void setSenha(String senha) {
         Senha = senha;
     }
 
