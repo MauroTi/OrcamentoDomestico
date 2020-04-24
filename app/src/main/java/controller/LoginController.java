@@ -12,7 +12,6 @@ public class LoginController {
     public void cadastroLogin(Login login) {
 
         listaLogins.add(login);
-
     }
 
     public static String exibeLogin() {
