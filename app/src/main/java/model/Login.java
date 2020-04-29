@@ -2,35 +2,34 @@ package model;
 
 public class Login {
 
-    private String Usuario;
-    private String Senha;
+  private String Usuario;
+  private String Senha;
 
+  public Login(String Usuario, String Senha) {
+    this.Usuario = Usuario;
+    this.Senha = Senha;
+  }
 
-    public Login(String Usuario, String Senha) {
-        this.Usuario = Usuario;
-        this.Senha = Senha;
-    }
+  public String getUsuario() {
+    return Usuario;
+  }
 
+  public void setUsuario(String usuario) {
+    Usuario = usuario;
+  }
 
-    public  String getUsuario() {
-        return Usuario;
-    }
+  public String getSenha() {
+    return Senha;
+  }
 
-    public  void setUsuario(String usuario) {
-        Usuario = usuario;
-    }
+  public void setSenha(String senha) {
+    Senha = senha;
+  }
 
-    public  String getSenha() {
-        return Senha;
-    }
+  @Override
+  public String toString() {
+    return getUsuario() + getSenha();
 
-    public  void setSenha(String senha) {
-        Senha = senha;
-    }
-
-    @Override
-    public String toString() {
-        return "Login [Usuário: " + getUsuario() + ", Senha: " + getSenha() + "]";
-    }
+  }
 
 }
