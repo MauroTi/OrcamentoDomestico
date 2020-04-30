@@ -15,15 +15,16 @@ public class Main2Activity extends AppCompatActivity {
     }
 
 
+
     public void cria_despesa(View view) {
-
-
     }
 
     public void proxima(View view) {
         Intent intent = new Intent(Main2Activity.this, Main4Activity.class);
         startActivity(intent);
-
     }
+
+
 }
+
 

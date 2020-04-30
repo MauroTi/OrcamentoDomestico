@@ -21,4 +21,8 @@ public class LoginController {
 
     }
 
+    public List<Login> reLogin(){
+        return this.listaLogins;
+    }
+
 }
