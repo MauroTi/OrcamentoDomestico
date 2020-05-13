@@ -10,8 +10,9 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -21,7 +22,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/txtDigitaDespesa"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center|top"
@@ -40,6 +41,7 @@
             android:orientation="horizontal">
 
             <LinearLayout
+                android:id="@+id/linearLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -48,17 +50,17 @@
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/edNomeDespesa"
+                    android:id="@+id/despesa"
                     android:layout_width="145dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:hint="Nome"
                     android:layout_marginRight="8dp"
                     android:autofillHints=""
                     android:background="@drawable/rounded_corner"
                     android:baselineAligned="false"
                     android:ems="10"
                     android:gravity="center"
+                    android:hint="Despesa"
                     android:inputType="textPersonName"
                     android:textSize="18sp"
                     android:visibility="visible"
@@ -70,24 +72,24 @@
                     android:orientation="horizontal">
 
                     <EditText
-                        android:id="@+id/edValorDespesa"
+                        android:id="@+id/valor"
                         android:layout_width="130dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:hint="Valor"
                         android:layout_marginRight="8dp"
                         android:autofillHints=""
                         android:background="@drawable/rounded_corner"
                         android:baselineAligned="false"
                         android:ems="10"
                         android:gravity="center"
+                        android:hint="Valor"
                         android:inputType="textPersonName"
                         android:textSize="18sp"
                         android:visibility="visible"
                         tools:visibility="visible" />
 
                     <Button
-                        android:id="@+id/btn_despesa"
+                        android:id="@+id/btnAdicionar"
                         style="@style/Widget.AppCompat.Button.Small"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -100,6 +102,7 @@
                         android:textAlignment="gravity"
                         android:textSize="18sp"
                         android:visibility="visible"
+                        tools:ignore="OnClick"
                         tools:visibility="visible" />
 
                 </LinearLayout>
@@ -108,10 +111,68 @@
 
         </LinearLayout>
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            />
+
+        <LinearLayout
+            android:id="@+id/linearLayoutQuantidade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="8dp"
+            android:background="#5384D610"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/itensAtuaisDespesa"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:inputType="number"
+                android:text="00000000000" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0"
+                android:gravity="center"
+                android:text="Itens adicionados" />
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            />
+
+            <ListView
+                android:id="@+id/minhaLista"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                />
+
+        </LinearLayout>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom|center">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:baselineAligned="false"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -124,7 +185,7 @@
                 android:onClick="proxima"
                 android:text="Próxima" />
         </LinearLayout>
-    </LinearLayout>
+    </RelativeLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

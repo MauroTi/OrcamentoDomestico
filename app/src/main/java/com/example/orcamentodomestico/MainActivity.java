@@ -18,7 +18,8 @@ public class MainActivity extends AppCompatActivity {
   // Variáveis SharedPreferences
 
   private EditText ed1;
-  private static final String KEY_SAUDACAO = "msgSaudacao";
+                              //CHAVE DO NOME DE USUÁRIO EM SHARED PREFERENCES
+  private static final String NOME_USUARIO = "nome-usuario";
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -31,12 +32,12 @@ public class MainActivity extends AppCompatActivity {
     // SharedPreferences
 
     ed1 = findViewById(R.id.etNome);
-    String msgNome = Utils.carregarDadosComponente(KEY_SAUDACAO, this);
+    String msgNome = Utils.carregarDadosComponente(NOME_USUARIO, this);
     ed1.setText(msgNome);
   }
 
   public void gravar(View view) {
-    Utils.salvarDadosComponente(KEY_SAUDACAO, ed1.getText().toString(), view.getContext());
+    Utils.salvarDadosComponente(NOME_USUARIO, ed1.getText().toString(), view.getContext());
   }
 
   // Fim SharedPreferences
@@ -86,8 +87,8 @@ public class MainActivity extends AppCompatActivity {
 
     String nome = etNome.getText().toString();
     String codigo = etSenha.getText().toString();
-    String teste = loginController.exibeLogin();
-    String valida = (nome + codigo);
+    //String teste = loginController.exibeLogin();
+    //String valida = (nome + codigo);
 
     if ((etNome.getText().toString().equals("")) && (etSenha.getText().toString().equals(""))) {
       Toast.makeText(MainActivity.this, "Os campos devem estar preenchidos.", Toast.LENGTH_LONG)
