@@ -51,7 +51,7 @@
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/despesa"
+                    android:id="@+id/receita"
                     android:layout_width="145dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -61,7 +61,7 @@
                     android:baselineAligned="false"
                     android:ems="10"
                     android:gravity="center"
-                    android:hint="Despesa"
+                    android:hint="Receita"
                     android:inputType="textPersonName"
                     android:textSize="18sp"
                     android:visibility="visible"
@@ -73,7 +73,7 @@
                     android:orientation="horizontal">
 
                     <EditText
-                        android:id="@+id/valor"
+                        android:id="@+id/valorReceita"
                         android:layout_width="130dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -84,13 +84,13 @@
                         android:ems="10"
                         android:gravity="center"
                         android:hint="Valor"
-                        android:inputType="textPersonName"
+                        android:inputType="numberDecimal"
                         android:textSize="18sp"
                         android:visibility="visible"
                         tools:visibility="visible" />
 
                     <Button
-                        android:id="@+id/btnAdicionar"
+                        android:id="@+id/btnAdicionarReceita"
                         style="@style/Widget.AppCompat.Button.Small"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -98,7 +98,7 @@
                         android:background="@drawable/botao_redondo"
                         android:baselineAligned="false"
                         android:gravity="center"
-                        android:onClick="cria_despesa"
+                        android:onClick="cria_receita"
                         android:text="+"
                         android:textAlignment="gravity"
                         android:textSize="18sp"
@@ -117,7 +117,7 @@
             />
 
         <LinearLayout
-            android:id="@+id/linearLayoutQuantidade"
+            android:id="@+id/linearLayoutQuantidadeReceita"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

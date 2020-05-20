@@ -50,7 +50,7 @@
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/despesa"
+                    android:id="@+id/receita"
                     android:layout_width="145dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -72,7 +72,7 @@
                     android:orientation="horizontal">
 
                     <EditText
-                        android:id="@+id/valor"
+                        android:id="@+id/valorReceita"
                         android:layout_width="130dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -82,14 +82,15 @@
                         android:baselineAligned="false"
                         android:ems="10"
                         android:gravity="center"
-                        android:hint="Valor"
-                        android:inputType="textPersonName"
+                        android:hint="R$ 0,00"
+                        android:inputType="numberDecimal"
                         android:textSize="18sp"
                         android:visibility="visible"
-                        tools:visibility="visible" />
+                        tools:visibility="visible"
+                        />
 
                     <Button
-                        android:id="@+id/btnAdicionar"
+                        android:id="@+id/btnAdicionarDespesa"
                         style="@style/Widget.AppCompat.Button.Small"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -117,7 +118,7 @@
             />
 
         <LinearLayout
-            android:id="@+id/linearLayoutQuantidade"
+            android:id="@+id/linearLayoutQuantidadeDespesa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -134,14 +135,15 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:inputType="number"
-                android:text="00000000000" />
+                android:inputType="text"
+                />
 
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginLeft="3dp"
                 android:layout_weight="0"
                 android:gravity="center"
                 android:text="Itens adicionados" />

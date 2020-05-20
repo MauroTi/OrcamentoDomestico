@@ -16,53 +16,55 @@ import java.util.ArrayList;
 
 public class ListAdapterItem extends ArrayAdapter<Item> {
 
-    private Context context;
-    private ArrayList<Item> lista;
+  private Context context;
+  private ArrayList<Item> lista;
 
-    public ListAdapterItem(Context context, ArrayList<Item> lista){
-        super(context,0,lista);
-        this.context = context;
-        this.lista = lista;
-    }
+  public ListAdapterItem(Context context, ArrayList<Item> lista) {
+    super(context, 0, lista);
+    this.context = context;
+    this.lista = lista;
+  }
 
-    @Override
-    public int getCount(){
-        return lista.size();
-    }
+  @Override
+  public int getCount() {
+    return lista.size();
+  }
 
-    @Override
-    public void add(Item object){
-        lista.add(object);
-    }
+  @Override
+  public void add(Item object) {
+    lista.add(object);
+  }
 
-    @SuppressLint("InflateParams")
-    @NonNull
-    @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-            Item itemPosicao = this.lista.get(position);
-            final int pos = position;
+  @SuppressLint("InflateParams")
+  @NonNull
+  @Override
+  public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+    Item itemPosicao = this.lista.get(position);
+    final int pos = position;
 
-             LayoutInflater inflater = (LayoutInflater) context
-                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+    LayoutInflater inflater =
+        (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-            convertView = inflater.inflate(R.layout.item_lista, null, false);
+    convertView = inflater.inflate(R.layout.item_lista, null, false);
 
-            TextView etNome =  convertView.findViewById(R.id.tvDespesa);
-            TextView etValor =  convertView.findViewById(R.id.tvValor);
-            Button btnRemover = convertView.findViewById(R.id.btnRemoverItem);
+    TextView etNome = convertView.findViewById(R.id.tvDespesa);
+    TextView etValor = convertView.findViewById(R.id.tvValor);
+    Button btnRemover = convertView.findViewById(R.id.btnRemoverItem);
 
-            etNome.setText(itemPosicao.nome);
-            etValor.setText(itemPosicao.valor + "");
+    etNome.setText(itemPosicao.nome);
+    etValor.setText(itemPosicao.valor + "");
 
-            btnRemover.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Item item = lista.get(pos);
-                    lista.remove(item);
-                    ((Main2Activity)context).updateAdapter();
-                }
-            });
+    btnRemover.setOnClickListener(
+        new View.OnClickListener() {
+          @Override
+          public void onClick(View view) {
+            Item item = lista.get(pos);
+            lista.remove(item);
+            ((Main2Activity) context).updateAdapter();
+            //((Main4Activity) context).updateAdapter();
+          }
+        });
 
-            return convertView;
-    }
+    return convertView;
+  }
 }

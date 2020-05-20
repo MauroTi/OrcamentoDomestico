@@ -35,7 +35,7 @@
         android:baselineAligned="false"
         android:ems="10"
         android:gravity="center"
-        android:hint="Valor"
+        android:hint="R$ 0,00"
         android:inputType="textPersonName"
         android:textSize="18sp"
         android:visibility="visible"

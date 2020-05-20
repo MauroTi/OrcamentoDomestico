@@ -7,68 +7,95 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Locale;
 
 public class Main2Activity extends AppCompatActivity {
 
+  // criação do adapter e da lista
+  ListAdapterItem adapter;
+  ArrayList<Item> listaItens;
+  // fim criação adapter e lista
 
+  // controles da tela
+  EditText txtDespesa;
+  EditText txtValor;
+  Button btnAdicionar;
+  ListView minhaLista;
+  MonetaryMask monetaryMask;
+  // fim dos controles da tela
 
-    //criação do adapter e da lista
-    ListAdapterItem adapter;
-    ArrayList<Item> listaItens;
-    //fim criação adapter e lista
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main2);
+    final Context context = this;
 
-    //controles da tela
-    EditText txtDespesa;
-    EditText txtValor;
-    Button btnAdicionar;
-    ListView minhaLista;
-    //fim dos controles da tela
+    listaItens = new ArrayList<Item>();
+    adapter = new ListAdapterItem(context, listaItens);
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
-        final Context context = this;
-        listaItens = new ArrayList<Item>();
-        adapter = new ListAdapterItem(context, listaItens);
+    minhaLista = findViewById(R.id.minhaLista);
+    minhaLista.setAdapter(adapter);
+    txtDespesa = findViewById(R.id.receita);
+    txtValor = findViewById(R.id.valorReceita);
+    monetaryMask = new MonetaryMask(this.txtValor);
+    btnAdicionar = findViewById(R.id.btnAdicionarDespesa);
 
-        minhaLista = findViewById(R.id.minhaLista);
-        minhaLista.setAdapter(adapter);
-        txtDespesa = findViewById(R.id.despesa);
-        txtValor = findViewById(R.id.valor);
-        btnAdicionar = findViewById(R.id.btnAdicionar);
+    Locale mLocale = new Locale("pt", "BR");
+    txtValor.addTextChangedListener(new MonetaryMask(txtValor, mLocale));
 
+    btnAdicionar.setOnClickListener(
+        new View.OnClickListener() {
+          @Override
+          public void onClick(View view) {
 
-        btnAdicionar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String despesa = txtDespesa.getText().toString();
-                String valor = txtValor.getText().toString();
-                Item novoItem = new Item(despesa, valor);
-                adapter.add(novoItem);
-                adapter.notifyDataSetChanged();
-                //Log.i("click", "Total de itens na lista" +  adapter.getCount());
-                Toast.makeText(context, "Total de itens na lista  " + adapter.getCount(), Toast.LENGTH_SHORT).show();
-                //Toast.makeText(context, "Item adicionado com sucesso!", Toast.LENGTH_LONG).show();
-            }
+            String despesa = txtDespesa.getText().toString();
+            String valor = txtValor.getText().toString();
+            Item novoItem = new Item(despesa, valor);
+            adapter.add(novoItem);
+            adapter.notifyDataSetChanged();
+
+            txtDespesa.setText("");
+            txtValor.setText("0");
+
+            // Contador dos itens adicionados
+            TextView itensAddDespesa = findViewById(R.id.itensAtuaisDespesa);
+            int itensDespesa = adapter.getCount();
+            itensAddDespesa.setText(String.valueOf(itensDespesa));
+          }
         });
+  }
+
+  public void updateAdapter() {
+    adapter.notifyDataSetChanged();
+
+    TextView itensAddDespesa = findViewById(R.id.itensAtuaisDespesa);
+    int itensDespesa = adapter.getCount();
+    itensAddDespesa.setText(String.valueOf(itensDespesa));
+  }
+
+  public void proxima(View view) {
+
+    Float despesas = Float.valueOf(0);
+    Float pegaValor;
+
+    for (Iterator<Item> iterator = listaItens.iterator(); iterator.hasNext(); ) {
+      Item item = iterator.next(); // pega o item da lista
+
+      pegaValor = Float.parseFloat(item.getValor().replaceAll("\\D", ""));
+      despesas = (despesas) + (pegaValor / 100);
     }
 
-    public void updateAdapter(){
-        adapter.notifyDataSetChanged();
-    }
+    Intent i = new Intent(Main2Activity.this, Main4Activity.class);
+    i.putExtra("TotalDespesas", despesas);
+    startActivity(i);
 
-    public void proxima(View view) {
-        Intent intent = new Intent(Main2Activity.this, Main4Activity.class);
-        startActivity(intent);
-    }
-
-
+    // Intent intent = new Intent(Main2Activity.this, Main4Activity.class);
+    // startActivity(intent);
+  }
 }
-
-
