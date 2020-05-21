@@ -21,6 +21,7 @@ public class Main2Activity extends AppCompatActivity {
   ListAdapterItem adapter;
   ArrayList<Item> listaItens;
   // fim criação adapter e lista
+  Float despesas = Float.valueOf(0);
 
   // controles da tela
   EditText txtDespesa;
@@ -81,7 +82,6 @@ public class Main2Activity extends AppCompatActivity {
 
   public void proxima(View view) {
 
-    Float despesas = Float.valueOf(0);
     Float pegaValor;
 
     for (Iterator<Item> iterator = listaItens.iterator(); iterator.hasNext(); ) {

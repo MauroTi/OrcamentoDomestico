@@ -17,21 +17,18 @@ import java.util.Locale;
 
 public class Main4Activity extends AppCompatActivity {
 
-
-
-    //criação do adapter e da lista
+    // criação do adapter e da lista
     ListAdapterItem adapter;
     ArrayList<Item> listaItens;
-    //fim criação adapter e lista
+    // fim criação adapter e lista
 
-    //controles da tela
-
+    // controles da tela
     EditText txtReceita;
     EditText txtValorReceita;
     Button btnAdicionar;
     ListView minhaLista;
     MonetaryMask monetaryMask;
-    //fim dos controles da tela
+    // fim dos controles da tela
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,67 +48,58 @@ public class Main4Activity extends AppCompatActivity {
         Locale mLocale = new Locale("pt", "BR");
         txtValorReceita.addTextChangedListener(new MonetaryMask(txtValorReceita, mLocale));
 
+        btnAdicionar.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        String despesa = txtReceita.getText().toString();
+                        String valor = txtValorReceita.getText().toString();
+                        Item novoItem = new Item(despesa, valor);
+                        adapter.add(novoItem);
+                        adapter.notifyDataSetChanged();
+                        txtReceita.setText("");
+                        txtValorReceita.setText("0");
 
-        btnAdicionar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String despesa = txtReceita.getText().toString();
-                String valor = txtValorReceita.getText().toString();
-                Item novoItem = new Item(despesa, valor);
-                adapter.add(novoItem);
-                adapter.notifyDataSetChanged();
-                txtReceita.setText("");
-                txtValorReceita.setText("0");
-                updateAdapter();
-
-
-                //Contador dos itens adicionados
-                TextView itensAddReceita;
-                itensAddReceita = findViewById(R.id.itensAtuaisReceita);
-                int itensReceita = adapter.getCount();
-                itensAddReceita.setText(String.valueOf(itensReceita));
-
-
-
-            }
+                        // Contador dos itens adicionados
+                        TextView itensAddReceita;
+                        itensAddReceita = findViewById(R.id.itensAtuaisReceita);
+                        int itensReceita = adapter.getCount();
+                        itensAddReceita.setText(String.valueOf(itensReceita));
+                    }
         });
     }
 
-    public void updateAdapter(){
+    public void updateAdapter() {
         adapter.notifyDataSetChanged();
+
+        TextView itensAddReceita = findViewById(R.id.itensAtuaisReceita);
+        int itensReceita = adapter.getCount();
+        itensAddReceita.setText(String.valueOf(itensReceita));
     }
 
     public void proxima(View view) {
 
         Float receitas = Float.valueOf(0);
         Float diferenca = Float.valueOf(0);
-            Float receita = Float.valueOf(0);
-            Float pegaValor;
+        Float receita = Float.valueOf(0);
+        Float pegaValor;
 
-            for (Iterator<Item> iterator = listaItens.iterator(); iterator.hasNext(); ) {
-                Item item = iterator.next(); // pega o item da lista
+        for (Iterator<Item> iterator = listaItens.iterator(); iterator.hasNext(); ) {
+            Item item = iterator.next(); // pega o item da lista
 
-                pegaValor = Float.parseFloat(item.getValor().replaceAll("\\D", ""));
-                receita = (receita) + (pegaValor/100) ;
-            }
+            pegaValor = Float.parseFloat(item.getValor().replaceAll("\\D", ""));
+            receitas = (receitas) + (pegaValor / 100);
+        }
 
         Bundle extras = getIntent().getExtras();
         Float despesas = extras.getFloat("TotalDespesas");
         diferenca = receitas - despesas;
 
-        //Toast.makeText(Main4Activity.this, "Receitas " + receitas, Toast.LENGTH_SHORT).show();
-        //Toast.makeText(Main4Activity.this, "Despesas " + despesas, Toast.LENGTH_SHORT).show();
-        //Toast.makeText(Main4Activity.this, "Total " + diferenca, Toast.LENGTH_SHORT).show();
-
-        Intent i = new Intent(Main4Activity.this,Main3Activity.class);
-        i.putExtra("TotalDespesas", ""+ diferenca);
-        i.putExtra("TotalReceitas", ""+ receitas);
-        i.putExtra("Diferenca", ""+ diferenca);
+        Intent i = new Intent(Main4Activity.this, Main3Activity.class);
+        i.putExtra("TotalDespesas", "" + diferenca);
+        i.putExtra("TotalReceitas", "" + receitas);
+        i.putExtra("Diferenca", "" + diferenca);
 
         startActivity(i);
-
-        }
+    }
 }
-
-
-

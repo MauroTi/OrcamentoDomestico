@@ -58,10 +58,19 @@ public class ListAdapterItem extends ArrayAdapter<Item> {
         new View.OnClickListener() {
           @Override
           public void onClick(View view) {
+
             Item item = lista.get(pos);
             lista.remove(item);
-            ((Main2Activity) context).updateAdapter();
-            //((Main4Activity) context).updateAdapter();
+            try {
+              ((Main2Activity) context).updateAdapter();
+            } catch (Exception e) {
+
+            }
+            try {
+              ((Main4Activity) context).updateAdapter();
+            } catch (Exception e) {
+
+            }
           }
         });
 
