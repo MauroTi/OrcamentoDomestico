@@ -96,7 +96,7 @@ public class Main4Activity extends AppCompatActivity {
         diferenca = receitas - despesas;
 
         Intent i = new Intent(Main4Activity.this, Main3Activity.class);
-        i.putExtra("TotalDespesas", "" + diferenca);
+        i.putExtra("TotalDespesas", "" + despesas);
         i.putExtra("TotalReceitas", "" + receitas);
         i.putExtra("Diferenca", "" + diferenca);
 

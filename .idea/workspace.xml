@@ -11,20 +11,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91bc989c-478e-46f4-8341-a1f1fad2049a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/layout_cantos_arredondados.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/jarAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/CustomToast.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/CustomToast.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/ListAdapterItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/ListAdapterItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/Main2Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/Main2Activity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/Main3Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/Main3Activity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/Main4Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/Main4Activity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main3.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -60,6 +63,9 @@
       </list>
     </option>
   </component>
+  <component name="GenerateSignedApkSettings">
+    <option name="BUILD_TARGET_KEY" value="apk" />
+  </component>
   <component name="Git.Settings">
     <option name="PUSH_TAGS">
       <GitPushTagMode>
@@ -79,8 +85,9 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ApkExportedModule" value="app" />
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Nexus_5_API_29" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-04-24T17:25:11.957Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-05-22T12:48:15.402Z" />
     <property name="OverrideImplement.combined" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="D:/Android SDK" />
@@ -91,20 +98,23 @@
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="ExtractSuperBase.RECENT_KEYS">
-      <recent name="com.example.orcamentodomestico" />
-    </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.example.orcamentodomestico" />
-    </key>
-    <key name="android.template.packageName">
-      <recent name="com.example.orcamentodomestico" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\MAURO\AndroidStudioProjects\OrcamentoDomestico\app\src\main\res\layout" />
       <recent name="C:\Users\MAURO\AndroidStudioProjects\OrcamentoDomestico\app\src\main\java\com\example\orcamentodomestico" />
       <recent name="C:\Users\MAURO\AndroidStudioProjects\OrcamentoDomestico\app\src\main\res\drawable" />
       <recent name="C:\Users\MAURO\AndroidStudioProjects\OrcamentoDomestico\app\src\main\res\drawable-v24" />
+    </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="com.example.orcamentodomestico" />
+    </key>
+    <key name="android.template.packageName">
+      <recent name="com.example.orcamentodomestico" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\MAURO\AndroidStudioProjects\OrcamentoDomestico\app\src\main\res\drawable" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.example.orcamentodomestico" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -445,7 +455,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590002937833</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Correcao do botao excluir">
+      <created>1590102178028</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1590102178028</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -478,6 +495,8 @@
     <MESSAGE value="Login funcionando, mudanca layout main2 main4" />
     <MESSAGE value="Novo Layout" />
     <MESSAGE value="Add mascara mais outras pequenas correcoes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add mascara mais outras pequenas correcoes" />
+    <MESSAGE value="Correcao do botao excluir" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correcao do botao excluir" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
