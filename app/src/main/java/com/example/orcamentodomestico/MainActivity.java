@@ -113,6 +113,7 @@ public class MainActivity extends AppCompatActivity {
       if (contatoExiste == 1) {
         Intent intent = new Intent(MainActivity.this, Main2Activity.class);
         startActivity(intent);
+        finish();
       } else {
         Toast.makeText(
                 MainActivity.this,

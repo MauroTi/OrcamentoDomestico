@@ -1,6 +1,7 @@
 package com.example.orcamentodomestico;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
@@ -21,6 +23,9 @@ public class Main4Activity extends AppCompatActivity {
     ListAdapterItem adapter;
     ArrayList<Item> listaItens;
     // fim criação adapter e lista
+
+    int testeAdd;
+    String valor = String.valueOf(0);
 
     // controles da tela
     EditText txtReceita;
@@ -53,7 +58,7 @@ public class Main4Activity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         String despesa = txtReceita.getText().toString();
-                        String valor = txtValorReceita.getText().toString();
+                        valor = txtValorReceita.getText().toString();
                         Item novoItem = new Item(despesa, valor);
                         adapter.add(novoItem);
                         adapter.notifyDataSetChanged();
@@ -64,6 +69,7 @@ public class Main4Activity extends AppCompatActivity {
                         TextView itensAddReceita;
                         itensAddReceita = findViewById(R.id.itensAtuaisReceita);
                         int itensReceita = adapter.getCount();
+                        testeAdd = itensReceita;
                         itensAddReceita.setText(String.valueOf(itensReceita));
                     }
         });
@@ -71,9 +77,9 @@ public class Main4Activity extends AppCompatActivity {
 
     public void updateAdapter() {
         adapter.notifyDataSetChanged();
-
         TextView itensAddReceita = findViewById(R.id.itensAtuaisReceita);
         int itensReceita = adapter.getCount();
+        testeAdd = itensReceita;
         itensAddReceita.setText(String.valueOf(itensReceita));
     }
 
@@ -81,25 +87,45 @@ public class Main4Activity extends AppCompatActivity {
 
         Float receitas = Float.valueOf(0);
         Float diferenca = Float.valueOf(0);
-        Float receita = Float.valueOf(0);
         Float pegaValor;
 
-        for (Iterator<Item> iterator = listaItens.iterator(); iterator.hasNext(); ) {
-            Item item = iterator.next(); // pega o item da lista
+        if ((testeAdd > 0) && (!valor.equals(""))) {
+            try {
 
-            pegaValor = Float.parseFloat(item.getValor().replaceAll("\\D", ""));
-            receitas = (receitas) + (pegaValor / 100);
+                for (Iterator<Item> iterator = listaItens.iterator(); iterator.hasNext(); ) {
+                    Item item = iterator.next(); // pega o item da lista
+
+                    pegaValor = Float.parseFloat(item.getValor().replaceAll("\\D", ""));
+                    receitas = (receitas) + (pegaValor / 100);
+                    Bundle extras = getIntent().getExtras();
+                    Float despesas = extras.getFloat("TotalDespesas");
+                    diferenca = receitas - despesas;
+
+                    Intent i = new Intent(Main4Activity.this, Main3Activity.class);
+                    i.putExtra("TotalDespesas", "" + despesas);
+                    i.putExtra("TotalReceitas", "" + receitas);
+                    i.putExtra("Diferenca", "" + diferenca);
+                    startActivity(i);
+                }
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
+            }
+        } else {
+            new AlertDialog.Builder(this)
+                    .setTitle("Nenhum valor!!!")
+                    .setMessage("Nenhum valor válido adicionado!!!")
+                    .setPositiveButton(
+                            "OK",
+                            new DialogInterface.OnClickListener() {
+
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+
+                                }
+                            })
+                    .show();
         }
-
-        Bundle extras = getIntent().getExtras();
-        Float despesas = extras.getFloat("TotalDespesas");
-        diferenca = receitas - despesas;
-
-        Intent i = new Intent(Main4Activity.this, Main3Activity.class);
-        i.putExtra("TotalDespesas", "" + despesas);
-        i.putExtra("TotalReceitas", "" + receitas);
-        i.putExtra("Diferenca", "" + diferenca);
-
-        startActivity(i);
     }
 }
+
+

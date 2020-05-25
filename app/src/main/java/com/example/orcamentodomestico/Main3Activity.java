@@ -1,8 +1,10 @@
 package com.example.orcamentodomestico;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import androidx.annotation.RequiresApi;
@@ -60,4 +62,13 @@ public class Main3Activity extends AppCompatActivity {
     String saidaSaldo = dfSaldo.format(resultadoDouble);
     tvSaldo.setText(saidaSaldo);
   }
+
+  public void voltar(View view) {
+    Intent intent = new Intent(Main3Activity.this, Main2Activity.class);
+    startActivity(intent);
+  }
+
+
+  // Intent intent = new Intent(Main2Activity.this, Main4Activity.class);
+  // startActivity(intent);
 }
