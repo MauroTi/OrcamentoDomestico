@@ -63,10 +63,8 @@ public class Main2Activity extends AppCompatActivity {
             String despesa = txtDespesa.getText().toString();
               valor = txtValor.getText().toString();
             Item novoItem = new Item(despesa, valor);
-
             adapter.add(novoItem);
             adapter.notifyDataSetChanged();
-
             txtDespesa.setText("");
             txtValor.setText("0");
 
@@ -100,7 +98,6 @@ public class Main2Activity extends AppCompatActivity {
 
                   pegaValor = Float.parseFloat(item.getValor().replaceAll("\\D", ""));
                   despesas = (despesas) + (pegaValor / 100);
-
               }
               Intent i = new Intent(Main2Activity.this, Main4Activity.class);
               i.putExtra("TotalDespesas", despesas);

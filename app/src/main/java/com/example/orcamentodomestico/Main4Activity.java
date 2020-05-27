@@ -68,8 +68,8 @@ public class Main4Activity extends AppCompatActivity {
                 txtValorReceita.setText("0");
 
                 // Contador dos itens adicionados
-                TextView itensAddReceita;
-                itensAddReceita = findViewById(R.id.itensAtuaisReceita);
+
+                TextView itensAddReceita = findViewById(R.id.itensAtuaisReceita);
                 int itensReceita = adapter.getCount();
                 testeAdd = itensReceita;
                 itensAddReceita.setText(String.valueOf(itensReceita));
@@ -99,12 +99,12 @@ public class Main4Activity extends AppCompatActivity {
 
           pegaValor = Float.parseFloat(item.getValor().replaceAll("\\D", ""));
           receitas = receitas + (pegaValor / 100);
-          Bundle extras = getIntent().getExtras();
-          despesas = extras.getFloat("TotalDespesas");
-          diferenca = receitas - despesas;
-
 
         }
+        Bundle extras = getIntent().getExtras();
+        despesas = extras.getFloat("TotalDespesas");
+        diferenca = receitas - despesas;
+
         Intent i = new Intent(Main4Activity.this, Main3Activity.class);
         i.putExtra("TotalDespesas", "" + despesas);
         i.putExtra("TotalReceitas", "" + receitas);
