@@ -37,21 +37,31 @@ public class Main3Activity extends AppCompatActivity {
     String saidaDespesas = dfDespesas.format(despesaDouble);
     tvDespesas.setText(saidaDespesas);
     if (despesaDouble < 0) {
-      tvDespesas.setBackgroundColor(Color.parseColor("#FF4500"));
+      tvDespesas.setBackgroundResource(R.drawable.rounded_corner_main3_red);
+      tvDespesas.setTextColor(Color.BLACK);
+
     } else {
-      tvDespesas.setBackgroundColor(Color.parseColor("#3CB371"));
+      //tvDespesas.setBackgroundColor(Color.parseColor("#3CB371"));
+      tvDespesas.setBackgroundResource(R.drawable.rounded_corner_main3_green);
+      tvDespesas.setTextColor(Color.BLACK);
     }
 
+
     if (receitaDouble < 0) {
-      tvReceitas.setBackgroundColor(Color.parseColor("#FF4500"));
+      tvReceitas.setBackgroundResource(R.drawable.rounded_corner_main3_red);
+      tvReceitas.setTextColor(Color.BLACK);
     } else {
-      tvReceitas.setBackgroundColor(Color.parseColor("#3CB371"));
+      tvReceitas.setBackgroundResource(R.drawable.rounded_corner_main3_green);
+      tvReceitas.setTextColor(Color.BLACK);
     }
 
     if (resultadoDouble < 0) {
-      tvSaldo.setBackgroundColor(Color.parseColor("#FF4500"));
+      tvSaldo.setBackgroundResource(R.drawable.rounded_corner_main3_red);
+      tvSaldo.setTextColor(Color.BLACK);
     } else {
-      tvSaldo.setBackgroundColor(Color.parseColor("#3CB371"));
+      tvSaldo.setBackgroundResource(R.drawable.rounded_corner_main3_green);
+      tvSaldo.setTextColor(Color.BLACK);
+
     }
 
     DecimalFormat dfReceitas = new DecimalFormat("R$ ,##0.00");
@@ -68,6 +78,9 @@ public class Main3Activity extends AppCompatActivity {
     startActivity(intent);
   }
 
+  public void sair(View view) {
+    finishAffinity();
+  }
 
   // Intent intent = new Intent(Main2Activity.this, Main4Activity.class);
   // startActivity(intent);

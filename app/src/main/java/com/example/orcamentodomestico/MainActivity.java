@@ -1,11 +1,13 @@
 package com.example.orcamentodomestico;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.List;
@@ -18,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
   // Variáveis SharedPreferences
 
   private EditText ed1;
-                              //CHAVE DO NOME DE USUÁRIO EM SHARED PREFERENCES
+  // CHAVE DO NOME DE USUÁRIO EM SHARED PREFERENCES
   private static final String NOME_USUARIO = "nome-usuario";
 
   @Override
@@ -82,13 +84,17 @@ public class MainActivity extends AppCompatActivity {
 
   public void logar(View view) {
 
+    Intent intent = new Intent(MainActivity.this, Main2Activity.class);
+    startActivity(intent);
+    finish();
+
     EditText etNome = findViewById(R.id.etNome);
     EditText etSenha = findViewById(R.id.etSenha);
 
     String nome = etNome.getText().toString();
     String codigo = etSenha.getText().toString();
-    //String teste = loginController.exibeLogin();
-    //String valida = (nome + codigo);
+    // String teste = loginController.exibeLogin();
+    // String valida = (nome + codigo);
 
     if ((etNome.getText().toString().equals("")) && (etSenha.getText().toString().equals(""))) {
       Toast.makeText(MainActivity.this, "Os campos devem estar preenchidos.", Toast.LENGTH_LONG)
@@ -111,15 +117,28 @@ public class MainActivity extends AppCompatActivity {
         }
       }
       if (contatoExiste == 1) {
-        Intent intent = new Intent(MainActivity.this, Main2Activity.class);
+       /*Intent intent = new Intent(MainActivity.this, Main2Activity.class);
         startActivity(intent);
-        finish();
+        finish();*/
       } else {
-        Toast.makeText(
+
+        new AlertDialog.Builder(this)
+                .setTitle("Dados não conferem.")
+                .setMessage("Nome ou senha não encontrados, tente novamente.")
+                .setPositiveButton(
+                        "OK",
+                        new DialogInterface.OnClickListener() {
+
+                          @Override
+                          public void onClick(DialogInterface dialogInterface, int i) {
+                          }
+                        })
+                .show();
+       /* Toast.makeText(
                 MainActivity.this,
                 "Nome ou senha não encontrados, tente novamente.",
                 Toast.LENGTH_LONG)
-            .show();
+            .show();*/
       }
     }
   }

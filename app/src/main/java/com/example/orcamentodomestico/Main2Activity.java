@@ -46,8 +46,8 @@ public class Main2Activity extends AppCompatActivity {
 
     minhaLista = findViewById(R.id.minhaLista);
     minhaLista.setAdapter(adapter);
-    txtDespesa = findViewById(R.id.receita);
-    txtValor = findViewById(R.id.valorReceita);
+      txtDespesa = findViewById(R.id.despesa);
+      txtValor = findViewById(R.id.valorDespesa);
     monetaryMask = new MonetaryMask(this.txtValor);
     btnAdicionar = findViewById(R.id.btnAdicionarDespesa);
 
@@ -59,6 +59,7 @@ public class Main2Activity extends AppCompatActivity {
           @Override
           public void onClick(View view) {
 
+              //  txtValor.setText("0");
             String despesa = txtDespesa.getText().toString();
               valor = txtValor.getText().toString();
             Item novoItem = new Item(despesa, valor);
@@ -99,10 +100,16 @@ public class Main2Activity extends AppCompatActivity {
 
                   pegaValor = Float.parseFloat(item.getValor().replaceAll("\\D", ""));
                   despesas = (despesas) + (pegaValor / 100);
-                  Intent i = new Intent(Main2Activity.this, Main4Activity.class);
-                  i.putExtra("TotalDespesas", despesas);
-                  startActivity(i);
+
               }
+              Intent i = new Intent(Main2Activity.this, Main4Activity.class);
+              i.putExtra("TotalDespesas", despesas);
+              startActivity(i);
+
+              Intent it = new Intent(Main2Activity.this, Main3Activity.class);
+              it.putExtra("TotalDespesas", despesas);
+              it.putExtra("NomesValoresDespesas", listaItens);
+              startActivity(i);
           } catch (NumberFormatException e) {
               e.printStackTrace();
           }
@@ -134,7 +141,7 @@ public class Main2Activity extends AppCompatActivity {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
 
-                                finishAffinity();
+                                finish();
                             }
                         })
                 .setNegativeButton("não", null)
