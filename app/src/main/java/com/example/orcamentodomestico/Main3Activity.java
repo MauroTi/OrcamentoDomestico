@@ -33,27 +33,12 @@ public class Main3Activity extends AppCompatActivity {
     Double receitaDouble = Double.parseDouble(receitas);
     Double resultadoDouble = Double.parseDouble(resultado);
 
-    DecimalFormat dfDespesas = new DecimalFormat("R$ ,##0.00");
-    String saidaDespesas = dfDespesas.format(despesaDouble);
-    tvDespesas.setText(saidaDespesas);
-    if (despesaDouble < 0) {
-      tvDespesas.setBackgroundResource(R.drawable.rounded_corner_main3_red);
-      tvDespesas.setTextColor(Color.BLACK);
 
-    } else {
-      //tvDespesas.setBackgroundColor(Color.parseColor("#3CB371"));
-      tvDespesas.setBackgroundResource(R.drawable.rounded_corner_main3_green);
-      tvDespesas.setTextColor(Color.BLACK);
-    }
+    tvDespesas.setBackgroundResource(R.drawable.rounded_corner_main3_green);
+    tvDespesas.setTextColor(Color.BLACK);
 
-
-    if (receitaDouble < 0) {
-      tvReceitas.setBackgroundResource(R.drawable.rounded_corner_main3_red);
-      tvReceitas.setTextColor(Color.BLACK);
-    } else {
-      tvReceitas.setBackgroundResource(R.drawable.rounded_corner_main3_green);
-      tvReceitas.setTextColor(Color.BLACK);
-    }
+    tvReceitas.setBackgroundResource(R.drawable.rounded_corner_main3_green);
+    tvReceitas.setTextColor(Color.BLACK);
 
     if (resultadoDouble < 0) {
       tvSaldo.setBackgroundResource(R.drawable.rounded_corner_main3_red);
@@ -61,8 +46,11 @@ public class Main3Activity extends AppCompatActivity {
     } else {
       tvSaldo.setBackgroundResource(R.drawable.rounded_corner_main3_green);
       tvSaldo.setTextColor(Color.BLACK);
-
     }
+
+    DecimalFormat dfDespesas = new DecimalFormat("R$ ,##0.00");
+    String saidaDespesas = dfDespesas.format(despesaDouble);
+    tvDespesas.setText(saidaDespesas);
 
     DecimalFormat dfReceitas = new DecimalFormat("R$ ,##0.00");
     String saidaReceitas = dfReceitas.format(receitaDouble);

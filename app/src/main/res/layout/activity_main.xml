@@ -17,14 +17,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
-            android:text="Digite nome e senha para utilizar o aplicativo" />
+            android:text="Para iniciar digite nome e senha"
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/etNome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
-            android:background="@drawable/rounded_corner"
+            android:background="@drawable/btn_customizado"
+            android:hint="Nome"
             android:ems="10"
             android:inputType="textPersonName" />
 
@@ -33,14 +35,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
-            android:background="@drawable/rounded_corner"
+            android:background="@drawable/btn_customizado"
             android:ems="10"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:hint="Senha" />
 
         <Button
             android:id="@+id/btnLogar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/btn_customizado"
             android:onClick="logar"
             android:text="Logar" />
 
@@ -48,6 +53,8 @@
             android:id="@+id/btncadastrar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/btn_customizado"
             android:onClick="cadastrar"
             android:text="Cadastrar" />
 

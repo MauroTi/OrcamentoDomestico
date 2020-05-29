@@ -22,6 +22,7 @@ public class Main2Activity extends AppCompatActivity {
   // criação do adapter e da lista
   ListAdapterItem adapter;
   ArrayList<Item> listaItens;
+
   // fim criação adapter e lista
 
     int testeAdd;
@@ -103,10 +104,9 @@ public class Main2Activity extends AppCompatActivity {
               i.putExtra("TotalDespesas", despesas);
               startActivity(i);
 
-              Intent it = new Intent(Main2Activity.this, Main3Activity.class);
-              it.putExtra("TotalDespesas", despesas);
-              it.putExtra("NomesValoresDespesas", listaItens);
-              startActivity(i);
+              listaItens = new ArrayList<>(listaItens);
+
+
           } catch (NumberFormatException e) {
               e.printStackTrace();
           }

@@ -99,7 +99,6 @@ public class Main4Activity extends AppCompatActivity {
 
           pegaValor = Float.parseFloat(item.getValor().replaceAll("\\D", ""));
           receitas = receitas + (pegaValor / 100);
-
         }
         Bundle extras = getIntent().getExtras();
         despesas = extras.getFloat("TotalDespesas");
@@ -109,8 +108,11 @@ public class Main4Activity extends AppCompatActivity {
         i.putExtra("TotalDespesas", "" + despesas);
         i.putExtra("TotalReceitas", "" + receitas);
         i.putExtra("Diferenca", "" + diferenca);
-        //i.putExtra("NomesValoresReceitas", listaItens);
         startActivity(i);
+
+       /* Intent it = new Intent(Main4Activity.this, Main3Activity.class);
+        it.putExtra("NomesValoresReceitas", listaItens);
+        startActivity(it);*/
       } catch (NumberFormatException e) {
         e.printStackTrace();
       }
@@ -128,5 +130,6 @@ public class Main4Activity extends AppCompatActivity {
                       })
               .show();
     }
+
   }
 }

@@ -57,7 +57,7 @@
                     android:layout_gravity="center"
                     android:layout_marginRight="8dp"
                     android:autofillHints=""
-                    android:background="@drawable/rounded_corner"
+                    android:background="@drawable/btn_customizado"
                     android:baselineAligned="false"
                     android:ems="10"
                     android:gravity="center"
@@ -79,7 +79,7 @@
                         android:layout_gravity="center"
                         android:layout_marginRight="8dp"
                         android:autofillHints=""
-                        android:background="@drawable/rounded_corner"
+                        android:background="@drawable/btn_customizado"
                         android:baselineAligned="false"
                         android:ems="10"
                         android:gravity="center"
@@ -190,7 +190,8 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:onClick="proxima"
-                android:text="Próxima" />
+                android:text="Próxima"
+                android:background="@drawable/btn_customizado" />
         </LinearLayout>
     </RelativeLayout>
 
