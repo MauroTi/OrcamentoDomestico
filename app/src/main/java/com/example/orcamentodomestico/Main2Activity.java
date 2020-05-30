@@ -104,7 +104,7 @@ public class Main2Activity extends AppCompatActivity {
               i.putExtra("TotalDespesas", despesas);
               startActivity(i);
 
-              listaItens = new ArrayList<>(listaItens);
+              //listaItens = new ArrayList<>(listaItens);
 
 
           } catch (NumberFormatException e) {
