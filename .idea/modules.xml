@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Orçamento  Doméstico.iml" filepath="$PROJECT_DIR$/Orçamento  Doméstico.iml" group="Orçamento  Doméstico" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Orçamento__Doméstico.iml" filepath="$PROJECT_DIR$/.idea/modules/Orçamento__Doméstico.iml" group="Orçamento__Doméstico" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="Orçamento  Doméstico/app" />
     </modules>
   </component>

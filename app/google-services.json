@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "997089676635",
-    "firebase_url": "https://orcamento-domestico.firebaseio.com",
-    "project_id": "orcamento-domestico",
-    "storage_bucket": "orcamento-domestico.appspot.com"
+    "project_number": "814551640533",
+    "firebase_url": "https://orcamentodomestico-aeffb.firebaseio.com",
+    "project_id": "orcamentodomestico-aeffb",
+    "storage_bucket": "orcamentodomestico-aeffb.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:997089676635:android:862326ad38d5fe68ce1e7e",
+        "mobilesdk_app_id": "1:814551640533:android:f165c62c026576b2a0355c",
         "android_client_info": {
           "package_name": "com.example.orcamentodomestico"
         }
       },
       "oauth_client": [
         {
-          "client_id": "997089676635-k5imo4m8vqogprcr89fkvp1505ugol7i.apps.googleusercontent.com",
+          "client_id": "814551640533-6m0mb8de39djj9bhde8luubh76hganqs.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyB_R2C6fu95EfCA7OSmYjqzLjR8q3wsgZg"
+          "current_key": "AIzaSyBvnriEAtGyh4Ftj0pqwMQGJOjsbwIuEc4"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "997089676635-k5imo4m8vqogprcr89fkvp1505ugol7i.apps.googleusercontent.com",
+              "client_id": "814551640533-6m0mb8de39djj9bhde8luubh76hganqs.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

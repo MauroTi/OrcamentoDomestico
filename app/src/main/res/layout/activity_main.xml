@@ -17,16 +17,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
-            android:text="Para iniciar digite nome e senha"
+            android:text="Para iniciar digite email e senha"
             android:textSize="20sp" />
 
         <EditText
-            android:id="@+id/etNome"
+            android:id="@+id/etEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
             android:background="@drawable/btn_customizado"
-            android:hint="Nome"
+            android:hint="Email"
             android:ems="10"
             android:inputType="textPersonName" />
 
@@ -40,23 +40,56 @@
             android:inputType="textPassword"
             android:hint="Senha" />
 
-        <Button
-            android:id="@+id/btnLogar"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/btn_customizado"
-            android:onClick="logar"
-            android:text="Logar" />
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnLogar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/btn_customizado"
+                android:text="Logar" />
+
+            <Button
+                android:id="@+id/btnLogout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_customizado"
+                android:text="Logout" />
+
+        </LinearLayout>
 
         <Button
-            android:id="@+id/btncadastrar"
+            android:id="@+id/btnCancelar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:background="@drawable/btn_customizado"
-            android:onClick="cadastrar"
+            android:text="Cancelar" />
+
+        <Button
+            android:id="@+id/btnCadastrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/btn_customizado"
             android:text="Cadastrar" />
+
+        <Button
+            android:id="@+id/btnRecuperaSenha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@android:drawable/menuitem_background"
+            android:text="Esqueceu sua senha?"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </LinearLayout>
 

@@ -105,6 +105,9 @@ public class Main2Activity extends AppCompatActivity {
               startActivity(i);
 
               //listaItens = new ArrayList<>(listaItens);
+             /* Intent intent = new Intent(Main2Activity.this, Main4Activity.class);
+              intent.putExtra("lista", listaItens);
+              startActivity(intent);*/
 
 
           } catch (NumberFormatException e) {
@@ -144,4 +147,6 @@ public class Main2Activity extends AppCompatActivity {
                 .setNegativeButton("não", null)
                 .show();
   }
+
+
 }

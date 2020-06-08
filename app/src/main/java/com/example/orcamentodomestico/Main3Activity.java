@@ -5,14 +5,20 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import java.text.DecimalFormat;
 
 public class Main3Activity extends AppCompatActivity {
+
+  private Button btnLogout;
 
   @RequiresApi(api = Build.VERSION_CODES.N)
   @Override
@@ -23,6 +29,7 @@ public class Main3Activity extends AppCompatActivity {
     TextView tvReceitas = findViewById(R.id.receitaFinal);
     TextView tvDespesas = findViewById(R.id.despesaFinal);
     TextView tvSaldo = findViewById(R.id.saldoFinal);
+    btnLogout = (Button) findViewById(R.id.btnLogout);
 
     Bundle extras = getIntent().getExtras();
     String despesas = extras.getString("TotalDespesas");
@@ -59,6 +66,14 @@ public class Main3Activity extends AppCompatActivity {
     DecimalFormat dfSaldo = new DecimalFormat("R$ ,##0.00");
     String saidaSaldo = dfSaldo.format(resultadoDouble);
     tvSaldo.setText(saidaSaldo);
+
+    btnLogout.setOnClickListener(
+            new View.OnClickListener() {
+              @Override
+              public void onClick(View v) {
+                disconnect();
+              }
+            });
   }
 
   public void voltar(View view) {
@@ -70,6 +85,14 @@ public class Main3Activity extends AppCompatActivity {
     finishAffinity();
   }
 
+
+  private void disconnect() {
+    FirebaseAuth.getInstance().signOut();
+    Toast.makeText(getApplicationContext(), "Logout efetuado com sucesso!", Toast.LENGTH_LONG).show();
+  }
+
+}
+
   // Intent intent = new Intent(Main2Activity.this, Main4Activity.class);
   // startActivity(intent);
-}
+

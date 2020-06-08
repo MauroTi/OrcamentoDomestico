@@ -100,15 +100,18 @@ public class Main4Activity extends AppCompatActivity {
           pegaValor = Float.parseFloat(item.getValor().replaceAll("\\D", ""));
           receitas = receitas + (pegaValor / 100);
         }
-        Bundle extras = getIntent().getExtras();
-        despesas = extras.getFloat("TotalDespesas");
-        diferenca = receitas - despesas;
+          Bundle extras = getIntent().getExtras();
+          despesas = extras.getFloat("TotalDespesas");
+          diferenca = receitas - despesas;
 
-        Intent i = new Intent(Main4Activity.this, Main3Activity.class);
-        i.putExtra("TotalDespesas", "" + despesas);
-        i.putExtra("TotalReceitas", "" + receitas);
-        i.putExtra("Diferenca", "" + diferenca);
-        startActivity(i);
+          Intent i = new Intent(Main4Activity.this, Main3Activity.class);
+          i.putExtra("TotalDespesas", "" + despesas);
+          i.putExtra("TotalReceitas", "" + receitas);
+          i.putExtra("Diferenca", "" + diferenca);
+          startActivity(i);
+
+       /* Intent intent = getIntent();
+        ListAdapterItem lista = (ListAdapterItem) intent.getSerializableExtra("lista");*/
 
        /* Intent it = new Intent(Main4Activity.this, Main3Activity.class);
         it.putExtra("NomesValoresReceitas", listaItens);
