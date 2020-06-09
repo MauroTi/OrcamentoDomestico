@@ -157,7 +157,7 @@ public class MainActivity extends AppCompatActivity {
                                     FirebaseUser user = mAuth.getCurrentUser();
                                     Toast.makeText(
                                             getApplicationContext(),
-                                            "Login realizado com sucesso!",
+                                            "Login realizado com sucesso! Bem vindo " + user.getEmail() + "!",
                                             Toast.LENGTH_LONG)
                                             .show();
 
@@ -167,13 +167,15 @@ public class MainActivity extends AppCompatActivity {
                                 } else {
                                     // If sign in fails, display a message to the user.
                                     Log.w("TAG", "signInWithEmail:failure", task.getException());
-                 /* Toast.makeText(
-                          getApplicationContext(),
-                          "Cadastro não encontrado! Tente novamente ou cadastre-se!",
-                          Toast.LENGTH_LONG)
-                      .show();*/
+                  /* Toast.makeText(
+                      getApplicationContext(),
+                      "Cadastro não encontrado! Tente novamente ou cadastre-se!",
+                      Toast.LENGTH_LONG)
+                  .show();*/
 
-                                    String errorCode = ((FirebaseAuthException) Objects.requireNonNull(task.getException())).getErrorCode();
+                                    String errorCode =
+                                            ((FirebaseAuthException) Objects.requireNonNull(task.getException()))
+                                                    .getErrorCode();
                                     EditText etEmail = findViewById(R.id.etEmail);
                                     EditText etPassword = findViewById(R.id.etSenha);
                                     switch (errorCode) {
@@ -316,9 +318,7 @@ public class MainActivity extends AppCompatActivity {
 
                                         default:
                                             Toast.makeText(
-                                                    MainActivity.this,
-                                                    "Ops, ocorreu algo imprevisto.",
-                                                    Toast.LENGTH_LONG)
+                                                    MainActivity.this, "Ops, ocorreu algo imprevisto.", Toast.LENGTH_LONG)
                                                     .show();
                                             break;
                                     }
