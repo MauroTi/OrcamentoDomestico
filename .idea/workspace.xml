@@ -11,9 +11,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91bc989c-478e-46f4-8341-a1f1fad2049a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/ResetPasswordActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_reset_senha.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/Main2Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/Main2Activity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/Splash.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/Splash.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main2.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +31,7 @@
   <component name="CodeInsightWorkspaceSettings">
     <option name="optimizeImportsOnTheFly" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_24" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Nexus_5X_API_29" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -105,7 +113,7 @@
     <property name="add_unversioned_files" value="true" />
     <property name="android.sdk.path" value="D:/Android SDK" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/layout" />
     <property name="project.structure.last.edited" value="Suggestions" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -117,15 +125,15 @@
     <option name="LAST_EDITED_BUILD_TYPE" value="release" />
   </component>
   <component name="RecentsManager">
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="com.example.orcamentodomestico" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\MAURO\AndroidStudioProjects\OrcamentoDomestico\app\src\main\res\layout" />
       <recent name="C:\Users\MAURO\AndroidStudioProjects\OrcamentoDomestico\app" />
       <recent name="C:\Users\MAURO\AndroidStudioProjects\OrcamentoDomestico\app\src\main\res\drawable-v24" />
       <recent name="C:\Users\MAURO\AndroidStudioProjects\OrcamentoDomestico\app\src\main\res\drawable" />
       <recent name="C:\Users\MAURO\AndroidStudioProjects\OrcamentoDomestico\app\src\main\res\mipmap-xxhdpi" />
-      <recent name="C:\Users\MAURO\AndroidStudioProjects\OrcamentoDomestico\app\src\main\res\mipmap-xhdpi" />
-    </key>
-    <key name="ExtractSuperBase.RECENT_KEYS">
-      <recent name="com.example.orcamentodomestico" />
     </key>
     <key name="android.template.packageName">
       <recent name="com.example.orcamentodomestico" />
@@ -134,6 +142,9 @@
       <recent name="C:\Users\MAURO\AndroidStudioProjects\OrcamentoDomestico\app" />
       <recent name="C:\Users\MAURO\AndroidStudioProjects\OrcamentoDomestico\app\src\main\res\drawable-v24" />
       <recent name="C:\Users\MAURO\AndroidStudioProjects\OrcamentoDomestico\app\src\main\res\drawable" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.orcamentodomestico" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.example.orcamentodomestico" />
@@ -514,7 +525,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591644097816</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Conectado Firebase Login quase completo">
+      <created>1591661417762</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1591661417762</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -578,30 +596,30 @@
       <screen x="0" y="0" width="1366" height="687" />
     </state>
     <state x="500" y="0" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog/0.0.1366.687@0.0.1366.687" timestamp="1591033942256" />
-    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1591644095776">
+    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1591661416800">
       <screen x="0" y="0" width="1366" height="687" />
     </state>
-    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1366.687@0.0.1366.687" timestamp="1591644095776" />
+    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1366.687@0.0.1366.687" timestamp="1591661416800" />
     <state x="463" y="85" key="FileChooserDialogImpl" timestamp="1591622610035">
       <screen x="0" y="0" width="1366" height="687" />
     </state>
     <state x="463" y="85" key="FileChooserDialogImpl/0.0.1366.687@0.0.1366.687" timestamp="1591622610035" />
-    <state width="1323" height="310" key="GridCell.Tab.0.bottom" timestamp="1591631306587">
+    <state width="1323" height="6" key="GridCell.Tab.0.bottom" timestamp="1591794783690">
       <screen x="0" y="0" width="1366" height="687" />
     </state>
-    <state width="1323" height="310" key="GridCell.Tab.0.bottom/0.0.1366.687@0.0.1366.687" timestamp="1591631306587" />
-    <state width="1323" height="310" key="GridCell.Tab.0.center" timestamp="1591631306586">
+    <state width="1323" height="6" key="GridCell.Tab.0.bottom/0.0.1366.687@0.0.1366.687" timestamp="1591794783690" />
+    <state width="1323" height="6" key="GridCell.Tab.0.center" timestamp="1591794783689">
       <screen x="0" y="0" width="1366" height="687" />
     </state>
-    <state width="1323" height="310" key="GridCell.Tab.0.center/0.0.1366.687@0.0.1366.687" timestamp="1591631306586" />
-    <state width="1323" height="310" key="GridCell.Tab.0.left" timestamp="1591631306586">
+    <state width="1323" height="6" key="GridCell.Tab.0.center/0.0.1366.687@0.0.1366.687" timestamp="1591794783689" />
+    <state width="1323" height="6" key="GridCell.Tab.0.left" timestamp="1591794783689">
       <screen x="0" y="0" width="1366" height="687" />
     </state>
-    <state width="1323" height="310" key="GridCell.Tab.0.left/0.0.1366.687@0.0.1366.687" timestamp="1591631306586" />
-    <state width="1323" height="310" key="GridCell.Tab.0.right" timestamp="1591631306586">
+    <state width="1323" height="6" key="GridCell.Tab.0.left/0.0.1366.687@0.0.1366.687" timestamp="1591794783689" />
+    <state width="1323" height="6" key="GridCell.Tab.0.right" timestamp="1591794783690">
       <screen x="0" y="0" width="1366" height="687" />
     </state>
-    <state width="1323" height="310" key="GridCell.Tab.0.right/0.0.1366.687@0.0.1366.687" timestamp="1591631306586" />
+    <state width="1323" height="6" key="GridCell.Tab.0.right/0.0.1366.687@0.0.1366.687" timestamp="1591794783690" />
     <state width="1323" height="118" key="GridCell.Tab.1.bottom" timestamp="1591626764871">
       <screen x="0" y="0" width="1366" height="687" />
     </state>
@@ -618,10 +636,10 @@
       <screen x="0" y="0" width="1366" height="687" />
     </state>
     <state width="1323" height="118" key="GridCell.Tab.1.right/0.0.1366.687@0.0.1366.687" timestamp="1591626764870" />
-    <state x="275" y="72" key="Vcs.Push.Dialog.v2" timestamp="1591644106133">
+    <state x="275" y="72" key="Vcs.Push.Dialog.v2" timestamp="1591661428275">
       <screen x="0" y="0" width="1366" height="687" />
     </state>
-    <state x="275" y="72" key="Vcs.Push.Dialog.v2/0.0.1366.687@0.0.1366.687" timestamp="1591644106133" />
+    <state x="275" y="72" key="Vcs.Push.Dialog.v2/0.0.1366.687@0.0.1366.687" timestamp="1591661428275" />
     <state x="100" y="100" width="1166" height="487" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1591624705697">
       <screen x="0" y="0" width="1366" height="687" />
     </state>

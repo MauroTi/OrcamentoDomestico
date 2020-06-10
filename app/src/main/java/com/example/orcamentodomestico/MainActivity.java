@@ -119,6 +119,8 @@ public class MainActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        Intent intent = new Intent(MainActivity.this, ResetPasswordActivity.class);
+                        startActivity(intent);
                     }
                 });
 
@@ -132,13 +134,12 @@ public class MainActivity extends AppCompatActivity {
                 });
 
 
-        btnLogout.setOnClickListener(
-                new View.OnClickListener() {
+       /* btnLogout.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         disconnect();
                     }
-                });
+                });*/
     }
 
     private void loginUser(String email, String password) {
@@ -157,7 +158,7 @@ public class MainActivity extends AppCompatActivity {
                                     FirebaseUser user = mAuth.getCurrentUser();
                                     Toast.makeText(
                                             getApplicationContext(),
-                                            "Login realizado com sucesso! Bem vindo " + user.getEmail() + "!",
+                                            "Login realizado com sucesso!",
                                             Toast.LENGTH_LONG)
                                             .show();
 

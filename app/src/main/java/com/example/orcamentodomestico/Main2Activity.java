@@ -9,9 +9,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -21,7 +25,8 @@ public class Main2Activity extends AppCompatActivity {
 
   // criação do adapter e da lista
   ListAdapterItem adapter;
-  ArrayList<Item> listaItens;
+    ArrayList<Item> listaItens;
+    private FirebaseAuth mAuth;
 
   // fim criação adapter e lista
 
@@ -38,15 +43,33 @@ public class Main2Activity extends AppCompatActivity {
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_main2);
-    final Context context = this;
+      super.onCreate(savedInstanceState);
+      setContentView(R.layout.activity_main2);
 
-    listaItens = new ArrayList<Item>();
-    adapter = new ListAdapterItem(context, listaItens);
+      // Initialize Firebase Auth
+      mAuth = FirebaseAuth.getInstance();
+      //Verifica se usuario esta logado
+      FirebaseUser user = mAuth.getCurrentUser();
+      if (user != null) {
+          Toast.makeText(
+                  getApplicationContext(),
+                  "Bem vindo de volta " + user.getEmail() + "!",
+                  Toast.LENGTH_LONG)
+                  .show();
+      } else {
+          Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+          startActivity(intent);
+          finish();
+      }
 
-    minhaLista = findViewById(R.id.minhaLista);
-    minhaLista.setAdapter(adapter);
+
+      final Context context = this;
+
+      listaItens = new ArrayList<Item>();
+      adapter = new ListAdapterItem(context, listaItens);
+
+      minhaLista = findViewById(R.id.minhaLista);
+      minhaLista.setAdapter(adapter);
       txtDespesa = findViewById(R.id.despesa);
       txtValor = findViewById(R.id.valorDespesa);
     monetaryMask = new MonetaryMask(this.txtValor);
@@ -66,27 +89,45 @@ public class Main2Activity extends AppCompatActivity {
             Item novoItem = new Item(despesa, valor);
             adapter.add(novoItem);
             adapter.notifyDataSetChanged();
-            txtDespesa.setText("");
-            txtValor.setText("0");
+              txtDespesa.setText("");
+              txtValor.setText("0");
 
-            // Contador dos itens adicionados
-            TextView itensAddDespesa = findViewById(R.id.itensAtuaisDespesa);
-            int itensDespesa = adapter.getCount();
+              // Contador dos itens adicionados
+              TextView itensAddDespesa = findViewById(R.id.itensAtuaisDespesa);
+              int itensDespesa = adapter.getCount();
               testeAdd = itensDespesa;
-            itensAddDespesa.setText(String.valueOf(itensDespesa));
+              itensAddDespesa.setText(String.valueOf(itensDespesa));
           }
         });
+
+      btnLogout.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View v) {
+              disconnect();
+          }
+      });
   }
 
-  public void updateAdapter() {
-    adapter.notifyDataSetChanged();
-    TextView itensAddDespesa = findViewById(R.id.itensAtuaisDespesa);
-    int itensDespesa = adapter.getCount();
-      testeAdd = itensDespesa;
-    itensAddDespesa.setText(String.valueOf(itensDespesa));
-  }
+    private void disconnect() {
+        FirebaseAuth.getInstance().signOut();
+        closePrincipal();
+    }
 
-  public void proxima(View view) {
+    private void closePrincipal() {
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public void updateAdapter() {
+        adapter.notifyDataSetChanged();
+        TextView itensAddDespesa = findViewById(R.id.itensAtuaisDespesa);
+        int itensDespesa = adapter.getCount();
+        testeAdd = itensDespesa;
+        itensAddDespesa.setText(String.valueOf(itensDespesa));
+    }
+
+    public void proxima(View view) {
 
     Float pegaValor;
       Float despesas = Float.valueOf(0);

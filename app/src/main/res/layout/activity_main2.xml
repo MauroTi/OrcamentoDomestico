@@ -185,10 +185,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:background="@drawable/btn_customizado"
                 android:gravity="center"
                 android:onClick="proxima"
-                android:text="Próxima"
-                android:background="@drawable/btn_customizado" />
+                android:text="Próxima" />
+
         </LinearLayout>
     </RelativeLayout>
 
