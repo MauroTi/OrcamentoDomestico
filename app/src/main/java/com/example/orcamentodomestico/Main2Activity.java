@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,90 +24,92 @@ import java.util.Locale;
 
 public class Main2Activity extends AppCompatActivity {
 
-  // criação do adapter e da lista
-  ListAdapterItem adapter;
+    // criação do adapter e da lista
+    ListAdapterItem adapter;
     ArrayList<Item> listaItens;
-    private FirebaseAuth mAuth;
-
-  // fim criação adapter e lista
-
     int testeAdd;
+
+    // fim criação adapter e lista
     String valor = String.valueOf(0);
+    // controles da tela
+    EditText txtDespesa;
+    EditText txtValor;
+    Button btnAdicionar;
+    ListView minhaLista;
+    MonetaryMask monetaryMask;
+    private FirebaseAuth mAuth;
+    // fim dos controles da tela
 
-  // controles da tela
-  EditText txtDespesa;
-  EditText txtValor;
-  Button btnAdicionar;
-  ListView minhaLista;
-  MonetaryMask monetaryMask;
-  // fim dos controles da tela
+    public boolean onCreateOptionsMenu(android.view.Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main, menu);
 
-  @Override
-  protected void onCreate(Bundle savedInstanceState) {
-      super.onCreate(savedInstanceState);
-      setContentView(R.layout.activity_main2);
+        return true;
+    }
 
-      // Initialize Firebase Auth
-      mAuth = FirebaseAuth.getInstance();
-      //Verifica se usuario esta logado
-      FirebaseUser user = mAuth.getCurrentUser();
-      if (user != null) {
-          Toast.makeText(
-                  getApplicationContext(),
-                  "Bem vindo de volta " + user.getEmail() + "!",
-                  Toast.LENGTH_LONG)
-                  .show();
-      } else {
-          Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-          startActivity(intent);
-          finish();
-      }
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main2);
 
+        // Initialize Firebase Auth
+        mAuth = FirebaseAuth.getInstance();
+        // Verifica se usuario esta logado
+        FirebaseUser user = mAuth.getCurrentUser();
+        if (user != null) {
+            Toast.makeText(
+                    getApplicationContext(), "Bem vindo " + user.getEmail() + "!", Toast.LENGTH_LONG)
+                    .show();
+        } else {
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(intent);
+            finish();
+        }
 
-      final Context context = this;
+        final Context context = this;
 
-      listaItens = new ArrayList<Item>();
-      adapter = new ListAdapterItem(context, listaItens);
+        listaItens = new ArrayList<Item>();
+        adapter = new ListAdapterItem(context, listaItens);
 
-      minhaLista = findViewById(R.id.minhaLista);
-      minhaLista.setAdapter(adapter);
-      txtDespesa = findViewById(R.id.despesa);
-      txtValor = findViewById(R.id.valorDespesa);
-    monetaryMask = new MonetaryMask(this.txtValor);
-    btnAdicionar = findViewById(R.id.btnAdicionarDespesa);
+        minhaLista = findViewById(R.id.minhaLista);
+        minhaLista.setAdapter(adapter);
+        txtDespesa = findViewById(R.id.despesa);
+        txtValor = findViewById(R.id.valorDespesa);
+        monetaryMask = new MonetaryMask(this.txtValor);
+        btnAdicionar = findViewById(R.id.btnAdicionarDespesa);
 
-    Locale mLocale = new Locale("pt", "BR");
-    txtValor.addTextChangedListener(new MonetaryMask(txtValor, mLocale));
+        Locale mLocale = new Locale("pt", "BR");
+        txtValor.addTextChangedListener(new MonetaryMask(txtValor, mLocale));
 
-    btnAdicionar.setOnClickListener(
-        new View.OnClickListener() {
-          @Override
-          public void onClick(View view) {
+        btnAdicionar.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
 
-              //  txtValor.setText("0");
-            String despesa = txtDespesa.getText().toString();
-              valor = txtValor.getText().toString();
-            Item novoItem = new Item(despesa, valor);
-            adapter.add(novoItem);
-            adapter.notifyDataSetChanged();
-              txtDespesa.setText("");
-              txtValor.setText("0");
+                        //  txtValor.setText("0");
+                        String despesa = txtDespesa.getText().toString();
+                        valor = txtValor.getText().toString();
+                        Item novoItem = new Item(despesa, valor);
+                        adapter.add(novoItem);
+                        adapter.notifyDataSetChanged();
+                        txtDespesa.setText("");
+                        txtValor.setText("0");
 
-              // Contador dos itens adicionados
-              TextView itensAddDespesa = findViewById(R.id.itensAtuaisDespesa);
-              int itensDespesa = adapter.getCount();
-              testeAdd = itensDespesa;
-              itensAddDespesa.setText(String.valueOf(itensDespesa));
-          }
-        });
+                        // Contador dos itens adicionados
+                        TextView itensAddDespesa = findViewById(R.id.itensAtuaisDespesa);
+                        int itensDespesa = adapter.getCount();
+                        testeAdd = itensDespesa;
+                        itensAddDespesa.setText(String.valueOf(itensDespesa));
+                    }
+                });
 
-     /* btnLogout.setOnClickListener(new View.OnClickListener() {
-          @Override
-          public void onClick(View v) {
-              disconnect();
-          }
-      });*/
-  }
+    /* btnLogout.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            disconnect();
+        }
+    });*/
+    }
 
     private void disconnect() {
         FirebaseAuth.getInstance().signOut();
@@ -129,45 +132,44 @@ public class Main2Activity extends AppCompatActivity {
 
     public void proxima(View view) {
 
-    Float pegaValor;
-      Float despesas = Float.valueOf(0);
+        Float pegaValor;
+        Float despesas = Float.valueOf(0);
 
-      if ((testeAdd > 0) && (!valor.equals(""))) {
-          try {
+        if ((testeAdd > 0) && (!valor.equals(""))) {
+            try {
 
-              for (Iterator<Item> iterator = listaItens.iterator(); iterator.hasNext(); ) {
-                  Item item = iterator.next(); // pega o item da lista
+                for (Iterator<Item> iterator = listaItens.iterator(); iterator.hasNext(); ) {
+                    Item item = iterator.next(); // pega o item da lista
 
-                  pegaValor = Float.parseFloat(item.getValor().replaceAll("\\D", ""));
-                  despesas = (despesas) + (pegaValor / 100);
-              }
-              Intent i = new Intent(Main2Activity.this, Main4Activity.class);
-              i.putExtra("TotalDespesas", despesas);
-              startActivity(i);
+                    pegaValor = Float.parseFloat(item.getValor().replaceAll("\\D", ""));
+                    despesas = (despesas) + (pegaValor / 100);
+                }
+                Intent i = new Intent(Main2Activity.this, Main4Activity.class);
+                i.putExtra("TotalDespesas", despesas);
+                startActivity(i);
 
-              //listaItens = new ArrayList<>(listaItens);
-             /* Intent intent = new Intent(Main2Activity.this, Main4Activity.class);
-              intent.putExtra("lista", listaItens);
-              startActivity(intent);*/
+                // listaItens = new ArrayList<>(listaItens);
+        /* Intent intent = new Intent(Main2Activity.this, Main4Activity.class);
+        intent.putExtra("lista", listaItens);
+        startActivity(intent);*/
 
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
+            }
+        } else {
+            new AlertDialog.Builder(this)
+                    .setTitle("Nenhum valor!!!")
+                    .setMessage("Nenhum valor válido adicionado!!!")
+                    .setPositiveButton(
+                            "OK",
+                            new DialogInterface.OnClickListener() {
 
-          } catch (NumberFormatException e) {
-              e.printStackTrace();
-          }
-      } else {
-          new AlertDialog.Builder(this)
-                  .setTitle("Nenhum valor!!!")
-                  .setMessage("Nenhum valor válido adicionado!!!")
-                  .setPositiveButton(
-                          "OK",
-                          new DialogInterface.OnClickListener() {
-
-                              @Override
-                              public void onClick(DialogInterface dialogInterface, int i) {
-                              }
-                          })
-                  .show();
-      }
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                }
+                            })
+                    .show();
+        }
   }
 
     public void onBackPressed() {
@@ -187,7 +189,5 @@ public class Main2Activity extends AppCompatActivity {
                         })
                 .setNegativeButton("não", null)
                 .show();
-  }
-
-
+    }
 }

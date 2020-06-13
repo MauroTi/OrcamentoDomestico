@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -63,8 +62,8 @@
                     android:inputType="textPersonName"
                     android:textSize="18sp"
                     android:visibility="visible"
-                    tools:visibility="visible"
-                    tools:ignore="autofillHints" />
+                    tools:ignore="autofillHints"
+                    tools:visibility="visible" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -83,13 +82,12 @@
                         android:ems="10"
                         android:gravity="center"
                         android:hint="R$ 0,00"
-                        android:text="R$ 0,00"
                         android:inputType="numberDecimal"
+                        android:text="R$ 0,00"
                         android:textSize="18sp"
                         android:visibility="visible"
-                        tools:visibility="visible"
                         tools:ignore="autofillHints"
-                        />
+                        tools:visibility="visible" />
 
                     <Button
                         android:id="@+id/btnAdicionarDespesa"
@@ -114,16 +112,12 @@
 
         </LinearLayout>
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            />
-
         <LinearLayout
             android:id="@+id/linearLayoutQuantidadeDespesa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginTop="10dp"
             android:layout_marginRight="8dp"
             android:background="#5384D610"
             android:gravity="center"
@@ -137,8 +131,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:inputType="text"
-                />
+                android:inputType="text" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -152,20 +145,20 @@
 
         </LinearLayout>
 
+        <ListView
+            android:id="@+id/minhaLista"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            >
+
+        </ListView>
+
         <Space
             android:layout_width="match_parent"
-            android:layout_height="20dp"
-            />
+            android:layout_height="20dp" />
 
-            <ListView
-                android:id="@+id/minhaLista"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-                />
-
-        </LinearLayout>
-
+    </LinearLayout>
 
 
     <RelativeLayout

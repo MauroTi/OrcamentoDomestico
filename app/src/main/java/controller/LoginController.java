@@ -7,22 +7,19 @@ import model.Login;
 
 public class LoginController {
 
-    static List<Login> listaLogins = new ArrayList<>();
+  static List<Login> listaLogins = new ArrayList<>();
 
+  public static String exibeLogin() {
+    // System.out.println(listaLogins.toString());
+    return listaLogins.toString();
+  }
 
-    public void cadastroLogin(Login login) {
+  public void cadastroLogin(Login login) {
 
-        listaLogins.add(login);
-    }
+    listaLogins.add(login);
+  }
 
-    public static String exibeLogin() {
-        //System.out.println(listaLogins.toString());
-        return listaLogins.toString();
-
-    }
-
-    public List<Login> reLogin(){
-        return this.listaLogins;
-    }
-
+  public List<Login> reLogin() {
+    return this.listaLogins;
+  }
 }

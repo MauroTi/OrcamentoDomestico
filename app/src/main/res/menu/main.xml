@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <Toolbar
+        android:id="@+id/toobar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:elevation="3dp"
+        android:minHeight="?attr/actionBarSize"
+        android:popupTheme="@style/Theme.AppCompat.Light" />
+
+    <item
+        android:id="@+id/logout"
+        android:title="Logout"
+
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/sair"
+        android:icon="@drawable/ic_baseline_close_24"
+        android:title="Sair"
+        app:showAsAction="always" />
+
+</menu>

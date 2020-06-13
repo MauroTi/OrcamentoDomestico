@@ -5,21 +5,19 @@ public class Receita {
     public static String Nome;
     public static Double Valor;
 
-    public String getNome()
-    {
+    public String getNome() {
         return Nome;
     }
-    public void setNome(String nome)
-    {
+
+    public void setNome(String nome) {
         Nome = nome;
     }
-    public Double getValor()
-    {
+
+    public Double getValor() {
         return Valor;
     }
-    public void setValor(Double valor)
-    {
+
+    public void setValor(Double valor) {
         Valor = valor;
     }
-
 }

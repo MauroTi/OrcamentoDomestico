@@ -29,7 +29,5 @@ public class Login {
   @Override
   public String toString() {
     return getUsuario() + getSenha();
-
   }
-
 }

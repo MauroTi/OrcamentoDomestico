@@ -28,12 +28,10 @@ public class MonetaryMask implements TextWatcher {
 
     @Override
     public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
     }
 
     @Override
     public void onTextChanged(CharSequence s, int start, int before, int count) {
-
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -53,14 +51,14 @@ public class MonetaryMask implements TextWatcher {
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     private BigDecimal parseToBigDecimal(String value, Locale locale) {
-        String replaceable = String.format("[%s,.\\s]", NumberFormat.getCurrencyInstance(locale).getCurrency().getSymbol());
+        String replaceable =
+                String.format(
+                        "[%s,.\\s]", NumberFormat.getCurrencyInstance(locale).getCurrency().getSymbol());
 
         String cleanString = value.replaceAll(replaceable, "");
 
-        return new BigDecimal(cleanString).setScale(
-                2, BigDecimal.ROUND_FLOOR).divide(new BigDecimal(100), BigDecimal.ROUND_FLOOR
-        );
+        return new BigDecimal(cleanString)
+                .setScale(2, BigDecimal.ROUND_FLOOR)
+                .divide(new BigDecimal(100), BigDecimal.ROUND_FLOOR);
     }
 }
-
-

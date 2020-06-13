@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -18,17 +19,26 @@ import java.text.DecimalFormat;
 
 public class Main3Activity extends AppCompatActivity {
 
-  private Button btnLogout;
+    private Button btnLogout;
 
-  @RequiresApi(api = Build.VERSION_CODES.N)
-  @Override
-  protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_main3);
+    public boolean onCreateOptionsMenu(android.view.Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main, menu);
 
-    TextView tvReceitas = findViewById(R.id.receitaFinal);
-    TextView tvDespesas = findViewById(R.id.despesaFinal);
-    TextView tvSaldo = findViewById(R.id.saldoFinal);
+        return true;
+    }
+
+    ;
+
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main3);
+
+        TextView tvReceitas = findViewById(R.id.receitaFinal);
+        TextView tvDespesas = findViewById(R.id.despesaFinal);
+        TextView tvSaldo = findViewById(R.id.saldoFinal);
     btnLogout = (Button) findViewById(R.id.btnLogout);
 
     Bundle extras = getIntent().getExtras();
@@ -39,7 +49,6 @@ public class Main3Activity extends AppCompatActivity {
     Double despesaDouble = Double.parseDouble(despesas);
     Double receitaDouble = Double.parseDouble(receitas);
     Double resultadoDouble = Double.parseDouble(resultado);
-
 
     tvDespesas.setBackgroundResource(R.drawable.rounded_corner_main3_green);
     tvDespesas.setTextColor(Color.BLACK);
@@ -67,13 +76,13 @@ public class Main3Activity extends AppCompatActivity {
     String saidaSaldo = dfSaldo.format(resultadoDouble);
     tvSaldo.setText(saidaSaldo);
 
-    btnLogout.setOnClickListener(
-            new View.OnClickListener() {
-              @Override
-              public void onClick(View v) {
-                disconnect();
-              }
-            });
+        btnLogout.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        disconnect();
+                    }
+                });
   }
 
   public void voltar(View view) {
@@ -85,14 +94,14 @@ public class Main3Activity extends AppCompatActivity {
     finishAffinity();
   }
 
-
   private void disconnect() {
-    FirebaseAuth.getInstance().signOut();
-    Toast.makeText(getApplicationContext(), "Logout efetuado com sucesso!", Toast.LENGTH_LONG).show();
+      FirebaseAuth.getInstance().signOut();
+      Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+      startActivity(intent);
+      Toast.makeText(getApplicationContext(), "Logout efetuado com sucesso!", Toast.LENGTH_LONG)
+              .show();
   }
-
 }
 
   // Intent intent = new Intent(Main2Activity.this, Main4Activity.class);
   // startActivity(intent);
-

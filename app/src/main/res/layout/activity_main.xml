@@ -16,9 +16,12 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
             android:text="Para iniciar digite email e senha"
             android:textSize="20sp" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="20dp" />
 
         <EditText
             android:id="@+id/etEmail"
@@ -37,23 +40,16 @@
             android:layout_marginBottom="15dp"
             android:background="@drawable/btn_customizado"
             android:ems="10"
-            android:inputType="textPassword"
-            android:hint="Senha" />
+            android:hint="Senha"
+            android:inputType="textPassword" />
 
-        <LinearLayout
+        <Button
+            android:id="@+id/btnLogar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/btnLogar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:background="@drawable/btn_customizado"
-                android:text="Logar" />
-
-        </LinearLayout>
+            android:layout_marginTop="15dp"
+            android:background="@drawable/btn_customizado"
+            android:text="Logar" />
 
         <Button
             android:id="@+id/btnCancelar"
@@ -80,6 +76,13 @@
             android:text="Esqueceu sua senha?"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        </LinearLayout>
 
     </LinearLayout>
 

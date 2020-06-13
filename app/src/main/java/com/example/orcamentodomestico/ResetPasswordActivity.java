@@ -21,7 +21,6 @@ public class ResetPasswordActivity extends AppCompatActivity {
     private EditText edtEmail;
     private FirebaseAuth mAuth;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,61 +32,71 @@ public class ResetPasswordActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        btnResetPassword.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        btnResetPassword.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
 
-                String email = edtEmail.getText().toString().trim();
+                        String email = edtEmail.getText().toString().trim();
 
-                if (isEmpty(email)) {
-                    Toast.makeText(getApplicationContext(), "Digite seu email!", Toast.LENGTH_SHORT).show();
-                    return;
-                }
+                        if (isEmpty(email)) {
+                            Toast.makeText(getApplicationContext(), "Digite seu email!", Toast.LENGTH_SHORT)
+                                    .show();
+                            return;
+                        }
 
-                mAuth.sendPasswordResetEmail(email)
-                        .addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
-                                if (task.isSuccessful()) {
+                        mAuth
+                                .sendPasswordResetEmail(email)
+                                .addOnCompleteListener(
+                                        new OnCompleteListener<Void>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<Void> task) {
+                                                if (task.isSuccessful()) {
 
-                                    Toast.makeText(getApplicationContext(), "Acesse o link enviado para seu email!", Toast.LENGTH_LONG).show();
+                                                    Toast.makeText(
+                                                            getApplicationContext(),
+                                                            "Acesse o link enviado para seu email!",
+                                                            Toast.LENGTH_LONG)
+                                                            .show();
 
-                                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                                    startActivity(intent);
-                                    finish();
-                                } else {
-                                    Toast.makeText(getApplicationContext(), "Redefinição de senha falhou! Tente novamente!", Toast.LENGTH_SHORT).show();
-                                }
-                            }
-                        });
-            }
-        });
+                                                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                                    startActivity(intent);
+                                                    finish();
+                                                } else {
+                                                    Toast.makeText(
+                                                            getApplicationContext(),
+                                                            "Redefinição de senha falhou! Tente novamente!",
+                                                            Toast.LENGTH_SHORT)
+                                                            .show();
+                                                }
+                                            }
+                                        });
+                    }
+                });
 
-        btnBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        btnBack.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        finish();
+                    }
+                });
     }
-
 }
-
-
 
    /* FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
-    BreakIterator newPassword = null;
-                      assert newPassword != null;
-                      user.updatePassword(newPassword.getText().toString().trim())
-            .addOnCompleteListener(new OnCompleteListener<Void>() {
-        @Override
-        public void onComplete(@NonNull Task<Void> task) {
-            if (task.isSuccessful()) {
-                Toast.makeText(LoginActivity.this, "Password is updated!", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(LoginActivity.this, "Failed to update password!", Toast.LENGTH_SHORT).show();
-                //progressBar.setVisibility(View.GONE);
-            }
-        }
-    });*/
+   BreakIterator newPassword = null;
+                     assert newPassword != null;
+                     user.updatePassword(newPassword.getText().toString().trim())
+           .addOnCompleteListener(new OnCompleteListener<Void>() {
+       @Override
+       public void onComplete(@NonNull Task<Void> task) {
+           if (task.isSuccessful()) {
+               Toast.makeText(LoginActivity.this, "Password is updated!", Toast.LENGTH_SHORT).show();
+           } else {
+               Toast.makeText(LoginActivity.this, "Failed to update password!", Toast.LENGTH_SHORT).show();
+               //progressBar.setVisibility(View.GONE);
+           }
+       }
+   });*/

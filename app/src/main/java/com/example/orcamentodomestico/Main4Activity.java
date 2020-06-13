@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -26,25 +27,34 @@ public class Main4Activity extends AppCompatActivity {
 
   int testeAdd;
   String valor = String.valueOf(0);
-  Float despesas;
+    Float despesas;
 
-  // controles da tela
-  EditText txtReceita;
-  EditText txtValorReceita;
-  Button btnAdicionar;
-  ListView minhaLista;
-  MonetaryMask monetaryMask;
-  // fim dos controles da tela
+    // controles da tela
+    EditText txtReceita;
+    EditText txtValorReceita;
+    Button btnAdicionar;
+    ListView minhaLista;
+    MonetaryMask monetaryMask;
+    // fim dos controles da tela
 
-  @Override
-  protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_main4);
-    final Context context = this;
-    listaItens = new ArrayList<Item>();
-    adapter = new ListAdapterItem(context, listaItens);
+    public boolean onCreateOptionsMenu(android.view.Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main, menu);
 
-    minhaLista = findViewById(R.id.minhaLista);
+        return true;
+    }
+
+    ;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main4);
+        final Context context = this;
+        listaItens = new ArrayList<Item>();
+        adapter = new ListAdapterItem(context, listaItens);
+
+        minhaLista = findViewById(R.id.minhaLista);
     minhaLista.setAdapter(adapter);
     txtReceita = findViewById(R.id.receita);
     txtValorReceita = findViewById(R.id.valorReceita);
@@ -56,25 +66,25 @@ public class Main4Activity extends AppCompatActivity {
 
     btnAdicionar.setOnClickListener(
             new View.OnClickListener() {
-              @Override
-              public void onClick(View view) {
-                // txtValorReceita.setText("0");
-                String despesa = txtReceita.getText().toString();
-                valor = txtValorReceita.getText().toString();
-                Item novoItem = new Item(despesa, valor);
-                adapter.add(novoItem);
-                adapter.notifyDataSetChanged();
-                txtReceita.setText("");
-                txtValorReceita.setText("0");
+                @Override
+                public void onClick(View view) {
+                    // txtValorReceita.setText("0");
+                    String despesa = txtReceita.getText().toString();
+                    valor = txtValorReceita.getText().toString();
+                    Item novoItem = new Item(despesa, valor);
+                    adapter.add(novoItem);
+                    adapter.notifyDataSetChanged();
+                    txtReceita.setText("");
+                    txtValorReceita.setText("0");
 
-                // Contador dos itens adicionados
+                    // Contador dos itens adicionados
 
-                TextView itensAddReceita = findViewById(R.id.itensAtuaisReceita);
-                int itensReceita = adapter.getCount();
-                testeAdd = itensReceita;
-                itensAddReceita.setText(String.valueOf(itensReceita));
-              }
-        });
+                    TextView itensAddReceita = findViewById(R.id.itensAtuaisReceita);
+                    int itensReceita = adapter.getCount();
+                    testeAdd = itensReceita;
+                    itensAddReceita.setText(String.valueOf(itensReceita));
+                }
+            });
   }
 
   public void updateAdapter() {
@@ -94,12 +104,12 @@ public class Main4Activity extends AppCompatActivity {
     if ((testeAdd > 0) && (!valor.equals(""))) {
       try {
 
-        for (Iterator<Item> iterator = listaItens.iterator(); iterator.hasNext(); ) {
-          Item item = iterator.next(); // pega o item da lista
+          for (Iterator<Item> iterator = listaItens.iterator(); iterator.hasNext(); ) {
+              Item item = iterator.next(); // pega o item da lista
 
-          pegaValor = Float.parseFloat(item.getValor().replaceAll("\\D", ""));
-          receitas = receitas + (pegaValor / 100);
-        }
+              pegaValor = Float.parseFloat(item.getValor().replaceAll("\\D", ""));
+              receitas = receitas + (pegaValor / 100);
+          }
           Bundle extras = getIntent().getExtras();
           despesas = extras.getFloat("TotalDespesas");
           diferenca = receitas - despesas;
@@ -110,29 +120,28 @@ public class Main4Activity extends AppCompatActivity {
           i.putExtra("Diferenca", "" + diferenca);
           startActivity(i);
 
-       /* Intent intent = getIntent();
+        /* Intent intent = getIntent();
         ListAdapterItem lista = (ListAdapterItem) intent.getSerializableExtra("lista");*/
 
-       /* Intent it = new Intent(Main4Activity.this, Main3Activity.class);
+        /* Intent it = new Intent(Main4Activity.this, Main3Activity.class);
         it.putExtra("NomesValoresReceitas", listaItens);
         startActivity(it);*/
       } catch (NumberFormatException e) {
         e.printStackTrace();
       }
     } else {
-      new AlertDialog.Builder(this)
-              .setTitle("Nenhum valor!!!")
-              .setMessage("Nenhum valor válido adicionado!!!")
-              .setPositiveButton(
-                      "OK",
-                      new DialogInterface.OnClickListener() {
+        new AlertDialog.Builder(this)
+                .setTitle("Nenhum valor!!!")
+                .setMessage("Nenhum valor válido adicionado!!!")
+                .setPositiveButton(
+                        "OK",
+                        new DialogInterface.OnClickListener() {
 
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                        }
-                      })
-              .show();
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                            }
+                        })
+                .show();
     }
-
   }
 }
