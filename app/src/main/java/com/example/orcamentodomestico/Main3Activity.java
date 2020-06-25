@@ -1,16 +1,19 @@
 package com.example.orcamentodomestico;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -83,24 +86,54 @@ public class Main3Activity extends AppCompatActivity {
                         disconnect();
                     }
                 });
-  }
+    }
 
-  public void voltar(View view) {
-    Intent intent = new Intent(Main3Activity.this, Main2Activity.class);
-    startActivity(intent);
-  }
+    public void voltar(View view) {
+        Intent intent = new Intent(Main3Activity.this, Main2Activity.class);
+        startActivity(intent);
+    }
 
-  public void sair(View view) {
-    finishAffinity();
-  }
+    public void sair(View view) {
+        finishAffinity();
+    }
 
-  private void disconnect() {
-      FirebaseAuth.getInstance().signOut();
-      Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-      startActivity(intent);
-      Toast.makeText(getApplicationContext(), "Logout efetuado com sucesso!", Toast.LENGTH_LONG)
-              .show();
-  }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.logout) {
+            disconnect();
+            return true;
+        } else if (id == R.id.sair) {
+            new AlertDialog.Builder(this)
+                    .setTitle("Sair do App?")
+                    .setMessage("Tem certeza que deseja sair do aplicativo?")
+                    .setPositiveButton(
+                            "sim",
+                            new DialogInterface.OnClickListener() {
+
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+
+                                    finish();
+                                }
+                            })
+                    .setNegativeButton("não", null)
+                    .show();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void disconnect() {
+        FirebaseAuth.getInstance().signOut();
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(intent);
+        Toast.makeText(getApplicationContext(), "Logout efetuado com sucesso!", Toast.LENGTH_LONG)
+                .show();
+    }
+
+
+    public void logout(MenuItem item) {
+    }
 }
 
   // Intent intent = new Intent(Main2Activity.this, Main4Activity.class);

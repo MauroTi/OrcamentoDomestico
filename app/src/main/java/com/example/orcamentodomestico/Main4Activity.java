@@ -5,14 +5,18 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -85,17 +89,51 @@ public class Main4Activity extends AppCompatActivity {
                     itensAddReceita.setText(String.valueOf(itensReceita));
                 }
             });
-  }
+    }
 
-  public void updateAdapter() {
-    adapter.notifyDataSetChanged();
-    TextView itensAddReceita = findViewById(R.id.itensAtuaisReceita);
-    int itensReceita = adapter.getCount();
-    testeAdd = itensReceita;
-    itensAddReceita.setText(String.valueOf(itensReceita));
-  }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.logout) {
+            disconnect();
+            return true;
+        } else if (id == R.id.sair) {
+            new AlertDialog.Builder(this)
+                    .setTitle("Sair do App?")
+                    .setMessage("Tem certeza que deseja sair do aplicativo?")
+                    .setPositiveButton(
+                            "sim",
+                            new DialogInterface.OnClickListener() {
 
-  public void proxima(View view) {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+
+                                    finish();
+                                }
+                            })
+                    .setNegativeButton("não", null)
+                    .show();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void disconnect() {
+        FirebaseAuth.getInstance().signOut();
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(intent);
+        Toast.makeText(getApplicationContext(), "Logout efetuado com sucesso!", Toast.LENGTH_LONG)
+                .show();
+    }
+
+    public void updateAdapter() {
+        adapter.notifyDataSetChanged();
+        TextView itensAddReceita = findViewById(R.id.itensAtuaisReceita);
+        int itensReceita = adapter.getCount();
+        testeAdd = itensReceita;
+        itensAddReceita.setText(String.valueOf(itensReceita));
+    }
+
+    public void proxima(View view) {
 
     Float receitas = Float.valueOf(0);
     Float diferenca = Float.valueOf(0);

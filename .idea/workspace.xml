@@ -11,52 +11,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91bc989c-478e-46f4-8341-a1f1fad2049a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/MenuActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_close_24.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_menu.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/menu/main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileChanges/last-build.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileContent/fileContent.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/resourceHashesCache.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/classAnalysis.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/jarAnalysis.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/javaCompile.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/taskHistory.bin" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/example/orcamentodomestico/ExampleInstrumentedTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/example/orcamentodomestico/ExampleInstrumentedTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/CustomToast.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/CustomToast.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/Item.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/Main2Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/Main2Activity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/Main3Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/Main3Activity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/Main4Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/Main4Activity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/MonetaryMask.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/MonetaryMask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/ResetPasswordActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/ResetPasswordActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/Splash.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/Splash.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/model/Despesa.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/model/Despesa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/model/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/model/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/model/Receita.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/model/Receita.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/btn_customizado.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/btn_customizado.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_add_black_24dp.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_add_black_24dp.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_add_circle_black_24dp.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_add_circle_black_24dp.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_captain_america_shield.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_captain_america_shield.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_delete_black_24dp.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_delete_black_24dp.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main3.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main4.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_reset_senha.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_reset_senha.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/example/orcamentodomestico/ExampleUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/example/orcamentodomestico/ExampleUnitTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_lista.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_lista.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/main.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -581,7 +546,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591797080401</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Reset password funcionando e espera btnLogout">
+      <created>1592086400019</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1592086400019</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -639,18 +611,19 @@
       <screen x="0" y="0" width="1366" height="687" />
     </state>
     <state x="200" y="75" key="#PSD/0.0.1366.687@0.0.1366.687" timestamp="1591375002306" />
-    <state x="413" y="98" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1591636455621">
-      <screen x="0" y="0" width="1366" height="687" />
+    <state x="411" y="98" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1593007234518">
+      <screen x="0" y="0" width="1360" height="687" />
     </state>
+    <state x="411" y="98" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1593007234518" />
     <state x="413" y="98" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1366.687@0.0.1366.687" timestamp="1591636455621" />
     <state x="500" y="0" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog" timestamp="1591033942256">
       <screen x="0" y="0" width="1366" height="687" />
     </state>
     <state x="500" y="0" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog/0.0.1366.687@0.0.1366.687" timestamp="1591033942256" />
-    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1591797079610">
+    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1592086398309">
       <screen x="0" y="0" width="1366" height="687" />
     </state>
-    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1366.687@0.0.1366.687" timestamp="1591797079610" />
+    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1366.687@0.0.1366.687" timestamp="1592086398309" />
     <state x="463" y="85" key="FileChooserDialogImpl" timestamp="1591820893618">
       <screen x="0" y="0" width="1366" height="687" />
     </state>
@@ -687,10 +660,10 @@
       <screen x="0" y="0" width="1366" height="687" />
     </state>
     <state width="1323" height="118" key="GridCell.Tab.1.right/0.0.1366.687@0.0.1366.687" timestamp="1591626764870" />
-    <state x="275" y="72" key="Vcs.Push.Dialog.v2" timestamp="1591797082640">
+    <state x="275" y="72" key="Vcs.Push.Dialog.v2" timestamp="1592086426844">
       <screen x="0" y="0" width="1366" height="687" />
     </state>
-    <state x="275" y="72" key="Vcs.Push.Dialog.v2/0.0.1366.687@0.0.1366.687" timestamp="1591797082640" />
+    <state x="275" y="72" key="Vcs.Push.Dialog.v2/0.0.1366.687@0.0.1366.687" timestamp="1592086426844" />
     <state x="100" y="100" width="1166" height="487" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1591624705697">
       <screen x="0" y="0" width="1366" height="687" />
     </state>
