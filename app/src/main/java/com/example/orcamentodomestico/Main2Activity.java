@@ -31,15 +31,17 @@ public class Main2Activity extends AppCompatActivity {
     int testeAdd;
 
     // fim criação adapter e lista
-    String valor = String.valueOf(0);
+
     // controles da tela
     EditText txtDespesa;
     EditText txtValor;
     Button btnAdicionar;
     ListView minhaLista;
     MonetaryMask monetaryMask;
-    private FirebaseAuth mAuth;
+
     // fim dos controles da tela
+    private FirebaseAuth mAuth;
+    String valor = String.valueOf(0);
 
     public boolean onCreateOptionsMenu(android.view.Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -78,7 +80,7 @@ public class Main2Activity extends AppCompatActivity {
         txtValor = findViewById(R.id.valorDespesa);
         monetaryMask = new MonetaryMask(this.txtValor);
         btnAdicionar = findViewById(R.id.btnAdicionarDespesa);
-        //logout =findViewById(R.id.logout);
+
 
         Locale mLocale = new Locale("pt", "BR");
         txtValor.addTextChangedListener(new MonetaryMask(txtValor, mLocale));
@@ -88,7 +90,7 @@ public class Main2Activity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
 
-                        //  txtValor.setText("0");
+
                         String despesa = txtDespesa.getText().toString();
                         valor = txtValor.getText().toString();
                         Item novoItem = new Item(despesa, valor);
@@ -105,6 +107,7 @@ public class Main2Activity extends AppCompatActivity {
                     }
                 });
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -176,11 +179,6 @@ public class Main2Activity extends AppCompatActivity {
                 Intent i = new Intent(Main2Activity.this, Main4Activity.class);
                 i.putExtra("TotalDespesas", despesas);
                 startActivity(i);
-
-                // listaItens = new ArrayList<>(listaItens);
-        /* Intent intent = new Intent(Main2Activity.this, Main4Activity.class);
-        intent.putExtra("lista", listaItens);
-        startActivity(intent);*/
 
             } catch (NumberFormatException e) {
                 e.printStackTrace();

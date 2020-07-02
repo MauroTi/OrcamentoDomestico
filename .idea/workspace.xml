@@ -11,17 +11,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91bc989c-478e-46f4-8341-a1f1fad2049a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_database_19_3_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_database_collection_17_0_1_aar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/CustomToast.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/Main2Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/Main2Activity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/Main3Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/Main3Activity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/Main4Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/Main4Activity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_lista.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_lista.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main3.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +64,10 @@
     </option>
   </component>
   <component name="GenerateSignedApkSettings">
-    <option name="BUILD_TARGET_KEY" value="apk" />
+    <option name="EXPORT_PRIVATE_KEY" value="false" />
+    <option name="KEY_STORE_PATH" value="C:\Users\MAURO\Desktop\Orcamento\Orcamento.jks" />
+    <option name="KEY_ALIAS" value="key0" />
+    <option name="REMEMBER_PASSWORDS" value="true" />
   </component>
   <component name="Git.Settings">
     <favorite-branches>
@@ -102,11 +107,14 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ApkExportedModule" value="app" />
+    <property name="BundleExportedModule" value="app" />
     <property name="DEBUGGABLE_DEVICE" value="Nexus_5_API_29 [emulator-5554]" />
     <property name="DEBUGGABLE_PROCESS" value="com.example.orcamentodomestico" />
     <property name="DEBUGGER_ID" value="Auto" />
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Nexus_5X_API_29" />
     <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-06-08T14:42:31.026Z" />
+    <property name="ExportApk.ApkPath" value="C:\Users\MAURO\AndroidStudioProjects\OrcamentoDomestico\app" />
+    <property name="ExportApk.BuildVariants" value="release" />
     <property name="OverrideImplement.combined" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHOW_ALL_PROCESSES" value="false" />
@@ -553,7 +561,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592086400019</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Logout e sair funcionando">
+      <created>1593122548725</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1593122548725</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -570,7 +585,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Primeiro commit" />
     <MESSAGE value="Primeiro_commit" />
     <MESSAGE value="Criadas classes" />
     <MESSAGE value="Tentando implementar MVC" />
@@ -595,13 +609,16 @@
     <MESSAGE value="Conectado Firebase Login quase completo" />
     <MESSAGE value="Reset password funcionando" />
     <MESSAGE value="Reset password funcionando e espera btnLogout" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reset password funcionando e espera btnLogout" />
+    <MESSAGE value="Logout e sair funcionando" />
+    <option name="LAST_COMMIT_MESSAGE" value="Logout e sair funcionando" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="275" y="2" key="#Notifications" timestamp="1591381176222">
-      <screen x="0" y="0" width="1366" height="687" />
+    <state x="274" y="2" key="#Notifications" timestamp="1593698707975">
+      <screen x="0" y="0" width="1360" height="687" />
     </state>
+    <state x="274" y="2" key="#Notifications/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1593698707975" />
     <state x="275" y="2" key="#Notifications/0.0.1366.687@0.0.1366.687" timestamp="1591381176222" />
     <state x="397" y="0" key="#OrcamentoDomestico_[dependencies]" timestamp="1591626067734">
       <screen x="0" y="0" width="1366" height="687" />
@@ -611,62 +628,103 @@
       <screen x="0" y="0" width="1366" height="687" />
     </state>
     <state x="200" y="75" key="#PSD/0.0.1366.687@0.0.1366.687" timestamp="1591375002306" />
-    <state x="411" y="98" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1593007234518">
+    <state x="411" y="98" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1593180929086">
       <screen x="0" y="0" width="1360" height="687" />
     </state>
-    <state x="411" y="98" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1593007234518" />
+    <state x="411" y="98" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1593180929086" />
     <state x="413" y="98" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1366.687@0.0.1366.687" timestamp="1591636455621" />
     <state x="500" y="0" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog" timestamp="1591033942256">
       <screen x="0" y="0" width="1366" height="687" />
     </state>
     <state x="500" y="0" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog/0.0.1366.687@0.0.1366.687" timestamp="1591033942256" />
-    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1592086398309">
-      <screen x="0" y="0" width="1366" height="687" />
+    <state x="586" y="14" key="#xdebugger.XInspectDialog" timestamp="1593185409026">
+      <screen x="0" y="0" width="1360" height="687" />
     </state>
+    <state x="586" y="14" key="#xdebugger.XInspectDialog/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1593185409026" />
+    <state x="435" y="0" key="#xdebugger.evaluate" timestamp="1593185779033">
+      <screen x="0" y="0" width="1360" height="687" />
+    </state>
+    <state x="435" y="0" key="#xdebugger.evaluate/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1593185779033" />
+    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1593122547511">
+      <screen x="0" y="0" width="1360" height="687" />
+    </state>
+    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1593122547511" />
     <state x="0" y="0" key="CommitChangelistDialog2/0.0.1366.687@0.0.1366.687" timestamp="1592086398309" />
-    <state x="463" y="85" key="FileChooserDialogImpl" timestamp="1591820893618">
-      <screen x="0" y="0" width="1366" height="687" />
+    <state x="461" y="85" key="FileChooserDialogImpl" timestamp="1593698578042">
+      <screen x="0" y="0" width="1360" height="687" />
     </state>
+    <state x="461" y="85" key="FileChooserDialogImpl/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1593698578042" />
     <state x="463" y="85" key="FileChooserDialogImpl/0.0.1366.687@0.0.1366.687" timestamp="1591820893618" />
-    <state width="1323" height="6" key="GridCell.Tab.0.bottom" timestamp="1591794783690">
-      <screen x="0" y="0" width="1366" height="687" />
+    <state width="1317" height="362" key="GridCell.Tab.0.bottom" timestamp="1593186188760">
+      <screen x="0" y="0" width="1360" height="687" />
     </state>
+    <state width="1317" height="362" key="GridCell.Tab.0.bottom/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1593186188760" />
     <state width="1323" height="6" key="GridCell.Tab.0.bottom/0.0.1366.687@0.0.1366.687" timestamp="1591794783690" />
-    <state width="1323" height="6" key="GridCell.Tab.0.center" timestamp="1591794783689">
-      <screen x="0" y="0" width="1366" height="687" />
+    <state width="1317" height="362" key="GridCell.Tab.0.center" timestamp="1593186188760">
+      <screen x="0" y="0" width="1360" height="687" />
     </state>
+    <state width="1317" height="362" key="GridCell.Tab.0.center/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1593186188760" />
     <state width="1323" height="6" key="GridCell.Tab.0.center/0.0.1366.687@0.0.1366.687" timestamp="1591794783689" />
-    <state width="1323" height="6" key="GridCell.Tab.0.left" timestamp="1591794783689">
-      <screen x="0" y="0" width="1366" height="687" />
+    <state width="1317" height="362" key="GridCell.Tab.0.left" timestamp="1593186188760">
+      <screen x="0" y="0" width="1360" height="687" />
     </state>
+    <state width="1317" height="362" key="GridCell.Tab.0.left/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1593186188760" />
     <state width="1323" height="6" key="GridCell.Tab.0.left/0.0.1366.687@0.0.1366.687" timestamp="1591794783689" />
-    <state width="1323" height="6" key="GridCell.Tab.0.right" timestamp="1591794783690">
-      <screen x="0" y="0" width="1366" height="687" />
+    <state width="1317" height="362" key="GridCell.Tab.0.right" timestamp="1593186188760">
+      <screen x="0" y="0" width="1360" height="687" />
     </state>
+    <state width="1317" height="362" key="GridCell.Tab.0.right/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1593186188760" />
     <state width="1323" height="6" key="GridCell.Tab.0.right/0.0.1366.687@0.0.1366.687" timestamp="1591794783690" />
-    <state width="1323" height="118" key="GridCell.Tab.1.bottom" timestamp="1591626764871">
-      <screen x="0" y="0" width="1366" height="687" />
+    <state width="1317" height="219" key="GridCell.Tab.1.bottom" timestamp="1593186110682">
+      <screen x="0" y="0" width="1360" height="687" />
     </state>
+    <state width="1317" height="219" key="GridCell.Tab.1.bottom/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1593186110682" />
     <state width="1323" height="118" key="GridCell.Tab.1.bottom/0.0.1366.687@0.0.1366.687" timestamp="1591626764871" />
-    <state width="1323" height="118" key="GridCell.Tab.1.center" timestamp="1591626764870">
-      <screen x="0" y="0" width="1366" height="687" />
+    <state width="1317" height="219" key="GridCell.Tab.1.center" timestamp="1593186110682">
+      <screen x="0" y="0" width="1360" height="687" />
     </state>
+    <state width="1317" height="219" key="GridCell.Tab.1.center/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1593186110682" />
     <state width="1323" height="118" key="GridCell.Tab.1.center/0.0.1366.687@0.0.1366.687" timestamp="1591626764870" />
-    <state width="1323" height="118" key="GridCell.Tab.1.left" timestamp="1591626764870">
-      <screen x="0" y="0" width="1366" height="687" />
+    <state width="1317" height="219" key="GridCell.Tab.1.left" timestamp="1593186110682">
+      <screen x="0" y="0" width="1360" height="687" />
     </state>
+    <state width="1317" height="219" key="GridCell.Tab.1.left/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1593186110682" />
     <state width="1323" height="118" key="GridCell.Tab.1.left/0.0.1366.687@0.0.1366.687" timestamp="1591626764870" />
-    <state width="1323" height="118" key="GridCell.Tab.1.right" timestamp="1591626764870">
-      <screen x="0" y="0" width="1366" height="687" />
+    <state width="1317" height="219" key="GridCell.Tab.1.right" timestamp="1593186110682">
+      <screen x="0" y="0" width="1360" height="687" />
     </state>
+    <state width="1317" height="219" key="GridCell.Tab.1.right/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1593186110682" />
     <state width="1323" height="118" key="GridCell.Tab.1.right/0.0.1366.687@0.0.1366.687" timestamp="1591626764870" />
-    <state x="275" y="72" key="Vcs.Push.Dialog.v2" timestamp="1592086426844">
-      <screen x="0" y="0" width="1366" height="687" />
+    <state x="274" y="72" key="Vcs.Push.Dialog.v2" timestamp="1593122552539">
+      <screen x="0" y="0" width="1360" height="687" />
     </state>
+    <state x="274" y="72" key="Vcs.Push.Dialog.v2/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1593122552539" />
     <state x="275" y="72" key="Vcs.Push.Dialog.v2/0.0.1366.687@0.0.1366.687" timestamp="1592086426844" />
-    <state x="100" y="100" width="1166" height="487" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1591624705697">
-      <screen x="0" y="0" width="1366" height="687" />
+    <state x="100" y="100" width="1161" height="487" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1593691936302">
+      <screen x="0" y="0" width="1360" height="687" />
     </state>
+    <state x="100" y="100" width="1161" height="487" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1593691936302" />
     <state x="100" y="100" width="1166" height="487" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.1366.687@0.0.1366.687" timestamp="1591624705697" />
+    <state x="441" y="189" key="edit.logcat.filter.dialog.dimensions" timestamp="1593186143671">
+      <screen x="0" y="0" width="1360" height="687" />
+    </state>
+    <state x="441" y="189" key="edit.logcat.filter.dialog.dimensions/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1593186143671" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/Main4Activity.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="app">
+        <watch expression="listaItens" language="JAVA" />
+        <watch expression="lista" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

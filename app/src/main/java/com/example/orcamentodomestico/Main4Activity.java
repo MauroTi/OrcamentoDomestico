@@ -135,7 +135,8 @@ public class Main4Activity extends AppCompatActivity {
 
     public void proxima(View view) {
 
-    Float receitas = Float.valueOf(0);
+
+        Float receitas = Float.valueOf(0);
     Float diferenca = Float.valueOf(0);
     Float pegaValor;
 

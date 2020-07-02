@@ -3,6 +3,7 @@ package com.example.orcamentodomestico;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.icu.text.SimpleDateFormat;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuInflater;
@@ -19,29 +20,35 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
 import java.text.DecimalFormat;
+import java.util.Date;
 
 public class Main3Activity extends AppCompatActivity {
 
-    private Button btnLogout;
+  private Button btnLogout;
+  TextView txtData;
 
-    public boolean onCreateOptionsMenu(android.view.Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.main, menu);
+  public boolean onCreateOptionsMenu(android.view.Menu menu) {
+    MenuInflater inflater = getMenuInflater();
+    inflater.inflate(R.menu.main, menu);
 
-        return true;
-    }
+    return true;
+  }
 
-    ;
+  ;
 
-    @RequiresApi(api = Build.VERSION_CODES.N)
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main3);
+  @RequiresApi(api = Build.VERSION_CODES.N)
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main3);
 
-        TextView tvReceitas = findViewById(R.id.receitaFinal);
-        TextView tvDespesas = findViewById(R.id.despesaFinal);
-        TextView tvSaldo = findViewById(R.id.saldoFinal);
+    txtData = (TextView) findViewById(R.id.data);
+    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+    txtData.setText(sdf.format(new Date()));
+
+    TextView tvReceitas = findViewById(R.id.receitaFinal);
+    TextView tvDespesas = findViewById(R.id.despesaFinal);
+    TextView tvSaldo = findViewById(R.id.saldoFinal);
     btnLogout = (Button) findViewById(R.id.btnLogout);
 
     Bundle extras = getIntent().getExtras();
@@ -79,61 +86,63 @@ public class Main3Activity extends AppCompatActivity {
     String saidaSaldo = dfSaldo.format(resultadoDouble);
     tvSaldo.setText(saidaSaldo);
 
-        btnLogout.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        disconnect();
-                    }
-                });
+    btnLogout.setOnClickListener(
+            new View.OnClickListener() {
+              @Override
+              public void onClick(View v) {
+                disconnect();
+              }
+            });
+
+
+  }
+
+  public void voltar(View view) {
+    Intent intent = new Intent(Main3Activity.this, Main2Activity.class);
+    startActivity(intent);
+  }
+
+  public void sair(View view) {
+    finishAffinity();
+  }
+
+
+  @Override
+  public boolean onOptionsItemSelected(MenuItem item) {
+    int id = item.getItemId();
+    if (id == R.id.logout) {
+      disconnect();
+      return true;
+    } else if (id == R.id.sair) {
+      new AlertDialog.Builder(this)
+              .setTitle("Sair do App?")
+              .setMessage("Tem certeza que deseja sair do aplicativo?")
+              .setPositiveButton(
+                      "sim",
+                      new DialogInterface.OnClickListener() {
+
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+
+                          finish();
+                        }
+                      })
+              .setNegativeButton("não", null)
+              .show();
     }
+    return super.onOptionsItemSelected(item);
+  }
 
-    public void voltar(View view) {
-        Intent intent = new Intent(Main3Activity.this, Main2Activity.class);
-        startActivity(intent);
-    }
+  private void disconnect() {
+    FirebaseAuth.getInstance().signOut();
+    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+    startActivity(intent);
+    Toast.makeText(getApplicationContext(), "Logout efetuado com sucesso!", Toast.LENGTH_LONG)
+            .show();
+  }
 
-    public void sair(View view) {
-        finishAffinity();
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.logout) {
-            disconnect();
-            return true;
-        } else if (id == R.id.sair) {
-            new AlertDialog.Builder(this)
-                    .setTitle("Sair do App?")
-                    .setMessage("Tem certeza que deseja sair do aplicativo?")
-                    .setPositiveButton(
-                            "sim",
-                            new DialogInterface.OnClickListener() {
-
-                                @Override
-                                public void onClick(DialogInterface dialogInterface, int i) {
-
-                                    finish();
-                                }
-                            })
-                    .setNegativeButton("não", null)
-                    .show();
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    private void disconnect() {
-        FirebaseAuth.getInstance().signOut();
-        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-        startActivity(intent);
-        Toast.makeText(getApplicationContext(), "Logout efetuado com sucesso!", Toast.LENGTH_LONG)
-                .show();
-    }
-
-
-    public void logout(MenuItem item) {
-    }
+  public void logout(MenuItem item) {
+  }
 }
 
   // Intent intent = new Intent(Main2Activity.this, Main4Activity.class);
