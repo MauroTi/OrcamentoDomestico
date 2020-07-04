@@ -6,24 +6,41 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="debug" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91bc989c-478e-46f4-8341-a1f1fad2049a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_database_19_3_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_database_collection_17_0_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_datatransport_transport_api_2_2_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_datatransport_transport_backend_cct_2_2_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_datatransport_transport_runtime_2_2_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_17_4_3_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_dagger_dagger_2_24_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_datatransport_17_0_3_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_encoders_json_16_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_iid_20_2_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_messaging_20_2_1_aar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_17_4_2_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_api_17_4_2_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_api_17_4_3_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_base_17_4_2_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_base_17_4_3_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_impl_17_4_2_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_impl_17_4_3_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_sdk_17_4_2_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_sdk_17_4_3_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_sdk_api_17_4_2_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_sdk_api_17_4_3_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_analytics_17_4_2_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_analytics_17_4_3_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_database_19_3_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_database_19_3_1_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_iid_20_1_5_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_installations_16_2_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_installations_16_3_2_aar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/CustomToast.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/google-services.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/google-services.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/Main2Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/Main2Activity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/Main3Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/Main3Activity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/Main4Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/Main4Activity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_lista.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_lista.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,9 +59,28 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Orçamento  Doméstico" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Orçamento  Doméstico" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Orçamento  Doméstico" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="verification" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -121,7 +157,7 @@
     <property name="add_unversioned_files" value="true" />
     <property name="android.sdk.path" value="D:/Android SDK" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../EsqueciMinhaSenha" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Suggestions" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -304,6 +340,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="OrcamentoDomestico [signingReport]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="signingReport" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="TestNG">
       <option name="TEST_OBJECT" value="CLASS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -315,6 +370,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.OrcamentoDomestico [signingReport]" />
         <item itemvalue="Android App.MainActivity" />
       </list>
     </recent_temporary>
@@ -568,7 +624,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593122548725</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Falta relatorio e database">
+      <created>1593699707178</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1593699707178</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -585,7 +648,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Primeiro_commit" />
     <MESSAGE value="Criadas classes" />
     <MESSAGE value="Tentando implementar MVC" />
     <MESSAGE value="MVC" />
@@ -610,7 +672,8 @@
     <MESSAGE value="Reset password funcionando" />
     <MESSAGE value="Reset password funcionando e espera btnLogout" />
     <MESSAGE value="Logout e sair funcionando" />
-    <option name="LAST_COMMIT_MESSAGE" value="Logout e sair funcionando" />
+    <MESSAGE value="Falta relatorio e database" />
+    <option name="LAST_COMMIT_MESSAGE" value="Falta relatorio e database" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -645,35 +708,35 @@
       <screen x="0" y="0" width="1360" height="687" />
     </state>
     <state x="435" y="0" key="#xdebugger.evaluate/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1593185779033" />
-    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1593122547511">
+    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1593699705932">
       <screen x="0" y="0" width="1360" height="687" />
     </state>
-    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1593122547511" />
+    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1593699705932" />
     <state x="0" y="0" key="CommitChangelistDialog2/0.0.1366.687@0.0.1366.687" timestamp="1592086398309" />
     <state x="461" y="85" key="FileChooserDialogImpl" timestamp="1593698578042">
       <screen x="0" y="0" width="1360" height="687" />
     </state>
     <state x="461" y="85" key="FileChooserDialogImpl/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1593698578042" />
     <state x="463" y="85" key="FileChooserDialogImpl/0.0.1366.687@0.0.1366.687" timestamp="1591820893618" />
-    <state width="1317" height="362" key="GridCell.Tab.0.bottom" timestamp="1593186188760">
+    <state width="1317" height="229" key="GridCell.Tab.0.bottom" timestamp="1593883767801">
       <screen x="0" y="0" width="1360" height="687" />
     </state>
-    <state width="1317" height="362" key="GridCell.Tab.0.bottom/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1593186188760" />
+    <state width="1317" height="229" key="GridCell.Tab.0.bottom/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1593883767801" />
     <state width="1323" height="6" key="GridCell.Tab.0.bottom/0.0.1366.687@0.0.1366.687" timestamp="1591794783690" />
-    <state width="1317" height="362" key="GridCell.Tab.0.center" timestamp="1593186188760">
+    <state width="1317" height="229" key="GridCell.Tab.0.center" timestamp="1593883767800">
       <screen x="0" y="0" width="1360" height="687" />
     </state>
-    <state width="1317" height="362" key="GridCell.Tab.0.center/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1593186188760" />
+    <state width="1317" height="229" key="GridCell.Tab.0.center/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1593883767800" />
     <state width="1323" height="6" key="GridCell.Tab.0.center/0.0.1366.687@0.0.1366.687" timestamp="1591794783689" />
-    <state width="1317" height="362" key="GridCell.Tab.0.left" timestamp="1593186188760">
+    <state width="1317" height="229" key="GridCell.Tab.0.left" timestamp="1593883767800">
       <screen x="0" y="0" width="1360" height="687" />
     </state>
-    <state width="1317" height="362" key="GridCell.Tab.0.left/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1593186188760" />
+    <state width="1317" height="229" key="GridCell.Tab.0.left/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1593883767800" />
     <state width="1323" height="6" key="GridCell.Tab.0.left/0.0.1366.687@0.0.1366.687" timestamp="1591794783689" />
-    <state width="1317" height="362" key="GridCell.Tab.0.right" timestamp="1593186188760">
+    <state width="1317" height="229" key="GridCell.Tab.0.right" timestamp="1593883767801">
       <screen x="0" y="0" width="1360" height="687" />
     </state>
-    <state width="1317" height="362" key="GridCell.Tab.0.right/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1593186188760" />
+    <state width="1317" height="229" key="GridCell.Tab.0.right/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1593883767801" />
     <state width="1323" height="6" key="GridCell.Tab.0.right/0.0.1366.687@0.0.1366.687" timestamp="1591794783690" />
     <state width="1317" height="219" key="GridCell.Tab.1.bottom" timestamp="1593186110682">
       <screen x="0" y="0" width="1360" height="687" />
@@ -695,10 +758,10 @@
     </state>
     <state width="1317" height="219" key="GridCell.Tab.1.right/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1593186110682" />
     <state width="1323" height="118" key="GridCell.Tab.1.right/0.0.1366.687@0.0.1366.687" timestamp="1591626764870" />
-    <state x="274" y="72" key="Vcs.Push.Dialog.v2" timestamp="1593122552539">
+    <state x="274" y="72" key="Vcs.Push.Dialog.v2" timestamp="1593699711632">
       <screen x="0" y="0" width="1360" height="687" />
     </state>
-    <state x="274" y="72" key="Vcs.Push.Dialog.v2/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1593122552539" />
+    <state x="274" y="72" key="Vcs.Push.Dialog.v2/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1593699711632" />
     <state x="275" y="72" key="Vcs.Push.Dialog.v2/0.0.1366.687@0.0.1366.687" timestamp="1592086426844" />
     <state x="100" y="100" width="1161" height="487" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1593691936302">
       <screen x="0" y="0" width="1360" height="687" />
@@ -715,7 +778,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/Main4Activity.java</url>
-          <line>57</line>
+          <line>66</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
