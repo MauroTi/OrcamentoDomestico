@@ -28,7 +28,7 @@ import java.util.Locale;
 public class Main2Activity extends AppCompatActivity {
 
 
-    DatabaseReference dbreference;
+    DatabaseReference dbreference; //banco
     // criação do adapter e da lista
     ListAdapterItem adapter;
     ArrayList<Item> listaItens;
@@ -59,7 +59,7 @@ public class Main2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-        dbreference = FirebaseDatabase.getInstance().getReference("relatorios");
+        dbreference = FirebaseDatabase.getInstance().getReference("despesas"); //banco
 
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
@@ -178,8 +178,10 @@ public class Main2Activity extends AppCompatActivity {
 
                 for (Iterator<Item> iterator = listaItens.iterator(); iterator.hasNext(); ) {
                     Item item = iterator.next(); // pega o item da lista
-                    String id = dbreference.push().getKey();
-                    dbreference.child(id).setValue(item);
+
+                    String id = dbreference.push().getKey(); //banco
+                    dbreference.child(id).setValue(item); //banco
+
                     pegaValor = Float.parseFloat(item.getValor().replaceAll("\\D", ""));
                     despesas = (despesas) + (pegaValor / 100);
                 }

@@ -18,11 +18,15 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.text.DecimalFormat;
 import java.util.Date;
 
 public class Main3Activity extends AppCompatActivity {
+
+  DatabaseReference dbreference; //banco
 
   private Button btnLogout;
   TextView txtData;
@@ -42,6 +46,8 @@ public class Main3Activity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main3);
 
+    dbreference = FirebaseDatabase.getInstance().getReference("totais"); //banco
+
     txtData = (TextView) findViewById(R.id.data);
     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
     txtData.setText(sdf.format(new Date()));
@@ -59,6 +65,11 @@ public class Main3Activity extends AppCompatActivity {
     Double despesaDouble = Double.parseDouble(despesas);
     Double receitaDouble = Double.parseDouble(receitas);
     Double resultadoDouble = Double.parseDouble(resultado);
+
+    String id = dbreference.push().getKey(); //banco
+    dbreference.child(id).setValue(despesas); //banco
+    dbreference.child(id).setValue(receitas); //banco
+    dbreference.child(id).setValue(resultado); //banco
 
     tvDespesas.setBackgroundResource(R.drawable.rounded_corner_main3_green);
     tvDespesas.setTextColor(Color.BLACK);
@@ -145,5 +156,3 @@ public class Main3Activity extends AppCompatActivity {
   }
 }
 
-  // Intent intent = new Intent(Main2Activity.this, Main4Activity.class);
-  // startActivity(intent);

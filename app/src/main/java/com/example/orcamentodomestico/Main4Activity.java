@@ -17,6 +17,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -24,13 +26,15 @@ import java.util.Locale;
 
 public class Main4Activity extends AppCompatActivity {
 
-  // criação do adapter e da lista
-  ListAdapterItem adapter;
-  ArrayList<Item> listaItens;
-  // fim criação adapter e lista
+    DatabaseReference dbreference; //banco
 
-  int testeAdd;
-  String valor = String.valueOf(0);
+    // criação do adapter e da lista
+    ListAdapterItem adapter;
+    ArrayList<Item> listaItens;
+    // fim criação adapter e lista
+
+    int testeAdd;
+    String valor = String.valueOf(0);
     Float despesas;
 
     // controles da tela
@@ -54,15 +58,18 @@ public class Main4Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main4);
+
+        dbreference = FirebaseDatabase.getInstance().getReference("receitas"); //banco
+
         final Context context = this;
         listaItens = new ArrayList<Item>();
         adapter = new ListAdapterItem(context, listaItens);
 
         minhaLista = findViewById(R.id.minhaLista);
-    minhaLista.setAdapter(adapter);
-    txtReceita = findViewById(R.id.receita);
-    txtValorReceita = findViewById(R.id.valorReceita);
-    monetaryMask = new MonetaryMask(this.txtValorReceita);
+        minhaLista.setAdapter(adapter);
+        txtReceita = findViewById(R.id.receita);
+        txtValorReceita = findViewById(R.id.valorReceita);
+        monetaryMask = new MonetaryMask(this.txtValorReceita);
     btnAdicionar = findViewById(R.id.btnAdicionarReceita);
 
     Locale mLocale = new Locale("pt", "BR");
@@ -146,6 +153,9 @@ public class Main4Activity extends AppCompatActivity {
           for (Iterator<Item> iterator = listaItens.iterator(); iterator.hasNext(); ) {
               Item item = iterator.next(); // pega o item da lista
 
+              String id = dbreference.push().getKey(); //banco
+              dbreference.child(id).setValue(item); //banco
+
               pegaValor = Float.parseFloat(item.getValor().replaceAll("\\D", ""));
               receitas = receitas + (pegaValor / 100);
           }
@@ -159,12 +169,6 @@ public class Main4Activity extends AppCompatActivity {
           i.putExtra("Diferenca", "" + diferenca);
           startActivity(i);
 
-        /* Intent intent = getIntent();
-        ListAdapterItem lista = (ListAdapterItem) intent.getSerializableExtra("lista");*/
-
-        /* Intent it = new Intent(Main4Activity.this, Main3Activity.class);
-        it.putExtra("NomesValoresReceitas", listaItens);
-        startActivity(it);*/
       } catch (NumberFormatException e) {
         e.printStackTrace();
       }
