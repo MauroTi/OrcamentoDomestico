@@ -114,12 +114,26 @@ public class Main2Activity extends AppCompatActivity {
                 });
     }
 
-
+//Botoes barra app
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.logout) {
-            disconnect();
+            new AlertDialog.Builder(this)
+                    .setTitle("Efetuar logout?")
+                    .setMessage("Tem certeza que deseja efetuar logout?")
+                    .setPositiveButton(
+                            "sim",
+                            new DialogInterface.OnClickListener() {
+
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+
+                                    disconnect();
+                                }
+                            })
+                    .setNegativeButton("não", null)
+                    .show();
             return true;
         } else if (id == R.id.sair) {
             new AlertDialog.Builder(this)

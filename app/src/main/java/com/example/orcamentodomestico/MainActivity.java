@@ -1,10 +1,12 @@
 package com.example.orcamentodomestico;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,6 +14,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -155,6 +158,38 @@ public class MainActivity extends AppCompatActivity {
             disconnect();
         }
     });*/
+  }
+
+  //Botões barra app
+  @Override
+  public boolean onOptionsItemSelected(MenuItem item) {
+    int id = item.getItemId();
+    if (id == R.id.logout) {
+      new AlertDialog.Builder(this)
+              .setTitle("Nenhum usuário logado!")
+              .setMessage("Não há usuários logados no momento!")
+              .setNegativeButton("Ok", null)
+              .show();
+
+      return true;
+    } else if (id == R.id.sair) {
+      new AlertDialog.Builder(this)
+              .setTitle("Sair do App?")
+              .setMessage("Tem certeza que deseja sair do aplicativo?")
+              .setPositiveButton(
+                      "sim",
+                      new DialogInterface.OnClickListener() {
+
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+
+                          finish();
+                        }
+                      })
+              .setNegativeButton("não", null)
+              .show();
+    }
+    return super.onOptionsItemSelected(item);
   }
 
   private void loginUser(String email, String password) {

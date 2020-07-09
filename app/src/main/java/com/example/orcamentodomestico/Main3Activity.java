@@ -66,10 +66,6 @@ public class Main3Activity extends AppCompatActivity {
     Double receitaDouble = Double.parseDouble(receitas);
     Double resultadoDouble = Double.parseDouble(resultado);
 
-    String id = dbreference.push().getKey(); //banco
-    dbreference.child(id).setValue(despesas); //banco
-    dbreference.child(id).setValue(receitas); //banco
-    dbreference.child(id).setValue(resultado); //banco
 
     tvDespesas.setBackgroundResource(R.drawable.rounded_corner_main3_green);
     tvDespesas.setTextColor(Color.BLACK);
@@ -97,6 +93,13 @@ public class Main3Activity extends AppCompatActivity {
     String saidaSaldo = dfSaldo.format(resultadoDouble);
     tvSaldo.setText(saidaSaldo);
 
+     /* String desp = dbreference.push().getKey(); //banco
+    dbreference.child(desp).setValue(saidadespesas); //banco
+    String rec = dbreference.push().getKey(); //banco
+    dbreference.child(rec).setValue(saidareceitas); //banco*/
+    String id = dbreference.push().getKey(); //banco
+    dbreference.child(id).setValue(saidaSaldo); //banco
+
     btnLogout.setOnClickListener(
             new View.OnClickListener() {
               @Override
@@ -118,11 +121,26 @@ public class Main3Activity extends AppCompatActivity {
   }
 
 
+  //Botoes barra app
   @Override
   public boolean onOptionsItemSelected(MenuItem item) {
     int id = item.getItemId();
     if (id == R.id.logout) {
-      disconnect();
+      new AlertDialog.Builder(this)
+              .setTitle("Efetuar logout?")
+              .setMessage("Tem certeza que deseja efetuar logout?")
+              .setPositiveButton(
+                      "sim",
+                      new DialogInterface.OnClickListener() {
+
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+
+                          disconnect();
+                        }
+                      })
+              .setNegativeButton("não", null)
+              .show();
       return true;
     } else if (id == R.id.sair) {
       new AlertDialog.Builder(this)

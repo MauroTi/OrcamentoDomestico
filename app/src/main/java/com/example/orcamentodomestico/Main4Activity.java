@@ -26,7 +26,7 @@ import java.util.Locale;
 
 public class Main4Activity extends AppCompatActivity {
 
-    DatabaseReference dbreference; //banco
+    DatabaseReference dbreference; // banco
 
     // criação do adapter e da lista
     ListAdapterItem adapter;
@@ -59,7 +59,7 @@ public class Main4Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main4);
 
-        dbreference = FirebaseDatabase.getInstance().getReference("receitas"); //banco
+        dbreference = FirebaseDatabase.getInstance().getReference("receitas"); // banco
 
         final Context context = this;
         listaItens = new ArrayList<Item>();
@@ -70,39 +70,54 @@ public class Main4Activity extends AppCompatActivity {
         txtReceita = findViewById(R.id.receita);
         txtValorReceita = findViewById(R.id.valorReceita);
         monetaryMask = new MonetaryMask(this.txtValorReceita);
-    btnAdicionar = findViewById(R.id.btnAdicionarReceita);
+        btnAdicionar = findViewById(R.id.btnAdicionarReceita);
 
-    Locale mLocale = new Locale("pt", "BR");
-    txtValorReceita.addTextChangedListener(new MonetaryMask(txtValorReceita, mLocale));
+        Locale mLocale = new Locale("pt", "BR");
+        txtValorReceita.addTextChangedListener(new MonetaryMask(txtValorReceita, mLocale));
 
-    btnAdicionar.setOnClickListener(
-            new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    // txtValorReceita.setText("0");
-                    String despesa = txtReceita.getText().toString();
-                    valor = txtValorReceita.getText().toString();
-                    Item novoItem = new Item(despesa, valor);
-                    adapter.add(novoItem);
-                    adapter.notifyDataSetChanged();
-                    txtReceita.setText("");
-                    txtValorReceita.setText("0");
+        btnAdicionar.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        // txtValorReceita.setText("0");
+                        String despesa = txtReceita.getText().toString();
+                        valor = txtValorReceita.getText().toString();
+                        Item novoItem = new Item(despesa, valor);
+                        adapter.add(novoItem);
+                        adapter.notifyDataSetChanged();
+                        txtReceita.setText("");
+                        txtValorReceita.setText("0");
 
-                    // Contador dos itens adicionados
+                        // Contador dos itens adicionados
 
-                    TextView itensAddReceita = findViewById(R.id.itensAtuaisReceita);
-                    int itensReceita = adapter.getCount();
-                    testeAdd = itensReceita;
-                    itensAddReceita.setText(String.valueOf(itensReceita));
-                }
-            });
+                        TextView itensAddReceita = findViewById(R.id.itensAtuaisReceita);
+                        int itensReceita = adapter.getCount();
+                        testeAdd = itensReceita;
+                        itensAddReceita.setText(String.valueOf(itensReceita));
+                    }
+                });
     }
 
+    //Botoes barra app
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.logout) {
-            disconnect();
+            new AlertDialog.Builder(this)
+                    .setTitle("Efetuar logout?")
+                    .setMessage("Tem certeza que deseja efetuar logout?")
+                    .setPositiveButton(
+                            "sim",
+                            new DialogInterface.OnClickListener() {
+
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+
+                                    disconnect();
+                                }
+                            })
+                    .setNegativeButton("não", null)
+                    .show();
             return true;
         } else if (id == R.id.sair) {
             new AlertDialog.Builder(this)
@@ -142,49 +157,48 @@ public class Main4Activity extends AppCompatActivity {
 
     public void proxima(View view) {
 
-
         Float receitas = Float.valueOf(0);
-    Float diferenca = Float.valueOf(0);
-    Float pegaValor;
+        Float diferenca = Float.valueOf(0);
+        Float pegaValor;
 
-    if ((testeAdd > 0) && (!valor.equals(""))) {
-      try {
+        if ((testeAdd > 0) && (!valor.equals(""))) {
+            try {
 
-          for (Iterator<Item> iterator = listaItens.iterator(); iterator.hasNext(); ) {
-              Item item = iterator.next(); // pega o item da lista
+                for (Iterator<Item> iterator = listaItens.iterator(); iterator.hasNext(); ) {
+                    Item item = iterator.next(); // pega o item da lista
 
-              String id = dbreference.push().getKey(); //banco
-              dbreference.child(id).setValue(item); //banco
+                    String id = dbreference.push().getKey(); // banco
+                    dbreference.child(id).setValue(item); // banco
 
-              pegaValor = Float.parseFloat(item.getValor().replaceAll("\\D", ""));
-              receitas = receitas + (pegaValor / 100);
-          }
-          Bundle extras = getIntent().getExtras();
-          despesas = extras.getFloat("TotalDespesas");
-          diferenca = receitas - despesas;
+                    pegaValor = Float.parseFloat(item.getValor().replaceAll("\\D", ""));
+                    receitas = receitas + (pegaValor / 100);
+                }
+                Bundle extras = getIntent().getExtras();
+                despesas = extras.getFloat("TotalDespesas");
+                diferenca = receitas - despesas;
 
-          Intent i = new Intent(Main4Activity.this, Main3Activity.class);
-          i.putExtra("TotalDespesas", "" + despesas);
-          i.putExtra("TotalReceitas", "" + receitas);
-          i.putExtra("Diferenca", "" + diferenca);
-          startActivity(i);
+                Intent i = new Intent(Main4Activity.this, Main3Activity.class);
+                i.putExtra("TotalDespesas", "" + despesas);
+                i.putExtra("TotalReceitas", "" + receitas);
+                i.putExtra("Diferenca", "" + diferenca);
+                startActivity(i);
 
-      } catch (NumberFormatException e) {
+            } catch (NumberFormatException e) {
         e.printStackTrace();
       }
     } else {
-        new AlertDialog.Builder(this)
-                .setTitle("Nenhum valor!!!")
-                .setMessage("Nenhum valor válido adicionado!!!")
-                .setPositiveButton(
-                        "OK",
-                        new DialogInterface.OnClickListener() {
+            new AlertDialog.Builder(this)
+                    .setTitle("Nenhum valor!!!")
+                    .setMessage("Nenhum valor válido adicionado!!!")
+                    .setPositiveButton(
+                            "OK",
+                            new DialogInterface.OnClickListener() {
 
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                            }
-                        })
-                .show();
-    }
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                }
+                            })
+                    .show();
+        }
   }
 }

@@ -84,19 +84,3 @@ public class ResetPasswordActivity extends AppCompatActivity {
     }
 }
 
-   /* FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-
-   BreakIterator newPassword = null;
-                     assert newPassword != null;
-                     user.updatePassword(newPassword.getText().toString().trim())
-           .addOnCompleteListener(new OnCompleteListener<Void>() {
-       @Override
-       public void onComplete(@NonNull Task<Void> task) {
-           if (task.isSuccessful()) {
-               Toast.makeText(LoginActivity.this, "Password is updated!", Toast.LENGTH_SHORT).show();
-           } else {
-               Toast.makeText(LoginActivity.this, "Failed to update password!", Toast.LENGTH_SHORT).show();
-               //progressBar.setVisibility(View.GONE);
-           }
-       }
-   });*/

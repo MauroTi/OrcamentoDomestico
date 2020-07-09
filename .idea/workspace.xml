@@ -13,10 +13,11 @@
     <list default="true" id="91bc989c-478e-46f4-8341-a1f1fad2049a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/Main2Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/Main2Activity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/Main3Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/Main3Activity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/Main4Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/Main4Activity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/ResetPasswordActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/ResetPasswordActivity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,8 +71,8 @@
         <option value="layoutResourceFile" />
         <option value="layoutResourceFile_vertical" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="resourceFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -607,7 +608,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593699707178</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="banco funcionando">
+      <created>1594045903882</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1594045903882</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -624,7 +632,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Criadas classes" />
     <MESSAGE value="Tentando implementar MVC" />
     <MESSAGE value="MVC" />
     <MESSAGE value="Adicionada tela 4" />
@@ -649,9 +656,11 @@
     <MESSAGE value="Reset password funcionando e espera btnLogout" />
     <MESSAGE value="Logout e sair funcionando" />
     <MESSAGE value="Falta relatorio e database" />
-    <option name="LAST_COMMIT_MESSAGE" value="Falta relatorio e database" />
+    <MESSAGE value="banco funcionando" />
+    <option name="LAST_COMMIT_MESSAGE" value="banco funcionando" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="274" y="2" key="#Notifications" timestamp="1593698707975">
@@ -676,6 +685,10 @@
       <screen x="0" y="0" width="1366" height="687" />
     </state>
     <state x="500" y="0" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog/0.0.1366.687@0.0.1366.687" timestamp="1591033942256" />
+    <state x="360" y="71" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1594164374347">
+      <screen x="0" y="0" width="1360" height="687" />
+    </state>
+    <state x="360" y="71" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1594164374347" />
     <state x="586" y="14" key="#xdebugger.XInspectDialog" timestamp="1593185409026">
       <screen x="0" y="0" width="1360" height="687" />
     </state>
@@ -684,35 +697,35 @@
       <screen x="0" y="0" width="1360" height="687" />
     </state>
     <state x="435" y="0" key="#xdebugger.evaluate/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1593185779033" />
-    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1593884616693">
+    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1594045902740">
       <screen x="0" y="0" width="1360" height="687" />
     </state>
-    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1593884616693" />
+    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1594045902740" />
     <state x="0" y="0" key="CommitChangelistDialog2/0.0.1366.687@0.0.1366.687" timestamp="1592086398309" />
     <state x="461" y="85" key="FileChooserDialogImpl" timestamp="1593698578042">
       <screen x="0" y="0" width="1360" height="687" />
     </state>
     <state x="461" y="85" key="FileChooserDialogImpl/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1593698578042" />
     <state x="463" y="85" key="FileChooserDialogImpl/0.0.1366.687@0.0.1366.687" timestamp="1591820893618" />
-    <state width="1317" height="229" key="GridCell.Tab.0.bottom" timestamp="1593883767801">
+    <state width="1317" height="229" key="GridCell.Tab.0.bottom" timestamp="1594122119460">
       <screen x="0" y="0" width="1360" height="687" />
     </state>
-    <state width="1317" height="229" key="GridCell.Tab.0.bottom/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1593883767801" />
+    <state width="1317" height="229" key="GridCell.Tab.0.bottom/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1594122119460" />
     <state width="1323" height="6" key="GridCell.Tab.0.bottom/0.0.1366.687@0.0.1366.687" timestamp="1591794783690" />
-    <state width="1317" height="229" key="GridCell.Tab.0.center" timestamp="1593883767800">
+    <state width="1317" height="229" key="GridCell.Tab.0.center" timestamp="1594122119460">
       <screen x="0" y="0" width="1360" height="687" />
     </state>
-    <state width="1317" height="229" key="GridCell.Tab.0.center/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1593883767800" />
+    <state width="1317" height="229" key="GridCell.Tab.0.center/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1594122119460" />
     <state width="1323" height="6" key="GridCell.Tab.0.center/0.0.1366.687@0.0.1366.687" timestamp="1591794783689" />
-    <state width="1317" height="229" key="GridCell.Tab.0.left" timestamp="1593883767800">
+    <state width="1317" height="229" key="GridCell.Tab.0.left" timestamp="1594122119460">
       <screen x="0" y="0" width="1360" height="687" />
     </state>
-    <state width="1317" height="229" key="GridCell.Tab.0.left/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1593883767800" />
+    <state width="1317" height="229" key="GridCell.Tab.0.left/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1594122119460" />
     <state width="1323" height="6" key="GridCell.Tab.0.left/0.0.1366.687@0.0.1366.687" timestamp="1591794783689" />
-    <state width="1317" height="229" key="GridCell.Tab.0.right" timestamp="1593883767801">
+    <state width="1317" height="229" key="GridCell.Tab.0.right" timestamp="1594122119460">
       <screen x="0" y="0" width="1360" height="687" />
     </state>
-    <state width="1317" height="229" key="GridCell.Tab.0.right/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1593883767801" />
+    <state width="1317" height="229" key="GridCell.Tab.0.right/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1594122119460" />
     <state width="1323" height="6" key="GridCell.Tab.0.right/0.0.1366.687@0.0.1366.687" timestamp="1591794783690" />
     <state width="1317" height="219" key="GridCell.Tab.1.bottom" timestamp="1593186110682">
       <screen x="0" y="0" width="1360" height="687" />
@@ -734,10 +747,10 @@
     </state>
     <state width="1317" height="219" key="GridCell.Tab.1.right/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1593186110682" />
     <state width="1323" height="118" key="GridCell.Tab.1.right/0.0.1366.687@0.0.1366.687" timestamp="1591626764870" />
-    <state x="274" y="72" key="Vcs.Push.Dialog.v2" timestamp="1593884619871">
+    <state x="274" y="72" key="Vcs.Push.Dialog.v2" timestamp="1594045905768">
       <screen x="0" y="0" width="1360" height="687" />
     </state>
-    <state x="274" y="72" key="Vcs.Push.Dialog.v2/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1593884619871" />
+    <state x="274" y="72" key="Vcs.Push.Dialog.v2/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1594045905768" />
     <state x="275" y="72" key="Vcs.Push.Dialog.v2/0.0.1366.687@0.0.1366.687" timestamp="1592086426844" />
     <state x="100" y="100" width="1161" height="487" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1593691936302">
       <screen x="0" y="0" width="1360" height="687" />
