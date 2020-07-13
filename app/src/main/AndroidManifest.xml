@@ -17,10 +17,10 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".Main4Activity" />
         <activity android:name=".Main3Activity" />
+        <activity android:name=".Main4Activity" />
         <activity android:name=".Main2Activity" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".LoginActivity" />
         <activity android:name=".ResetPasswordActivity" />
 
     </application>

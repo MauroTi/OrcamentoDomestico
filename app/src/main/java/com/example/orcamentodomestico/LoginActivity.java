@@ -26,7 +26,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 import java.util.Objects;
 
-public class MainActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
   // CHAVE DO NOME DE USUÁRIO EM SHARED PREFERENCES
   private static final String NOME_USUARIO = "nome-usuario";
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_main);
+    setContentView(R.layout.login_main);
 
     // Initialize Firebase Auth
     mAuth = FirebaseAuth.getInstance();
@@ -91,15 +91,15 @@ public class MainActivity extends AppCompatActivity {
                 if ((email.getText().toString().equals(""))
                         && (senha.getText().toString().equals(""))) {
                   Toast.makeText(
-                          MainActivity.this, "Os campos devem estar preenchidos.", Toast.LENGTH_LONG)
+                          LoginActivity.this, "Os campos devem estar preenchidos.", Toast.LENGTH_LONG)
                           .show();
                 } else if (email.getText().toString().equals("")) {
                   Toast.makeText(
-                          MainActivity.this, "O campo email deve estar preenchido.", Toast.LENGTH_LONG)
+                          LoginActivity.this, "O campo email deve estar preenchido.", Toast.LENGTH_LONG)
                           .show();
                 } else if (senha.getText().toString().equals("")) {
                   Toast.makeText(
-                          MainActivity.this, "O campo senha deve estar preenchido.", Toast.LENGTH_LONG)
+                          LoginActivity.this, "O campo senha deve estar preenchido.", Toast.LENGTH_LONG)
                           .show();
                 } else if (!(email.getText().toString().equals(""))
                         && !(senha.getText().toString().equals(""))) {
@@ -116,15 +116,15 @@ public class MainActivity extends AppCompatActivity {
                 if ((email.getText().toString().equals(""))
                         && (senha.getText().toString().equals(""))) {
                   Toast.makeText(
-                          MainActivity.this, "Os campos devem estar preenchidos.", Toast.LENGTH_LONG)
+                          LoginActivity.this, "Os campos devem estar preenchidos.", Toast.LENGTH_LONG)
                           .show();
                 } else if (email.getText().toString().equals("")) {
                   Toast.makeText(
-                          MainActivity.this, "O campo email deve estar preenchido.", Toast.LENGTH_LONG)
+                          LoginActivity.this, "O campo email deve estar preenchido.", Toast.LENGTH_LONG)
                           .show();
                 } else if (senha.getText().toString().equals("")) {
                   Toast.makeText(
-                          MainActivity.this, "O campo senha deve estar preenchido.", Toast.LENGTH_LONG)
+                          LoginActivity.this, "O campo senha deve estar preenchido.", Toast.LENGTH_LONG)
                           .show();
                 } else if (!(email.getText().toString().equals(""))
                         && !(senha.getText().toString().equals(""))) {
@@ -138,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
             new View.OnClickListener() {
               @Override
               public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ResetPasswordActivity.class);
+                Intent intent = new Intent(LoginActivity.this, ResetPasswordActivity.class);
                 startActivity(intent);
               }
             });
@@ -232,7 +232,7 @@ public class MainActivity extends AppCompatActivity {
                           switch (errorCode) {
                             case "ERROR_INVALID_CUSTOM_TOKEN":
                               Toast.makeText(
-                                      MainActivity.this,
+                                      LoginActivity.this,
                                       "O formato do token personalizado está incorreto. Por favor, verifique a documentação.",
                                       Toast.LENGTH_LONG)
                                       .show();
@@ -240,7 +240,7 @@ public class MainActivity extends AppCompatActivity {
 
                             case "ERROR_CUSTOM_TOKEN_MISMATCH":
                               Toast.makeText(
-                                      MainActivity.this,
+                                      LoginActivity.this,
                                       "O token personalizado corresponde a um público diferente.",
                                       Toast.LENGTH_LONG)
                                       .show();
@@ -248,7 +248,7 @@ public class MainActivity extends AppCompatActivity {
 
                             case "ERROR_INVALID_CREDENTIAL":
                               Toast.makeText(
-                                      MainActivity.this,
+                                      LoginActivity.this,
                                       "A credencial de autenticação fornecida está incorreta ou expirou.",
                                       Toast.LENGTH_LONG)
                                       .show();
@@ -256,7 +256,7 @@ public class MainActivity extends AppCompatActivity {
 
                             case "ERROR_INVALID_EMAIL":
                               Toast.makeText(
-                                      MainActivity.this,
+                                      LoginActivity.this,
                                       "\n" + "O endereço de email está mal formatado.",
                                       Toast.LENGTH_LONG)
                                       .show();
@@ -266,7 +266,7 @@ public class MainActivity extends AppCompatActivity {
 
                             case "ERROR_WRONG_PASSWORD":
                               Toast.makeText(
-                                      MainActivity.this,
+                                      LoginActivity.this,
                                       "\n" + "A senha é inválida ou o usuário não tem uma senha.",
                                       Toast.LENGTH_LONG)
                                       .show();
@@ -277,7 +277,7 @@ public class MainActivity extends AppCompatActivity {
 
                             case "ERROR_USER_MISMATCH":
                               Toast.makeText(
-                                      MainActivity.this,
+                                      LoginActivity.this,
                                       "As credenciais fornecidas não correspondem ao usuário conectado anteriormente.",
                                       Toast.LENGTH_LONG)
                                       .show();
@@ -285,7 +285,7 @@ public class MainActivity extends AppCompatActivity {
 
                             case "ERROR_REQUIRES_RECENT_LOGIN":
                               Toast.makeText(
-                                      MainActivity.this,
+                                      LoginActivity.this,
                                       "Esta operação é sensível e requer autenticação recente. Efetue login novamente antes de tentar novamente esta solicitação.",
                                       Toast.LENGTH_LONG)
                                       .show();
@@ -293,7 +293,7 @@ public class MainActivity extends AppCompatActivity {
 
                             case "ERROR_ACCOUNT_EXISTS_WITH_DIFFERENT_CREDENTIAL":
                               Toast.makeText(
-                                      MainActivity.this,
+                                      LoginActivity.this,
                                       "Já existe uma conta com o mesmo endereço de email, mas com credenciais de login diferentes. Faça login usando um provedor associado a este endereço de e-mail.",
                                       Toast.LENGTH_LONG)
                                       .show();
@@ -301,7 +301,7 @@ public class MainActivity extends AppCompatActivity {
 
                             case "ERROR_EMAIL_ALREADY_IN_USE":
                               Toast.makeText(
-                                      MainActivity.this,
+                                      LoginActivity.this,
                                       "\n" + "O endereço de email já está sendo usado por outra conta.   ",
                                       Toast.LENGTH_LONG)
                                       .show();
@@ -311,7 +311,7 @@ public class MainActivity extends AppCompatActivity {
 
                             case "ERROR_CREDENTIAL_ALREADY_IN_USE":
                               Toast.makeText(
-                                      MainActivity.this,
+                                      LoginActivity.this,
                                       "Essa credencial já está associada a uma conta de usuário diferente.",
                                       Toast.LENGTH_LONG)
                                       .show();
@@ -319,7 +319,7 @@ public class MainActivity extends AppCompatActivity {
 
                             case "ERROR_USER_DISABLED":
                               Toast.makeText(
-                                      MainActivity.this,
+                                      LoginActivity.this,
                                       "A conta do usuário foi desativada por um administrador.",
                                       Toast.LENGTH_LONG)
                                       .show();
@@ -327,7 +327,7 @@ public class MainActivity extends AppCompatActivity {
 
                             case "ERROR_USER_TOKEN_EXPIRED":
                               Toast.makeText(
-                                      MainActivity.this,
+                                      LoginActivity.this,
                                       "A credencial do usuário não é mais válida. O usuário deve entrar novamente.",
                                       Toast.LENGTH_LONG)
                                       .show();
@@ -335,7 +335,7 @@ public class MainActivity extends AppCompatActivity {
 
                             case "ERROR_USER_NOT_FOUND":
                               Toast.makeText(
-                                      MainActivity.this,
+                                      LoginActivity.this,
                                       "Cadastro não encontrado! Tente novamente ou cadastre-se!",
                                       Toast.LENGTH_LONG)
                                       .show();
@@ -343,7 +343,7 @@ public class MainActivity extends AppCompatActivity {
 
                             case "ERROR_INVALID_USER_TOKEN":
                               Toast.makeText(
-                                      MainActivity.this,
+                                      LoginActivity.this,
                                       "A credencial do usuário não é mais válida. Entre novamente.",
                                       Toast.LENGTH_LONG)
                                       .show();
@@ -351,7 +351,7 @@ public class MainActivity extends AppCompatActivity {
 
                             case "ERROR_OPERATION_NOT_ALLOWED":
                               Toast.makeText(
-                                      MainActivity.this,
+                                      LoginActivity.this,
                                       "Esta operação não é permitida. Você deve ativar este serviço no console.",
                                       Toast.LENGTH_LONG)
                                       .show();
@@ -359,7 +359,7 @@ public class MainActivity extends AppCompatActivity {
 
                             case "ERROR_WEAK_PASSWORD":
                               Toast.makeText(
-                                      MainActivity.this,
+                                      LoginActivity.this,
                                       "\n" + "A senha fornecida é inválida.",
                                       Toast.LENGTH_LONG)
                                       .show();
@@ -369,7 +369,7 @@ public class MainActivity extends AppCompatActivity {
 
                             default:
                               Toast.makeText(
-                                      MainActivity.this, "Ops, ocorreu algo imprevisto.", Toast.LENGTH_LONG)
+                                      LoginActivity.this, "Ops, ocorreu algo imprevisto.", Toast.LENGTH_LONG)
                                       .show();
                               break;
                           }
@@ -410,7 +410,7 @@ public class MainActivity extends AppCompatActivity {
                           switch (errorCode) {
                             case "ERROR_INVALID_CUSTOM_TOKEN":
                               Toast.makeText(
-                                      MainActivity.this,
+                                      LoginActivity.this,
                                       "O formato do token personalizado está incorreto. Por favor, verifique a documentação.",
                                       Toast.LENGTH_LONG)
                                       .show();
@@ -418,7 +418,7 @@ public class MainActivity extends AppCompatActivity {
 
                             case "ERROR_CUSTOM_TOKEN_MISMATCH":
                               Toast.makeText(
-                                      MainActivity.this,
+                                      LoginActivity.this,
                                       "O token personalizado corresponde a um público diferente.",
                                       Toast.LENGTH_LONG)
                                       .show();
@@ -426,7 +426,7 @@ public class MainActivity extends AppCompatActivity {
 
                             case "ERROR_INVALID_CREDENTIAL":
                               Toast.makeText(
-                                      MainActivity.this,
+                                      LoginActivity.this,
                                       "A credencial de autenticação fornecida está incorreta ou expirou.",
                                       Toast.LENGTH_LONG)
                                       .show();
@@ -434,7 +434,7 @@ public class MainActivity extends AppCompatActivity {
 
                             case "ERROR_INVALID_EMAIL":
                               Toast.makeText(
-                                      MainActivity.this,
+                                      LoginActivity.this,
                                       "\n" + "O endereço de email está mal formatado.",
                                       Toast.LENGTH_LONG)
                                       .show();
@@ -444,7 +444,7 @@ public class MainActivity extends AppCompatActivity {
 
                             case "ERROR_WRONG_PASSWORD":
                               Toast.makeText(
-                                      MainActivity.this,
+                                      LoginActivity.this,
                                       "\n" + "A senha é inválida ou o usuário não tem uma senha.",
                                       Toast.LENGTH_LONG)
                                       .show();
@@ -455,7 +455,7 @@ public class MainActivity extends AppCompatActivity {
 
                             case "ERROR_USER_MISMATCH":
                               Toast.makeText(
-                                      MainActivity.this,
+                                      LoginActivity.this,
                                       "As credenciais fornecidas não correspondem ao usuário conectado anteriormente.",
                                       Toast.LENGTH_LONG)
                                       .show();
@@ -463,7 +463,7 @@ public class MainActivity extends AppCompatActivity {
 
                             case "ERROR_REQUIRES_RECENT_LOGIN":
                               Toast.makeText(
-                                      MainActivity.this,
+                                      LoginActivity.this,
                                       "Esta operação é sensível e requer autenticação recente. Efetue login novamente antes de tentar novamente esta solicitação.",
                                       Toast.LENGTH_LONG)
                                       .show();
@@ -471,7 +471,7 @@ public class MainActivity extends AppCompatActivity {
 
                             case "ERROR_ACCOUNT_EXISTS_WITH_DIFFERENT_CREDENTIAL":
                               Toast.makeText(
-                                      MainActivity.this,
+                                      LoginActivity.this,
                                       "Já existe uma conta com o mesmo endereço de email, mas com credenciais de login diferentes. Faça login usando um provedor associado a este endereço de e-mail.",
                                       Toast.LENGTH_LONG)
                                       .show();
@@ -479,7 +479,7 @@ public class MainActivity extends AppCompatActivity {
 
                             case "ERROR_EMAIL_ALREADY_IN_USE":
                               Toast.makeText(
-                                      MainActivity.this,
+                                      LoginActivity.this,
                                       "\n" + "O endereço de email já está sendo usado por outra conta.   ",
                                       Toast.LENGTH_LONG)
                                       .show();
@@ -489,7 +489,7 @@ public class MainActivity extends AppCompatActivity {
 
                             case "ERROR_CREDENTIAL_ALREADY_IN_USE":
                               Toast.makeText(
-                                      MainActivity.this,
+                                      LoginActivity.this,
                                       "Essa credencial já está associada a uma conta de usuário diferente.",
                                       Toast.LENGTH_LONG)
                                       .show();
@@ -497,7 +497,7 @@ public class MainActivity extends AppCompatActivity {
 
                             case "ERROR_USER_DISABLED":
                               Toast.makeText(
-                                      MainActivity.this,
+                                      LoginActivity.this,
                                       "A conta do usuário foi desativada por um administrador.",
                                       Toast.LENGTH_LONG)
                                       .show();
@@ -505,7 +505,7 @@ public class MainActivity extends AppCompatActivity {
 
                             case "ERROR_USER_TOKEN_EXPIRED":
                               Toast.makeText(
-                                      MainActivity.this,
+                                      LoginActivity.this,
                                       "A credencial do usuário não é mais válida. O usuário deve entrar novamente.",
                                       Toast.LENGTH_LONG)
                                       .show();
@@ -513,7 +513,7 @@ public class MainActivity extends AppCompatActivity {
 
                             case "ERROR_USER_NOT_FOUND":
                               Toast.makeText(
-                                      MainActivity.this,
+                                      LoginActivity.this,
                                       "Cadastro não encontrado! Tente novamente ou cadastre-se!",
                                       Toast.LENGTH_LONG)
                                       .show();
@@ -521,7 +521,7 @@ public class MainActivity extends AppCompatActivity {
 
                             case "ERROR_INVALID_USER_TOKEN":
                               Toast.makeText(
-                                      MainActivity.this,
+                                      LoginActivity.this,
                                       "A credencial do usuário não é mais válida. Entre novamente.",
                                       Toast.LENGTH_LONG)
                                       .show();
@@ -529,7 +529,7 @@ public class MainActivity extends AppCompatActivity {
 
                             case "ERROR_OPERATION_NOT_ALLOWED":
                               Toast.makeText(
-                                      MainActivity.this,
+                                      LoginActivity.this,
                                       "Esta operação não é permitida. Você deve ativar este serviço no console.",
                                       Toast.LENGTH_LONG)
                                       .show();
@@ -537,7 +537,7 @@ public class MainActivity extends AppCompatActivity {
 
                             case "ERROR_WEAK_PASSWORD":
                               Toast.makeText(
-                                      MainActivity.this,
+                                      LoginActivity.this,
                                       "\n" + "A senha fornecida é inválida.",
                                       Toast.LENGTH_LONG)
                                       .show();
@@ -547,7 +547,7 @@ public class MainActivity extends AppCompatActivity {
 
                             default:
                               Toast.makeText(
-                                      MainActivity.this, "Ops, ocorreu algo imprevisto.", Toast.LENGTH_LONG)
+                                      LoginActivity.this, "Ops, ocorreu algo imprevisto.", Toast.LENGTH_LONG)
                                       .show();
                               break;
                           }
@@ -616,7 +616,7 @@ public class MainActivity extends AppCompatActivity {
   }
 
   private void closePrincipal() {
-    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+    Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
     startActivity(intent);
     finish();
   }
@@ -652,10 +652,10 @@ public void cadastrar(View view) {
     }
     if (contatoExisteLogin != 1) {
       loginController.cadastroLogin(login);
-      Toast.makeText(MainActivity.this, "Cadastro efetuado com sucesso!!", Toast.LENGTH_SHORT)
+      Toast.makeText(LoginActivity.this, "Cadastro efetuado com sucesso!!", Toast.LENGTH_SHORT)
           .show();
     } else {
-      Toast.makeText(MainActivity.this, "Usuário já existente!!", Toast.LENGTH_SHORT).show();
+      Toast.makeText(LoginActivity.this, "Usuário já existente!!", Toast.LENGTH_SHORT).show();
     }
   }
 
@@ -664,7 +664,7 @@ public void cadastrar(View view) {
 
 public void logar(View view) {
 
-  Intent intent = new Intent(MainActivity.this, Main2Activity.class);
+  Intent intent = new Intent(LoginActivity.this, Main2Activity.class);
   startActivity(intent);
   finish();
 
@@ -677,13 +677,13 @@ public void logar(View view) {
   // String valida = (nome + codigo);
 
   if ((etNome.getText().toString().equals("")) && (etSenha.getText().toString().equals(""))) {
-    Toast.makeText(MainActivity.this, "Os campos devem estar preenchidos.", Toast.LENGTH_LONG)
+    Toast.makeText(LoginActivity.this, "Os campos devem estar preenchidos.", Toast.LENGTH_LONG)
         .show();
   } else if (etNome.getText().toString().equals("")) {
-    Toast.makeText(MainActivity.this, "O campo nome deve estar preenchido.", Toast.LENGTH_LONG)
+    Toast.makeText(LoginActivity.this, "O campo nome deve estar preenchido.", Toast.LENGTH_LONG)
         .show();
   } else if (etSenha.getText().toString().equals("")) {
-    Toast.makeText(MainActivity.this, "O campo senha deve estar preenchido.", Toast.LENGTH_LONG)
+    Toast.makeText(LoginActivity.this, "O campo senha deve estar preenchido.", Toast.LENGTH_LONG)
         .show();
   } else if (!(etNome.getText().toString().equals(""))
       && !(etSenha.getText().toString().equals(""))) {
@@ -697,7 +697,7 @@ public void logar(View view) {
       }
     }
     if (contatoExiste == 1) {
-     /*Intent intent = new Intent(MainActivity.this, Main2Activity.class);
+     /*Intent intent = new Intent(LoginActivity.this, Main2Activity.class);
       startActivity(intent);
       finish();
     } else {
@@ -715,7 +715,7 @@ public void logar(View view) {
                       })
               .show();
      /* Toast.makeText(
-              MainActivity.this,
+              LoginActivity.this,
               "Nome ou senha não encontrados, tente novamente.",
               Toast.LENGTH_LONG)
           .show();

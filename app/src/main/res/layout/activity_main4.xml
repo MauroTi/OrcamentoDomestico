@@ -6,187 +6,163 @@
     android:layout_gravity="center|top"
     tools:context=".Main4Activity">
 
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        tools:ignore="MissingConstraints">
+        android:layout_height="match_parent"
+        android:gravity="bottom|center"
+        android:orientation="vertical">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/txtDigitaReceita"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center|top"
-                android:text="Digite nome e valor da receita e toque em +"
-                android:textSize="18sp"
-                android:visibility="visible"
-                tools:visibility="visible" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center|center_horizontal|center_vertical"
-            android:layout_marginTop="10dp"
             android:gravity="center"
             android:orientation="horizontal">
 
             <LinearLayout
-                android:id="@+id/linearLayout"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginRight="8dp"
-                android:gravity="center"
-                android:orientation="horizontal">
+                android:layout_marginRight="40dp"
+                android:orientation="vertical">
 
-                <EditText
-                    android:id="@+id/receita"
-                    android:layout_width="145dp"
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginRight="8dp"
-                    android:autofillHints=""
-                    android:background="@drawable/btn_customizado"
-                    android:baselineAligned="false"
-                    android:ems="10"
-                    android:gravity="center"
-                    android:hint="Receita"
-                    android:inputType="textPersonName"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="1"
+                    android:text="Total em receitas:"
                     android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="1"
+                    android:text="Total em despesas:"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:ignore="DuplicateIds" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="1"
+                    android:text="Saldo:"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:ignore="DuplicateIds" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/receitaFinal"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_corner_main3_green"
+                    android:gravity="center"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
                     android:visibility="visible"
                     tools:visibility="visible" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/despesaFinal"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_corner_main3_green"
+                    android:gravity="center"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/valorReceita"
-                        android:layout_width="130dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginRight="8dp"
-                        android:autofillHints=""
-                        android:background="@drawable/btn_customizado"
-                        android:baselineAligned="false"
-                        android:ems="10"
-                        android:gravity="center"
-                        android:hint="R$ 0,00"
-                        android:inputType="numberDecimal"
-                        android:text="R$ 0,00"
-                        android:textSize="18sp"
-                        android:visibility="visible"
-                        tools:visibility="visible" />
-
-                    <Button
-                        android:id="@+id/btnAdicionarReceita"
-                        style="@style/Widget.AppCompat.Button.Small"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:background="@drawable/botao_redondo"
-                        android:baselineAligned="false"
-                        android:gravity="center"
-                        android:onClick="cria_receita"
-                        android:text="+"
-                        android:textAlignment="gravity"
-                        android:textSize="18sp"
-                        android:visibility="visible"
-                        tools:ignore="OnClick"
-                        tools:visibility="visible" />
-
-                </LinearLayout>
-
+                <TextView
+                    android:id="@+id/saldoFinal"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/linearLayoutQuantidadeReceita"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="8dp"
-            android:background="#5384D610"
-            android:gravity="center"
-            android:orientation="horizontal">
+            android:layout_gravity="bottom"
+            android:gravity="bottom|center"
+            android:orientation="vertical">
 
-
-            <TextView
-                android:id="@+id/itensAtuaisReceita"
-
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:inputType="text" />
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/textView2"
+                <Button
+                    android:id="@+id/btnVoltar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_customizado"
+                    android:onClick="voltar"
+                    android:text="Calcular novamente" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="3dp"
-                android:layout_weight="0"
-                android:gravity="center"
-                android:text="Itens adicionados" />
+                android:orientation="horizontal">
 
-        </LinearLayout>
+                <Button
+                    android:id="@+id/btnSair2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_customizado"
+                    android:onClick="sair"
+                    android:text="Sair" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <ListView
-                android:id="@+id/minhaLista"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-                />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="20dp" />
+                <Button
+                    android:id="@+id/btnLogout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_customizado"
+                    android:text="Logout" />
+            </LinearLayout>
 
         </LinearLayout>
 
     </LinearLayout>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="bottom|center">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:baselineAligned="false"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@drawable/btn_customizado"
-                android:gravity="center"
-                android:onClick="proxima"
-                android:text="Próxima" />
-        </LinearLayout>
-    </RelativeLayout>
-
-
+    <TextView
+        android:id="@+id/data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+

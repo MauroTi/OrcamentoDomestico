@@ -59,7 +59,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
                                                             Toast.LENGTH_LONG)
                                                             .show();
 
-                                                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                                    Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                                                     startActivity(intent);
                                                     finish();
                                                 } else {

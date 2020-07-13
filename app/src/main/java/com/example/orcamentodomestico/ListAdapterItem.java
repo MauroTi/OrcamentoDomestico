@@ -67,7 +67,7 @@ public class ListAdapterItem extends ArrayAdapter<Item> {
 
             }
             try {
-              ((Main4Activity) context).updateAdapter();
+              ((Main3Activity) context).updateAdapter();
             } catch (Exception e) {
 
             }

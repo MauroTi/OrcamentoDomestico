@@ -70,7 +70,7 @@ public class Main2Activity extends AppCompatActivity {
                     getApplicationContext(), "Bem vindo " + user.getEmail() + "!", Toast.LENGTH_LONG)
                     .show();
         } else {
-            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
             startActivity(intent);
             finish();
         }
@@ -157,7 +157,7 @@ public class Main2Activity extends AppCompatActivity {
 
     private void disconnect() {
         FirebaseAuth.getInstance().signOut();
-        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
         startActivity(intent);
         Toast.makeText(getApplicationContext(), "Logout efetuado com sucesso!", Toast.LENGTH_LONG)
                 .show();
@@ -169,7 +169,7 @@ public class Main2Activity extends AppCompatActivity {
     }*/
 
     private void closePrincipal() {
-        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
         startActivity(intent);
         finish();
     }
@@ -199,7 +199,7 @@ public class Main2Activity extends AppCompatActivity {
                     pegaValor = Float.parseFloat(item.getValor().replaceAll("\\D", ""));
                     despesas = (despesas) + (pegaValor / 100);
                 }
-                Intent i = new Intent(Main2Activity.this, Main4Activity.class);
+                Intent i = new Intent(Main2Activity.this, Main3Activity.class);
                 i.putExtra("TotalDespesas", despesas);
                 //i.putExtra("DespesasDiscriminadas",listaItens);
 
