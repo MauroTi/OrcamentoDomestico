@@ -1,5 +1,6 @@
 package com.example.orcamentodomestico;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -20,6 +21,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Locale;
@@ -36,6 +38,9 @@ public class Main3Activity extends AppCompatActivity {
     int testeAdd;
     String valor = String.valueOf(0);
     Float despesas;
+    Float receitas = Float.valueOf(0);
+    Float diferenca = Float.valueOf(0);
+    Float pegaValor;
 
     // controles da tela
     EditText txtReceita;
@@ -43,6 +48,8 @@ public class Main3Activity extends AppCompatActivity {
     Button btnAdicionar;
     ListView minhaLista;
     MonetaryMask monetaryMask;
+
+    TextView tvDespesaTotal;
     // fim dos controles da tela
 
     public boolean onCreateOptionsMenu(android.view.Menu menu) {
@@ -54,6 +61,7 @@ public class Main3Activity extends AppCompatActivity {
 
     ;
 
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,11 +77,14 @@ public class Main3Activity extends AppCompatActivity {
         minhaLista.setAdapter(adapter);
         txtReceita = findViewById(R.id.receita);
         txtValorReceita = findViewById(R.id.valorReceita);
+
+        tvDespesaTotal = findViewById(R.id.tvDespesaTotal);
         monetaryMask = new MonetaryMask(this.txtValorReceita);
         btnAdicionar = findViewById(R.id.btnAdicionarReceita);
 
         Locale mLocale = new Locale("pt", "BR");
         txtValorReceita.addTextChangedListener(new MonetaryMask(txtValorReceita, mLocale));
+
 
         btnAdicionar.setOnClickListener(
                 new View.OnClickListener() {
@@ -94,8 +105,21 @@ public class Main3Activity extends AppCompatActivity {
                         int itensReceita = adapter.getCount();
                         testeAdd = itensReceita;
                         itensAddReceita.setText(String.valueOf(itensReceita));
+
+
                     }
                 });
+
+        //Campo soma das despesas
+        Bundle extras = getIntent().getExtras();
+        despesas = extras.getFloat("TotalDespesas");
+        String desp;
+        desp = despesas.toString();
+
+        Double despesaDouble = Double.parseDouble(desp);
+        DecimalFormat dfDespesas = new DecimalFormat("R$ ,##0.00");
+        String saidaDespesas = dfDespesas.format(despesaDouble);
+        tvDespesaTotal.setText(saidaDespesas);
     }
 
 
@@ -158,9 +182,6 @@ public class Main3Activity extends AppCompatActivity {
 
     public void proxima(View view) {
 
-        Float receitas = Float.valueOf(0);
-        Float diferenca = Float.valueOf(0);
-        Float pegaValor;
 
         if ((testeAdd > 0) && (!valor.equals(""))) {
             try {

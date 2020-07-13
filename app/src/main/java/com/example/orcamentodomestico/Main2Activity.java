@@ -110,6 +110,7 @@ public class Main2Activity extends AppCompatActivity {
                         int itensDespesa = adapter.getCount();
                         testeAdd = itensDespesa;
                         itensAddDespesa.setText(String.valueOf(itensDespesa));
+
                     }
                 });
     }

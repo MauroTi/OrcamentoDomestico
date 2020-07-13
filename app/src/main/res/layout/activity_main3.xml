@@ -16,24 +16,6 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/txtDigitaReceita"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center|top"
-                android:text="Digite nome e valor da receita e toque em +"
-                android:textSize="18sp"
-                android:visibility="visible"
-                tools:visibility="visible" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:layout_gravity="center|center_horizontal|center_vertical"
             android:layout_marginTop="10dp"
             android:gravity="center"
@@ -70,23 +52,6 @@
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
-                    <Button
-                        android:id="@+id/btnAdicionarReceita"
-                        style="@style/Widget.AppCompat.Button.Small"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:background="@drawable/botao_redondo"
-                        android:baselineAligned="false"
-                        android:gravity="center"
-                        android:onClick="cria_receita"
-                        android:text="+"
-                        android:textAlignment="gravity"
-                        android:textSize="18sp"
-                        android:visibility="visible"
-                        tools:ignore="OnClick"
-                        tools:visibility="visible" />
-
                     <EditText
                         android:id="@+id/valorReceita"
                         android:layout_width="130dp"
@@ -105,9 +70,77 @@
                         android:visibility="visible"
                         tools:visibility="visible" />
 
+                    <Button
+                        android:id="@+id/btnAdicionarReceita"
+                        style="@style/Widget.AppCompat.Button.Small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/botao_redondo"
+                        android:baselineAligned="false"
+                        android:gravity="center"
+                        android:onClick="cria_receita"
+                        android:text="+"
+                        android:textAlignment="gravity"
+                        android:textSize="18sp"
+                        android:visibility="visible"
+                        tools:ignore="OnClick"
+                        tools:visibility="visible" />
+
                 </LinearLayout>
 
             </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtDigitaReceita"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center|top"
+                android:text="Digite nome e valor da receita e toque em +"
+                android:textSize="18sp"
+                android:visibility="visible"
+                tools:visibility="visible" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayoutQuantidadeDespesa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="8dp"
+            android:background="#5384D610"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/textViewdespesas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="3dp"
+                android:layout_weight="0"
+                android:gravity="center"
+                android:text="Despesas totais" />
+
+            <TextView
+                android:id="@+id/tvDespesaTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="7dp"
+                android:gravity="center" />
+
 
         </LinearLayout>
 
@@ -133,7 +166,7 @@
                 android:inputType="text" />
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/textViewdespesas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
