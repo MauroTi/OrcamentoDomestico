@@ -22,6 +22,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Main4Activity extends AppCompatActivity {
@@ -61,6 +62,13 @@ public class Main4Activity extends AppCompatActivity {
     String despesas = extras.getString("TotalDespesas");
     String receitas = extras.getString("TotalReceitas");
     String resultado = extras.getString("Diferenca");
+
+    //Pega lista serializada
+    ArrayList<Item> listaDespesas;
+    listaDespesas = (ArrayList<Item>) getIntent().getSerializableExtra("DespesasDiscriminadas");
+
+    ArrayList<Item> listaReceitas;
+    listaReceitas = (ArrayList<Item>) getIntent().getSerializableExtra("ReceitasDiscriminadas");
 
     Double despesaDouble = Double.parseDouble(despesas);
     Double receitaDouble = Double.parseDouble(receitas);

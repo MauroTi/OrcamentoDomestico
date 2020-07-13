@@ -85,7 +85,6 @@ public class Main3Activity extends AppCompatActivity {
         Locale mLocale = new Locale("pt", "BR");
         txtValorReceita.addTextChangedListener(new MonetaryMask(txtValorReceita, mLocale));
 
-
         btnAdicionar.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
@@ -105,25 +104,26 @@ public class Main3Activity extends AppCompatActivity {
                         int itensReceita = adapter.getCount();
                         testeAdd = itensReceita;
                         itensAddReceita.setText(String.valueOf(itensReceita));
-
-
                     }
                 });
 
-        //Campo soma das despesas
+        // Campo soma das despesas
         Bundle extras = getIntent().getExtras();
         despesas = extras.getFloat("TotalDespesas");
         String desp;
         desp = despesas.toString();
 
+
         Double despesaDouble = Double.parseDouble(desp);
         DecimalFormat dfDespesas = new DecimalFormat("R$ ,##0.00");
         String saidaDespesas = dfDespesas.format(despesaDouble);
         tvDespesaTotal.setText(saidaDespesas);
+        // Campo soma das despesas final
+
+
     }
 
-
-    //Botoes barra app
+    // Botoes barra app
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
@@ -182,7 +182,6 @@ public class Main3Activity extends AppCompatActivity {
 
     public void proxima(View view) {
 
-
         if ((testeAdd > 0) && (!valor.equals(""))) {
             try {
 
@@ -199,10 +198,20 @@ public class Main3Activity extends AppCompatActivity {
                 despesas = extras.getFloat("TotalDespesas");
                 diferenca = receitas - despesas;
 
+                //Passa lista serializada
+                ArrayList<Item> listaDespesas;
+                listaDespesas = (ArrayList<Item>) getIntent().getSerializableExtra("DespesasDiscriminadas");
+
+                //Intent i = new Intent(Main3Activity.this, Main4Activity.class);
+
+
                 Intent i = new Intent(Main3Activity.this, Main4Activity.class);
                 i.putExtra("TotalDespesas", "" + despesas);
                 i.putExtra("TotalReceitas", "" + receitas);
                 i.putExtra("Diferenca", "" + diferenca);
+                //Passa lista serializada
+                i.putExtra("DespesasDiscriminadas", listaDespesas);
+                i.putExtra("ReceitasDiscriminadas", listaItens);
                 startActivity(i);
 
             } catch (NumberFormatException e) {

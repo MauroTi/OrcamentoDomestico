@@ -1,6 +1,8 @@
 package com.example.orcamentodomestico;
 
-public class Item {
+import java.io.Serializable;
+
+public class Item implements Serializable {
     String nome;
     String valor;
 

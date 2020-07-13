@@ -27,8 +27,7 @@ import java.util.Locale;
 
 public class Main2Activity extends AppCompatActivity {
 
-
-    DatabaseReference dbreference; //banco
+    DatabaseReference dbreference; // banco
     // criação do adapter e da lista
     ListAdapterItem adapter;
     ArrayList<Item> listaItens;
@@ -42,10 +41,9 @@ public class Main2Activity extends AppCompatActivity {
     Button btnAdicionar;
     ListView minhaLista;
     MonetaryMask monetaryMask;
-
+    String valor = String.valueOf(0);
     // fim dos controles da tela
     private FirebaseAuth mAuth;
-    String valor = String.valueOf(0);
 
     public boolean onCreateOptionsMenu(android.view.Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -59,9 +57,9 @@ public class Main2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-        dbreference = FirebaseDatabase.getInstance().getReference("despesas"); //banco
+        dbreference = FirebaseDatabase.getInstance().getReference("despesas"); // banco
 
-        // Initialize Firebase Auth
+        // Inicializa Firebase Auth
         mAuth = FirebaseAuth.getInstance();
         // Verifica se usuario esta logado
         FirebaseUser user = mAuth.getCurrentUser();
@@ -87,15 +85,15 @@ public class Main2Activity extends AppCompatActivity {
         monetaryMask = new MonetaryMask(this.txtValor);
         btnAdicionar = findViewById(R.id.btnAdicionarDespesa);
 
-
+        // Parte da mácara monetária
         Locale mLocale = new Locale("pt", "BR");
         txtValor.addTextChangedListener(new MonetaryMask(txtValor, mLocale));
 
+        // Adiciona nova despesa
         btnAdicionar.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-
 
                         String despesa = txtDespesa.getText().toString();
                         valor = txtValor.getText().toString();
@@ -110,12 +108,11 @@ public class Main2Activity extends AppCompatActivity {
                         int itensDespesa = adapter.getCount();
                         testeAdd = itensDespesa;
                         itensAddDespesa.setText(String.valueOf(itensDespesa));
-
                     }
                 });
     }
 
-//Botoes barra app
+    // Botoes barra app
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
@@ -156,6 +153,7 @@ public class Main2Activity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    // Função desconectar
     private void disconnect() {
         FirebaseAuth.getInstance().signOut();
         Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
@@ -164,17 +162,13 @@ public class Main2Activity extends AppCompatActivity {
                 .show();
     }
 
-    /*private void disconnect() {
-        FirebaseAuth.getInstance().signOut();
-        closePrincipal();
-    }*/
-
     private void closePrincipal() {
         Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
         startActivity(intent);
         finish();
     }
 
+    // Função atualiza contador
     public void updateAdapter() {
         adapter.notifyDataSetChanged();
         TextView itensAddDespesa = findViewById(R.id.itensAtuaisDespesa);
@@ -183,6 +177,7 @@ public class Main2Activity extends AppCompatActivity {
         itensAddDespesa.setText(String.valueOf(itensDespesa));
     }
 
+    // Botão Calcular
     public void proxima(View view) {
 
         Float pegaValor;
@@ -194,15 +189,15 @@ public class Main2Activity extends AppCompatActivity {
                 for (Iterator<Item> iterator = listaItens.iterator(); iterator.hasNext(); ) {
                     Item item = iterator.next(); // pega o item da lista
 
-                    String id = dbreference.push().getKey(); //banco
-                    dbreference.child(id).setValue(item); //banco
+                    String id = dbreference.push().getKey(); // banco
+                    dbreference.child(id).setValue(item); // banco
 
                     pegaValor = Float.parseFloat(item.getValor().replaceAll("\\D", ""));
                     despesas = (despesas) + (pegaValor / 100);
                 }
                 Intent i = new Intent(Main2Activity.this, Main3Activity.class);
                 i.putExtra("TotalDespesas", despesas);
-                //i.putExtra("DespesasDiscriminadas",listaItens);
+                i.putExtra("DespesasDiscriminadas", listaItens);
 
                 startActivity(i);
 
@@ -210,6 +205,7 @@ public class Main2Activity extends AppCompatActivity {
                 e.printStackTrace();
             }
         } else {
+            // Alerta nenhum valor adicionado
             new AlertDialog.Builder(this)
                     .setTitle("Nenhum valor!!!")
                     .setMessage("Nenhum valor válido adicionado!!!")
