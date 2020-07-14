@@ -209,6 +209,7 @@ public class Main3Activity extends AppCompatActivity {
                 i.putExtra("TotalDespesas", "" + despesas);
                 i.putExtra("TotalReceitas", "" + receitas);
                 i.putExtra("Diferenca", "" + diferenca);
+
                 //Passa lista serializada
                 i.putExtra("DespesasDiscriminadas", listaDespesas);
                 i.putExtra("ReceitasDiscriminadas", listaItens);
