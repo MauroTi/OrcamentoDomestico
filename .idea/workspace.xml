@@ -11,10 +11,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91bc989c-478e-46f4-8341-a1f1fad2049a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/ItemRelatorio.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/ListAdapterItemRelatorio.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_relatorio.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/Main3Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/Main3Activity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/Main4Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/Main4Activity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main3.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main4.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -644,7 +651,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594674863669</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Tudo funcionando">
+      <created>1594756298271</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1594756298271</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -661,7 +675,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="MVC Implementado" />
     <MESSAGE value="SobrescrevendoValores ArrayList" />
     <MESSAGE value="Print das telas" />
     <MESSAGE value="Nova instancia objeto" />
@@ -686,7 +699,8 @@
     <MESSAGE value="Ordem das activity corrigida" />
     <MESSAGE value="Adicionado campo despesas totais" />
     <MESSAGE value="Serializado" />
-    <option name="LAST_COMMIT_MESSAGE" value="Serializado" />
+    <MESSAGE value="Tudo funcionando" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tudo funcionando" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -705,11 +719,15 @@
       <screen x="0" y="0" width="1366" height="687" />
     </state>
     <state x="200" y="75" key="#PSD/0.0.1366.687@0.0.1366.687" timestamp="1591375002306" />
-    <state x="411" y="98" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1593180929086">
+    <state x="411" y="98" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1594901765547">
       <screen x="0" y="0" width="1360" height="687" />
     </state>
-    <state x="411" y="98" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1593180929086" />
+    <state x="411" y="98" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1594901765547" />
     <state x="413" y="98" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1366.687@0.0.1366.687" timestamp="1591636455621" />
+    <state x="485" y="23" key="#com.intellij.ide.util.MemberChooser" timestamp="1594912803994">
+      <screen x="0" y="0" width="1360" height="687" />
+    </state>
+    <state x="485" y="23" key="#com.intellij.ide.util.MemberChooser/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1594912803994" />
     <state x="500" y="0" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog" timestamp="1591033942256">
       <screen x="0" y="0" width="1366" height="687" />
     </state>
@@ -722,10 +740,10 @@
       <screen x="0" y="0" width="1360" height="687" />
     </state>
     <state x="410" y="90" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1594643769377" />
-    <state x="410" y="94" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1594744182800">
+    <state x="410" y="94" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1594912113196">
       <screen x="0" y="0" width="1360" height="687" />
     </state>
-    <state x="410" y="94" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1594744182800" />
+    <state x="410" y="94" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1594912113196" />
     <state x="586" y="14" key="#xdebugger.XInspectDialog" timestamp="1593185409026">
       <screen x="0" y="0" width="1360" height="687" />
     </state>
@@ -734,10 +752,10 @@
       <screen x="0" y="0" width="1360" height="687" />
     </state>
     <state x="435" y="0" key="#xdebugger.evaluate/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1593185779033" />
-    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1594674862636">
+    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1594756297029">
       <screen x="0" y="0" width="1360" height="687" />
     </state>
-    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1594674862636" />
+    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1594756297029" />
     <state x="0" y="0" key="CommitChangelistDialog2/0.0.1366.687@0.0.1366.687" timestamp="1592086398309" />
     <state x="461" y="85" key="FileChooserDialogImpl" timestamp="1593698578042">
       <screen x="0" y="0" width="1360" height="687" />
@@ -784,10 +802,10 @@
     </state>
     <state width="1300" height="266" key="GridCell.Tab.1.right/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1594732431407" />
     <state width="1323" height="118" key="GridCell.Tab.1.right/0.0.1366.687@0.0.1366.687" timestamp="1591626764870" />
-    <state x="274" y="72" key="Vcs.Push.Dialog.v2" timestamp="1594674881349">
+    <state x="274" y="72" key="Vcs.Push.Dialog.v2" timestamp="1594756300393">
       <screen x="0" y="0" width="1360" height="687" />
     </state>
-    <state x="274" y="72" key="Vcs.Push.Dialog.v2/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1594674881349" />
+    <state x="274" y="72" key="Vcs.Push.Dialog.v2/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1594756300393" />
     <state x="275" y="72" key="Vcs.Push.Dialog.v2/0.0.1366.687@0.0.1366.687" timestamp="1592086426844" />
     <state x="100" y="100" width="1161" height="487" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1593691936302">
       <screen x="0" y="0" width="1360" height="687" />

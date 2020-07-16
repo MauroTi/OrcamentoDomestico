@@ -48,7 +48,6 @@ public class Main3Activity extends AppCompatActivity {
     Button btnAdicionar;
     ListView minhaLista;
     MonetaryMask monetaryMask;
-
     TextView tvDespesaTotal;
     // fim dos controles da tela
 
@@ -58,8 +57,6 @@ public class Main3Activity extends AppCompatActivity {
 
         return true;
     }
-
-    ;
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -201,8 +198,6 @@ public class Main3Activity extends AppCompatActivity {
                 //Passa lista serializada
                 ArrayList<Item> listaDespesas;
                 listaDespesas = (ArrayList<Item>) getIntent().getSerializableExtra("DespesasDiscriminadas");
-
-                //Intent i = new Intent(Main3Activity.this, Main4Activity.class);
 
 
                 Intent i = new Intent(Main3Activity.this, Main4Activity.class);

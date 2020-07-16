@@ -28,6 +28,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Objects;
 
+@RequiresApi(api = Build.VERSION_CODES.KITKAT)
 public class Main4Activity extends AppCompatActivity {
 
   DatabaseReference dbreference; //banco
@@ -37,6 +38,7 @@ public class Main4Activity extends AppCompatActivity {
   ArrayList<Item> listaDespesas;
   ArrayList<Item> listaReceitas;
 
+
   public boolean onCreateOptionsMenu(android.view.Menu menu) {
     MenuInflater inflater = getMenuInflater();
     inflater.inflate(R.menu.main, menu);
@@ -45,12 +47,12 @@ public class Main4Activity extends AppCompatActivity {
   }
 
 
-
   @RequiresApi(api = Build.VERSION_CODES.N)
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main4);
+
 
     dbreference = FirebaseDatabase.getInstance().getReference("totais"); //banco
 
@@ -77,15 +79,13 @@ public class Main4Activity extends AppCompatActivity {
 
     //Popula listas despesas e receitas finais
     ListView listaRelatDespesas = findViewById(R.id.listaRelatDespesas);
-    ArrayList<String> listaDespesas = preencherDespesas();
-    ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listaDespesas);
-    listaRelatDespesas.setAdapter(arrayAdapter);
+    ArrayAdapter adapterDespesas = new ListAdapterItemRelatorio(this, listaDespesas);
+    listaRelatDespesas.setAdapter(adapterDespesas);
 
 
     ListView listaRelatReceitas = findViewById(R.id.listaRelatReceitas);
-    ArrayList<String> listaReceitas = preencherReceitas();
-    ArrayAdapter<String> arrayAdapterReceitas = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listaReceitas);
-    listaRelatReceitas.setAdapter(arrayAdapterReceitas);
+    ArrayAdapter adapterReceitas = new ListAdapterItemRelatorio(this, listaReceitas);
+    listaRelatReceitas.setAdapter(adapterReceitas);
     //Final popula listas despesas e receitas finais
 
     Double despesaDouble = Double.parseDouble(despesas);
@@ -130,39 +130,31 @@ public class Main4Activity extends AppCompatActivity {
                 disconnect();
               }
             });
-
   }
 
   //Preencher lista despesas
   @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-  private ArrayList<String> preencherDespesas() {
-    ArrayList<String> dadosDespesas = new ArrayList<>();
+  private ArrayList<Item> preencherDespesas() {
+    ArrayList<Item> dadosDespesas = new ArrayList<>();
     for (int i = 0; i < Objects.requireNonNull(listaDespesas).size(); i++) {
       Item itemDespesas = listaDespesas.get(i);
-      if (itemDespesas.getNome() != "") {
-        dadosDespesas.add(itemDespesas.getNome() + "    " + itemDespesas.getValor());
-      } else {
-        dadosDespesas.add("Nome não informado" + "    " + itemDespesas.getValor());
-      }
     }
     return dadosDespesas;
   }
+
   //Final preencher lista despesas
 
   //Preencher lista receitas
+
   @RequiresApi(api = Build.VERSION_CODES.KITKAT)
   private ArrayList<String> preencherReceitas() {
     ArrayList<String> dadosReceitas = new ArrayList<>();
     for (int i = 0; i < Objects.requireNonNull(listaReceitas).size(); i++) {
       Item itemReceitas = listaReceitas.get(i);
-      if (itemReceitas.getNome() != "") {
-        dadosReceitas.add(itemReceitas.getNome() + "    " + itemReceitas.getValor());
-      } else {
-        dadosReceitas.add("Nome não informado" + "    " + itemReceitas.getValor());
-      }
     }
     return dadosReceitas;
   }
+
 //Final preencher lista receitas
 
   public void voltar(View view) {
