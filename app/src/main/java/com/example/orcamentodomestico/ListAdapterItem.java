@@ -17,14 +17,14 @@ import java.util.ArrayList;
 
 public class ListAdapterItem extends ArrayAdapter<Item> implements Serializable {
 
-    private Context context;
-    private ArrayList<Item> lista;
+  private Context context;
+  private ArrayList<Item> lista;
 
-    public ListAdapterItem(Context context, ArrayList<Item> lista) {
-        super(context, 0, lista);
-        this.context = context;
-        this.lista = lista;
-    }
+  public ListAdapterItem(Context context, ArrayList<Item> lista) {
+    super(context, 0, lista);
+    this.context = context;
+    this.lista = lista;
+  }
 
   @Override
   public int getCount() {

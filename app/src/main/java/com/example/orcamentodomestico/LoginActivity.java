@@ -55,7 +55,7 @@ public class LoginActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.login_main);
 
-    // Initialize Firebase Auth
+    // Inicialize Firebase Auth
     mAuth = FirebaseAuth.getInstance();
     // Verifica se usuario esta logado
     FirebaseUser user = mAuth.getCurrentUser();
@@ -151,16 +151,9 @@ public class LoginActivity extends AppCompatActivity {
                 senha.setText("");
               }
             });
-
-    /* btnLogout.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            disconnect();
-        }
-    });*/
   }
 
-  //Botões barra app
+  // Botões barra app
   @Override
   public boolean onOptionsItemSelected(MenuItem item) {
     int id = item.getItemId();
@@ -218,11 +211,6 @@ public class LoginActivity extends AppCompatActivity {
                         } else {
                           // If sign in fails, display a message to the user.
                           Log.w("TAG", "signInWithEmail:failure", task.getException());
-                  /* Toast.makeText(
-                      getApplicationContext(),
-                      "Cadastro não encontrado! Tente novamente ou cadastre-se!",
-                      Toast.LENGTH_LONG)
-                  .show();*/
 
                           String errorCode =
                                   ((FirebaseAuthException) Objects.requireNonNull(task.getException()))
@@ -369,7 +357,9 @@ public class LoginActivity extends AppCompatActivity {
 
                             default:
                               Toast.makeText(
-                                      LoginActivity.this, "Ops, ocorreu algo imprevisto.", Toast.LENGTH_LONG)
+                                      LoginActivity.this,
+                                      "Ops, ocorreu algo imprevisto.",
+                                      Toast.LENGTH_LONG)
                                       .show();
                               break;
                           }
@@ -547,39 +537,15 @@ public class LoginActivity extends AppCompatActivity {
 
                             default:
                               Toast.makeText(
-                                      LoginActivity.this, "Ops, ocorreu algo imprevisto.", Toast.LENGTH_LONG)
+                                      LoginActivity.this,
+                                      "Ops, ocorreu algo imprevisto.",
+                                      Toast.LENGTH_LONG)
                                       .show();
                               break;
                           }
                         }
                       }
                     });
-
-    /* String excecao;
-
-    try {
-        throw Objects.requireNonNull(task.getException());
-    } catch (FirebaseNetworkException ex) {
-        excecao = "Verifique sua conexão com a internet.";
-    } catch (FirebaseAuthWeakPasswordException ex) {
-        excecao =
-                "Senha fraca. Utilize ao menos seis caracteres contendo letras e números.";
-    } catch (FirebaseAuthUserCollisionException ex) {
-        excecao = "E-mail já cadastrado.";
-    } catch (FirebaseAuthInvalidCredentialsException ex) {
-        excecao = "O e-mail fornecido é inválido.";
-    } catch (Exception ex) {
-        excecao = "Erro ao tentar cadastrar.";
-        ex.printStackTrace();
-    }
-
-    Toast.makeText(getApplicationContext(), excecao, Toast.LENGTH_SHORT).show();
-            Toast.makeText(
-                    getApplicationContext(),
-                    "Cadastro não efetuado! Insira Email e senha de no mínimo 6 caracteres!",
-                    Toast.LENGTH_LONG)
-                    .show();*/
-    // updateUI(null);
   }
 
   private boolean userConnected() {
@@ -610,6 +576,26 @@ public class LoginActivity extends AppCompatActivity {
     Utils.salvarDadosComponente(NOME_USUARIO, ed1.getText().toString(), view.getContext());
   }
 
+  public void onBackPressed() {
+
+    new AlertDialog.Builder(this)
+            .setTitle("Sair do App?")
+            .setMessage("Tem certeza que deseja sair do aplicativo?")
+            .setPositiveButton(
+                    "sim",
+                    new DialogInterface.OnClickListener() {
+
+                      @Override
+                      public void onClick(DialogInterface dialogInterface, int i) {
+
+                        finish();
+                      }
+                    })
+            .setNegativeButton("não", null)
+            .show();
+  }
+
+
   private void disconnect() {
     FirebaseAuth.getInstance().signOut();
     closePrincipal();
@@ -621,102 +607,3 @@ public class LoginActivity extends AppCompatActivity {
     finish();
   }
 }
-
-// Fim SharedPreferences
-
-/*  Login login;
-LoginController loginController = new LoginController();
-
-String usuario;
-String senha;
-
-public void cadastrar(View view) {
-
-  EditText etNome = findViewById(R.id.etEmail);
-  usuario = etNome.getText().toString();
-  EditText etSenha = findViewById(R.id.etSenha);
-  senha = etSenha.getText().toString();
-
-  login = new Login(usuario, senha);
-  login.setUsuario(usuario);
-  login.setSenha(senha);
-  if (!(etNome.getText().toString().equals("")) && !(etSenha.getText().toString().equals(""))) {
-
-    List<Login> lista = loginController.reLogin();
-    int contatoExisteLogin = 0;
-
-    for (int i = 0; i < loginController.reLogin().size(); i++) {
-      if (usuario.equals(lista.get(i).getUsuario()) && senha.equals(lista.get(i).getSenha())) {
-        contatoExisteLogin = 1;
-      }
-    }
-    if (contatoExisteLogin != 1) {
-      loginController.cadastroLogin(login);
-      Toast.makeText(LoginActivity.this, "Cadastro efetuado com sucesso!!", Toast.LENGTH_SHORT)
-          .show();
-    } else {
-      Toast.makeText(LoginActivity.this, "Usuário já existente!!", Toast.LENGTH_SHORT).show();
-    }
-  }
-
-  gravar(view);
-}
-
-public void logar(View view) {
-
-  Intent intent = new Intent(LoginActivity.this, Main2Activity.class);
-  startActivity(intent);
-  finish();
-
-  EditText etNome = findViewById(R.id.etEmail);
-  EditText etSenha = findViewById(R.id.etSenha);
-
-  String nome = etNome.getText().toString();
-  String codigo = etSenha.getText().toString();
-  // String teste = loginController.exibeLogin();
-  // String valida = (nome + codigo);
-
-  if ((etNome.getText().toString().equals("")) && (etSenha.getText().toString().equals(""))) {
-    Toast.makeText(LoginActivity.this, "Os campos devem estar preenchidos.", Toast.LENGTH_LONG)
-        .show();
-  } else if (etNome.getText().toString().equals("")) {
-    Toast.makeText(LoginActivity.this, "O campo nome deve estar preenchido.", Toast.LENGTH_LONG)
-        .show();
-  } else if (etSenha.getText().toString().equals("")) {
-    Toast.makeText(LoginActivity.this, "O campo senha deve estar preenchido.", Toast.LENGTH_LONG)
-        .show();
-  } else if (!(etNome.getText().toString().equals(""))
-      && !(etSenha.getText().toString().equals(""))) {
-
-    List<Login> lista = loginController.reLogin();
-    int contatoExiste = 0;
-
-    for (int i = 0; i < loginController.reLogin().size(); i++) {
-      if (nome.equals(lista.get(i).getUsuario()) && codigo.equals(lista.get(i).getSenha())) {
-        contatoExiste = 1;
-      }
-    }
-    if (contatoExiste == 1) {
-     /*Intent intent = new Intent(LoginActivity.this, Main2Activity.class);
-      startActivity(intent);
-      finish();
-    } else {
-
-      new AlertDialog.Builder(this)
-              .setTitle("Dados não conferem.")
-              .setMessage("Nome ou senha não encontrados, tente novamente.")
-              .setPositiveButton(
-                      "OK",
-                      new DialogInterface.OnClickListener() {
-
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                        }
-                      })
-              .show();
-     /* Toast.makeText(
-              LoginActivity.this,
-              "Nome ou senha não encontrados, tente novamente.",
-              Toast.LENGTH_LONG)
-          .show();
-    }*/

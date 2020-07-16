@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/cash_logo_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ItemRelatorio"></activity>
+        <activity android:name=".ItemRelatorio" />
         <activity android:name=".Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

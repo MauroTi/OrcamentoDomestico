@@ -10,7 +10,7 @@ public class LoginController {
   static List<Login> listaLogins = new ArrayList<>();
 
   public static String exibeLogin() {
-    // System.out.println(listaLogins.toString());
+
     return listaLogins.toString();
   }
 

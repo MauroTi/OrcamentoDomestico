@@ -33,14 +33,13 @@ public class ListAdapterItemRelatorio extends ArrayAdapter<Item> {
         lista.add(object);
     }
 
-
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         Item itemPosicao = this.lista.get(position);
 
-
-        LayoutInflater inflater = (LayoutInflater) contexto.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        LayoutInflater inflater =
+                (LayoutInflater) contexto.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         convertView = inflater.inflate(R.layout.item_relatorio, parent, false);
 
@@ -58,4 +57,3 @@ public class ListAdapterItemRelatorio extends ArrayAdapter<Item> {
         return convertView;
     }
 }
-

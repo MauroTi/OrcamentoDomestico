@@ -31,13 +31,12 @@ import java.util.Objects;
 @RequiresApi(api = Build.VERSION_CODES.KITKAT)
 public class Main4Activity extends AppCompatActivity {
 
-  DatabaseReference dbreference; //banco
+  DatabaseReference dbreference; // banco
 
   private Button btnLogout;
   TextView txtData;
   ArrayList<Item> listaDespesas;
   ArrayList<Item> listaReceitas;
-
 
   public boolean onCreateOptionsMenu(android.view.Menu menu) {
     MenuInflater inflater = getMenuInflater();
@@ -46,21 +45,19 @@ public class Main4Activity extends AppCompatActivity {
     return true;
   }
 
-
   @RequiresApi(api = Build.VERSION_CODES.N)
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main4);
 
+    dbreference = FirebaseDatabase.getInstance().getReference("totais"); // banco
 
-    dbreference = FirebaseDatabase.getInstance().getReference("totais"); //banco
-
-    //Data do sistema
+    // Data do sistema
     txtData = findViewById(R.id.data);
     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
     txtData.setText(sdf.format(new Date()));
-    //Final data do sistema
+    // Final data do sistema
 
     TextView tvReceitas = findViewById(R.id.receitaFinal);
     TextView tvDespesas = findViewById(R.id.despesaFinal);
@@ -72,26 +69,24 @@ public class Main4Activity extends AppCompatActivity {
     String receitas = extras.getString("TotalReceitas");
     String resultado = extras.getString("Diferenca");
 
-    //Pega lista serializada
+    // Pega lista serializada
 
     listaDespesas = (ArrayList<Item>) getIntent().getSerializableExtra("DespesasDiscriminadas");
     listaReceitas = (ArrayList<Item>) getIntent().getSerializableExtra("ReceitasDiscriminadas");
 
-    //Popula listas despesas e receitas finais
+    // Popula listas despesas e receitas finais
     ListView listaRelatDespesas = findViewById(R.id.listaRelatDespesas);
     ArrayAdapter adapterDespesas = new ListAdapterItemRelatorio(this, listaDespesas);
     listaRelatDespesas.setAdapter(adapterDespesas);
 
-
     ListView listaRelatReceitas = findViewById(R.id.listaRelatReceitas);
     ArrayAdapter adapterReceitas = new ListAdapterItemRelatorio(this, listaReceitas);
     listaRelatReceitas.setAdapter(adapterReceitas);
-    //Final popula listas despesas e receitas finais
+    // Final popula listas despesas e receitas finais
 
     Double despesaDouble = Double.parseDouble(despesas);
     Double receitaDouble = Double.parseDouble(receitas);
     Double resultadoDouble = Double.parseDouble(resultado);
-
 
     tvDespesas.setBackgroundResource(R.drawable.rounded_corner_main3_green);
     tvDespesas.setTextColor(Color.BLACK);
@@ -119,20 +114,13 @@ public class Main4Activity extends AppCompatActivity {
     String saidaSaldo = dfSaldo.format(resultadoDouble);
     tvSaldo.setText(saidaSaldo);
 
+    String id = dbreference.push().getKey(); // banco
+    dbreference.child(id).setValue(saidaSaldo); // banco
 
-    String id = dbreference.push().getKey(); //banco
-    dbreference.child(id).setValue(saidaSaldo); //banco
 
-    btnLogout.setOnClickListener(
-            new View.OnClickListener() {
-              @Override
-              public void onClick(View v) {
-                disconnect();
-              }
-            });
   }
 
-  //Preencher lista despesas
+  // Preencher lista despesas
   @RequiresApi(api = Build.VERSION_CODES.KITKAT)
   private ArrayList<Item> preencherDespesas() {
     ArrayList<Item> dadosDespesas = new ArrayList<>();
@@ -142,9 +130,9 @@ public class Main4Activity extends AppCompatActivity {
     return dadosDespesas;
   }
 
-  //Final preencher lista despesas
+  // Final preencher lista despesas
 
-  //Preencher lista receitas
+  // Preencher lista receitas
 
   @RequiresApi(api = Build.VERSION_CODES.KITKAT)
   private ArrayList<String> preencherReceitas() {
@@ -155,7 +143,7 @@ public class Main4Activity extends AppCompatActivity {
     return dadosReceitas;
   }
 
-//Final preencher lista receitas
+  // Final preencher lista receitas
 
   public void voltar(View view) {
     Intent intent = new Intent(Main4Activity.this, Main2Activity.class);
@@ -163,11 +151,26 @@ public class Main4Activity extends AppCompatActivity {
   }
 
   public void sair(View view) {
-    finishAffinity();
+    new AlertDialog.Builder(this)
+            .setTitle("Sair do App?")
+            .setMessage("Tem certeza que deseja sair do aplicativo?")
+            .setPositiveButton(
+                    "sim",
+                    new DialogInterface.OnClickListener() {
+
+                      @Override
+                      public void onClick(DialogInterface dialogInterface, int i) {
+
+                        finishAffinity();
+                      }
+                    })
+            .setNegativeButton("não", null)
+            .show();
+
+
   }
 
-
-  //Botoes barra app
+  // Botoes barra app
   @Override
   public boolean onOptionsItemSelected(MenuItem item) {
     int id = item.getItemId();
@@ -216,7 +219,24 @@ public class Main4Activity extends AppCompatActivity {
             .show();
   }
 
-  public void logout(MenuItem item) {
+  public void logout(View view) {
+
+    new AlertDialog.Builder(this)
+            .setTitle("Efetuar logout?")
+            .setMessage("Tem certeza que deseja efetuar logout?")
+            .setPositiveButton(
+                    "sim",
+                    new DialogInterface.OnClickListener() {
+
+                      @Override
+                      public void onClick(DialogInterface dialogInterface, int i) {
+                        disconnect();
+
+                      }
+                    })
+            .setNegativeButton("não", null)
+            .show();
   }
+
 }
 
