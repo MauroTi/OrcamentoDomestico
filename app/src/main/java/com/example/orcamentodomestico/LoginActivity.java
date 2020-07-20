@@ -84,6 +84,7 @@ public class LoginActivity extends AppCompatActivity {
     email = (EditText) findViewById(R.id.etEmail);
     senha = (EditText) findViewById(R.id.etSenha);
 
+
     btnLogar.setOnClickListener(
             new View.OnClickListener() {
               @Override
@@ -587,8 +588,7 @@ public class LoginActivity extends AppCompatActivity {
 
                       @Override
                       public void onClick(DialogInterface dialogInterface, int i) {
-
-                        finish();
+                        finishAffinity();
                       }
                     })
             .setNegativeButton("não", null)

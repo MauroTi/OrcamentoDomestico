@@ -1,6 +1,7 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.rtoshiro.mflibrary:mflibrary:1.0.0@aar">
     <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/82881308febcd28dcf02349bc600e913/jetified-mflibrary-1.0.0/AndroidManifest.xml" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/82881308febcd28dcf02349bc600e913/jetified-mflibrary-1.0.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/82881308febcd28dcf02349bc600e913/jetified-mflibrary-1.0.0/res" />
     </CLASSES>
