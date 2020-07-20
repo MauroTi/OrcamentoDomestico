@@ -11,4 +11,6 @@ public class ItemRelatorio extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.item_relatorio);
     }
+
 }
+
