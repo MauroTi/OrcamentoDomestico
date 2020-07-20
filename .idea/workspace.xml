@@ -10,7 +10,10 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91bc989c-478e-46f4-8341-a1f1fad2049a" name="Default Changelist" comment="" />
+    <list default="true" id="91bc989c-478e-46f4-8341-a1f1fad2049a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/LoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/orcamentodomestico/LoginActivity.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -671,7 +674,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595283375804</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Correção de bug">
+      <created>1595283482128</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1595283482128</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -689,7 +699,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="Print das telas" />
     <MESSAGE value="Nova instancia objeto" />
     <MESSAGE value="Adicionado tela splash" />
     <MESSAGE value="Tentando comparar Strings" />
@@ -714,7 +723,8 @@
     <MESSAGE value="Serializado" />
     <MESSAGE value="Tudo funcionando" />
     <MESSAGE value="Projeto para entregar" />
-    <option name="LAST_COMMIT_MESSAGE" value="Projeto para entregar" />
+    <MESSAGE value="Correção de bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correção de bug" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -769,11 +779,15 @@
       <screen x="0" y="0" width="1360" height="687" />
     </state>
     <state x="435" y="0" key="#xdebugger.evaluate/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1593185779033" />
-    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1595283421063">
+    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1595283615198">
       <screen x="0" y="0" width="1360" height="687" />
     </state>
-    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1595283421063" />
+    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1595283615198" />
     <state x="0" y="0" key="CommitChangelistDialog2/0.0.1366.687@0.0.1366.687" timestamp="1592086398309" />
+    <state x="130" y="51" key="DiffContextDialog" timestamp="1595283509983">
+      <screen x="0" y="0" width="1360" height="687" />
+    </state>
+    <state x="130" y="51" key="DiffContextDialog/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1595283509983" />
     <state x="461" y="85" key="FileChooserDialogImpl" timestamp="1595025422404">
       <screen x="0" y="0" width="1360" height="687" />
     </state>
@@ -819,10 +833,10 @@
     </state>
     <state width="1300" height="266" key="GridCell.Tab.1.right/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1594938108452" />
     <state width="1323" height="118" key="GridCell.Tab.1.right/0.0.1366.687@0.0.1366.687" timestamp="1591626764870" />
-    <state x="274" y="72" key="Vcs.Push.Dialog.v2" timestamp="1595283380644">
+    <state x="274" y="72" key="Vcs.Push.Dialog.v2" timestamp="1595283529074">
       <screen x="0" y="0" width="1360" height="687" />
     </state>
-    <state x="274" y="72" key="Vcs.Push.Dialog.v2/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1595283380644" />
+    <state x="274" y="72" key="Vcs.Push.Dialog.v2/0.0.1360.687/1360.304.1366.728@0.0.1360.687" timestamp="1595283529074" />
     <state x="275" y="72" key="Vcs.Push.Dialog.v2/0.0.1366.687@0.0.1366.687" timestamp="1592086426844" />
     <state x="100" y="100" width="1161" height="487" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1593691936302">
       <screen x="0" y="0" width="1360" height="687" />
